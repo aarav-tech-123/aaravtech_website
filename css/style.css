@@ -1,5 +1,16 @@
 /*** Spinner Start ***/
 /*** Spinner ***/
+
+
+.web-color {
+  color: #e1dafa;
+  color: #aca6d0;
+  color: #7872b4;
+  color: #4f4c9d;
+  color: #3a3284;
+  color: #191133;
+}
+
 #spinner {
   opacity: 0;
   visibility: hidden;

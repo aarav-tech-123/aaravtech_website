@@ -556,7 +556,8 @@ progress {
 
 @media(min-width: 1200px) {
     .display-5 {
-        font-size: 3rem
+        font-size: 3rem;
+        color: #191133;
     }
 }
 
@@ -8384,7 +8385,7 @@ fieldset:disabled .btn {
 }
 
 .text-dark {
-    color: #353f4f !important
+    color: #191133 !important
 }
 
 .text-white {

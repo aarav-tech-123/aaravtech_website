@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container evedel_button">
+        <div class="row">
+            <div class="col-2 btn_1">1</div>
+            <div class="col-2 btn_2">2</div>
+            <div class="col-2 btn_3">3</div>
+            <div class="col-2 btn_4">4</div>
+            <div class="col-2 btn_5">5</div>
+            <div class="col-2 btn_6">6</div>
+        </div>
+    </div>
+    <script>
+        const eventDelBtn = document.querySelector(".evedel_button")
+
+        console.log(window)
+        eventDelBtn.addEventListener('click', (event) => {
+            // console.log(event.target.innerHTML)
+            alert(`Event called, ${event.target.innerHTML}`)
+        })
+
+        console.log('eventLi')
+    </script>
+</body>
+
+</html>

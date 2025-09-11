@@ -1950,8 +1950,12 @@
 
 .card {
   transform-style: preserve-3d;
-  transition: transform .8s;
+  /* transition: transform .8s; */
   position: relative;
+  padding: 30px;
+  height: 350px;
+  margin-bottom: 2rem;
+  transition: transform 0.8s ease !important;
 }
 
 .card:hover {
@@ -1967,7 +1971,7 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards !important;
+  animation: fadeInUp 0.8s ease-in-out forwards !important;
   opacity: 0;
   transform: translateY(20px) !important;
 }
@@ -1998,4 +2002,5 @@
 
 .border-blue-500 {
   border-color: #4f4c9d !important;
+  border-top-width: 4px;
 }

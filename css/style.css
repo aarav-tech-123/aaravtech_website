@@ -242,7 +242,7 @@
   }
 
   nav.navbar {
-    padding: 0 30px 30px 0;
+    padding: 0 10px 30px 10px;
   }
 
   .navbar.navbar-expand-lg .navbar-toggler {
@@ -1211,7 +1211,7 @@
 
 
 .services-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background: #e9e8f8;
   position: relative;
   overflow: hidden;
@@ -1265,13 +1265,20 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 2rem;
+  gap: 1rem 1rem;
   flex: 1 1 45%;
 }
 
 .service-card {
   background: transparent;
   text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
 }
 
 .icon-circle {
@@ -1319,6 +1326,10 @@
   .services-grid {
     grid-template-columns: 1fr 1fr;
     width: 100%;
+  }
+
+  .services-section {
+    padding: 2rem 1rem;
   }
 }
 
@@ -1900,6 +1911,19 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+.btn-back-to-top {
+  display: inline-block;
+  padding: 15px 15px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
+  background-color: #3a3284;
+  color: white;
+}
+
 .btn-dark {
   background-color: #1c2b4a;
   color: #fff;
@@ -1917,4 +1941,61 @@
 .btn-red:hover {
   background-color: var(--bs-dark);
   color: var(--bs-white);
+}
+
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform .8s;
+  position: relative;
+}
+
+.card:hover {
+  transform: rotateY(15deg) !important;
+}
+
+.card-back {
+  transform: rotateY(180deg) !important;
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg) !important;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards !important;
+  opacity: 0;
+  transform: translateY(20px) !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-delay-1 {
+  animation-delay: 0.2s !important;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.4s !important;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.6s !important;
+}
+
+.border-blue-500 {
+  border-color: #4f4c9d !important;
 }

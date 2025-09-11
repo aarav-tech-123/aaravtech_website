@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Aarav Tech?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .card-container {
+            perspective: 1000px;
+        }
+        .card {
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            position: relative;
+        }
+        .card:hover {
+            transform: rotateY(15deg);
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        .card:hover .card-back {
+            transform: rotateY(0deg);
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-delay-1 { animation-delay: 0.2s; }
+        .animate-delay-2 { animation-delay: 0.4s; }
+        .animate-delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4 animate-fade-in-up">
+                Why Choose <span class="text-blue-600">Aarav Tech?</span>
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto animate-fade-in-up animate-delay-1">
+                We're more than just a service provider. We're your strategic partner in digital success.
+            </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+
+            <!-- Card 1: Tailored Strategy, Real Results -->
+            <div class="card-container flex-1">
+                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-2 h-full">
+                    <div>
+                        <div class="text-4xl mb-4 text-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.485.647 3 3 0 0 0 4.942 1.478A2.25 2.25 0 0 1 12 18.25V21h4.5v-2.25m-4.5-5.625h3m-3 3.375h3m-3 1.125h3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM7.5 13.5h.008v.008H7.5v-.008Zm1.5-3h.008v.008H9v-.008Zm.5-2.5h.008v.008h-.008V8Zm2.5 1.5h.008v.008H12.5v-.008Zm1.5 1.5h.008v.008H14v-.008Zm1.5-1.5h.008v.008h-.008V11Zm2.5-1.5h.008v.008h-.008V8.5Zm1.5-3h.008v.008H19v-.008Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Tailored Strategy, Real Results</h3>
+                        <p class="text-gray-600">
+                            Every company is different. Our digital marketing and lead generation techniques are specific to your needs, whether you need increased traffic, conversion, or qualified leads.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Smart, Streamlined Solutions -->
+            <div class="card-container flex-1">
+                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-3 h-full">
+                    <div>
+                        <div class="text-4xl mb-4 text-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-10.5m-14.25 0 2.152 2.152m13.5 11.798-11.798-13.5m-1.5 1.5L7.5 7.5m10.5 10.5L16.5 16.5m-5.184 6.364 1.25-1.25m-12.5-12.5 1.25-1.25M12 20.25a8.25 8.25 0 0 1-2.956-6.196L5.32 8.706C5.111 8.5 4.856 8.354 4.582 8.272M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Smart, Streamlined Solutions</h3>
+                        <p class="text-gray-600">
+                            Need anything other than marketing? We provide efficient, consistent services of business process outsourcing that can be implemented from customer care to back-office processes, allowing your organization to grow and work smoothly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Engaging, Human Touch -->
+            <div class="card-container flex-1">
+                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-4 h-full">
+                    <div>
+                        <div class="text-4xl mb-4 text-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.079 0-2.15.214-3.157.659M12 6.042a8.967 8.967 0 0 1 6-2.292c1.079 0 2.15.214 3.157.659m-12.75 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.75 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 18.75m0-4.5v4.5m0-4.5h.008v.008H4.5v-.008Zm12.75 0m0-4.5v4.5m0-4.5h.008v.008h-.008v-.008Zm-4.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm.75-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm.75 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-.75 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-.75-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Engaging, Human Touch</h3>
+                        <p class="text-gray-600">
+                            We believe in building relationships—not just algorithms. Your brand will have a voice, and your message will not only be heard but will also appeal to the audience as well.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -590,8 +590,8 @@
 }
 
 .hero-header {
-  padding-top: 160px;
-  padding-bottom: 70px;
+  padding-top: 130px;
+  padding-bottom: 20px;
   position: relative;
 }
 
@@ -1210,9 +1210,16 @@
 }
 
 
+.outer-section {
+  background-image: url('/img/bg-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .services-section {
   padding: 2rem 2rem;
-  background: #e9e8f8;
+  /* background: #e9e8f8; */
   position: relative;
   overflow: hidden;
 }

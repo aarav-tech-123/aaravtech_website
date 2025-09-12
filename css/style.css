@@ -758,11 +758,6 @@
 
 
 @media (max-width: 992px) {
-  .hero-header {
-    /* padding-top: 280px; */
-
-  }
-
   .hero-header .rotate-img img {
     margin-top: 100px;
   }
@@ -1503,9 +1498,10 @@
 
 .image-card img {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: block;
   transition: transform 0.3s ease;
+  height: 250px;
 }
 
 .image-card:hover img {
@@ -1665,7 +1661,7 @@
 
 .footer-section {
   background: #eaf0ff;
-  padding: 100px 60px 40px;
+  padding: 40px 40px 10px;
   position: relative;
   text-align: center;
 }
@@ -1747,7 +1743,7 @@
   display: flex;
   justify-content: center;
   gap: 60px;
-  margin-top: 80px;
+  margin-top: 50px;
   flex-wrap: wrap;
   text-align: left;
 }
@@ -1778,11 +1774,11 @@
 }
 
 .social-icons i:hover {
-  color: #e03e3e;
+  color: #4f4c9d;
 }
 
 .footer-bottom {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -1810,7 +1806,7 @@
 }
 
 .cta-section {
-  padding: 120px 20px;
+  padding: 80px 20px;
   /* background: url('/img/world-map-hexagon-free-png.webp') no-repeat center center; */
   background-size: contain;
   text-align: center;
@@ -1849,7 +1845,7 @@
 
 .btn-back-to-top {
   display: inline-block;
-  padding: 15px 15px;
+  padding: 18px 18px;
   border-radius: 40px;
   font-size: 16px;
   font-weight: 600;
@@ -1861,7 +1857,7 @@
 }
 
 .btn-dark {
-  background-color: #1c2b4a;
+  background-color: #191133;
   color: #fff;
 }
 
@@ -1990,4 +1986,11 @@
     min-width: 100%;
     max-width: 100%;
   }
+
+  .footer-links {
+    justify-content: left;
+    gap: 10px;
+    margin-top: 40px;
+  }
 }
+

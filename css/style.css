@@ -1215,6 +1215,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: rgb(255,255,255, 0.6);
+  background-blend-mode: overlay;
 }
 
 .services-section {

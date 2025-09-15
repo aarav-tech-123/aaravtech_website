@@ -300,7 +300,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 150px 0 60px 0;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
   transition: 0.5s;
 }
 

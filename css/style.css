@@ -1936,6 +1936,7 @@
   border-color: #4f4c9d !important;
   border-top-width: 4px;
 }
+
 /* Image Slider */
 
 
@@ -1994,3 +1995,50 @@
   }
 }
 
+
+/* Digital Marketing Page Style */
+
+.service-detail-section {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.service-content h1 {
+  color: #191133;
+  font-weight: bold;
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.sub-services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sub-services-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.sub-services-list li::before {
+  content: "\f00c";
+  /* FontAwesome check icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #7872b4;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

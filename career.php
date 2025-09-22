@@ -142,7 +142,7 @@
     <div class="container-fluid career-section">
         <div class="container">
             <div class="career-intro wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="mb-1 text-primary">JOIN OUR TEAM</h6>
+                <p class="subheading">JOIN OUR TEAM</h6>
                 <h1 class="display-5 mb-4">Shape the Future of Digital with Us</h1>
                 <p class="fs-4 mb-4">At **Aarav Tech Services LLP**, we believe in fostering a culture of innovation,
                     creativity, and collaboration. We are constantly looking for passionate and talented individuals who

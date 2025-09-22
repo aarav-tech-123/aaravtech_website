@@ -76,7 +76,7 @@
     </div>
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="/" class="navbar-brand p-0">
                 <img src="img/company_logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -97,10 +97,11 @@
                             <a href="bpo.html" class="dropdown-item">BPO Service</a>
                         </div>
                     </div>
+                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
                     <a href="career.php" class="nav-item nav-link active">Career</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="tel:7905355614" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
+                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
             </div>
         </nav>
         <div class="hero-header overflow-hidden px-5">
@@ -112,7 +113,7 @@
             <div class="row gy-5">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
                     <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="index.html" class="">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
                         <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
                         <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Career</a>
                         </li>
@@ -128,7 +129,7 @@
                         learning, creativity, and career growth. No matter how experienced you are or whether you are a
                         fresh graduate, you will get a good environment to develop your future. Research our available
                         opportunities and start pursuing a promising career at our company. </p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
+                    <a href="/contact.html" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
                         Started</a>
                 </div>
                 <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">

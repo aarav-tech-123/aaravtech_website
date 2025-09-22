@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing - Aarav Tech Services LLP</title>
+    <title>Career - Aarav Tech Services LLP</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css">
@@ -17,10 +17,53 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .dropdown-item.active {
-            color: #fff;
-            background-color: #4f4c9d !important;
-        }
+    .career-section {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .career-intro {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .job-listing-card {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 30px;
+    }
+
+    .job-listing-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .job-listing-card h4 {
+        font-weight: bold;
+        color: #191133;
+    }
+
+    .job-meta {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    .apply-btn {
+        background-color: #7872b4;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .apply-btn:hover {
+        background-color: #5d598e;
+        color: #fff;
+    }
     </style>
 </head>
 
@@ -34,7 +77,7 @@
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <img src="img/AARAV_TECH_SERVICES-removebg-preview.png" alt="">
+                <img src="img/company_logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -43,25 +86,23 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
-                    <!-- <a href="solution.html" class="nav-item nav-link">Solution</a> -->
+                    <a href="solution.html" class="nav-item nav-link">Solution</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
-                            <a href="digital_marketing.html" class="dropdown-item active">Digital Marketing</a>
-                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
-                            <a href="web_development.html" class="dropdown-item">Web Development</a>
+                            <a href="digital_marketing.html" class="dropdown-item">Digital Marketing</a>
+                            <a href="seo.html" class="dropdown-item">Search Engine Optimization</a>
+                            <a href="software_development.html" class="dropdown-item">Web Development</a>
                             <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
                             <a href="bpo.html" class="dropdown-item">BPO Service</a>
                         </div>
                     </div>
-                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
+                    <a href="career.php" class="nav-item nav-link active">Career</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
+                <a href="tel:7905355614" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
             </div>
         </nav>
-
         <div class="hero-header overflow-hidden px-5">
             <div class="rotate-img">
                 <img src="img/sty-1.png" class="img-fluid w-100" alt="">
@@ -73,11 +114,11 @@
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="index.html" class="">Home</a></li>
                         <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
-                                Marketing</a></li>
+                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Career</a>
+                        </li>
                     </ol>
                     <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">Digital Marketing Solution
+                        style="color: #191133; font-size: 3rem; font-weight: bold;">Shape the Future of Digital with Us
                     </h1>
                     <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
                     <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">In today's fast-paced digital world, a
@@ -93,100 +134,87 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid service-detail-section">
+    <div class="container-fluid career-section">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
-                </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <h6 class="mb-1 text-primary">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4" style="color: #191133;">Ignite Your Online Presence with Strategic
-                        Digital Marketing</h1>
-                    <p class="mb-4">In the ever-evolving digital landscape, a strong online presence is no longer a
-                        luxury—it's a necessity. Our digital marketing services are designed to get your brand in front
-                        of the right people, at the right time, and in the right way. We use a data-driven approach to
-                        craft campaigns that not only increase your visibility but also drive measurable results, from
-                        brand awareness to lead generation and customer conversions.</p>
-                    <p class="mb-4">At Aarav Tech Services LLP, we understand that every business is unique. We don't
-                        believe in one-size-fits-all solutions. Our team of digital marketing experts works closely with
-                        you to understand your business goals, target audience, and competitive landscape. We then build
-                        a customized strategy that leverages the most effective channels to achieve your specific
-                        objectives.</p>
-                </div>
+            <div class="career-intro wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="mb-1 text-primary">JOIN OUR TEAM</h6>
+                <h1 class="display-5 mb-4">Shape the Future of Digital with Us</h1>
+                <p class="fs-4 mb-4">At **Aarav Tech Services LLP**, we believe in fostering a culture of innovation,
+                    creativity, and collaboration. We are constantly looking for passionate and talented individuals who
+                    are eager to make a meaningful impact. If you're ready to grow your career and work on exciting
+                    projects, you've come to the right place.
+                </p>
+                <a href="#open-positions" class="btn btn-primary rounded-pill py-3 px-5">View Open Positions</a>
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Our Digital Marketing
-                        Services Include</h2>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SEO 3.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Search Engine Optimization (SEO)</h4>
-                                <p>Improve your website's visibility on search engines like Google. We help you rank
-                                    higher for relevant keywords, driving organic traffic and attracting potential
-                                    customers actively looking for your products or services.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/social_media_service.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Social Media Marketing (SMM)</h4>
-                                <p>Build a strong brand community and engage with your audience on platforms like
-                                    Facebook, Instagram, Twitter, and LinkedIn. We create compelling content, manage
-                                    your social presence, and run targeted ad campaigns to boost your reach and
-                                    conversions.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/pay_per_click_service.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Pay-Per-Click (PPC) Advertising</h4>
-                                <p>Get immediate results with strategically managed PPC campaigns. We create and
-                                    optimize ads on platforms like Google Ads and social media, ensuring your budget is
-                                    spent efficiently to generate high-quality leads and sales.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/content_writing_service.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Content Marketing</h4>
-                                <p>We develop a content strategy that establishes you as an industry leader. Through
-                                    blog posts, articles, infographics, and videos, we attract and educate your
-                                    audience, building trust and guiding them through the sales funnel.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Paid Marketing Campaigns.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Paid Marketing Campaigns</h4>
-                                <p>Boost your brand visibility through our targeted paid marketing campaigns. Our
-                                    strategies are calculated to gain the most reach and conversion, which means that
-                                    the correct audience will reach your your business in the most appropriate time,
-                                    providing them with measurable result and sustainable growth.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Analytics & Reporting</h4>
-                                <p>We believe in transparency and continuous improvement. We provide detailed reports on
-                                    key metrics, giving you clear insights into campaign performance and allowing us to
-                                    refine our strategies for maximum ROI.</p>
-                            </div>
-                        </div>
+
+            <hr class="my-5">
+
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" id="open-positions">
+                <h2 class="display-6 mb-4">Current Openings</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="job-listing-card">
+                        <h4>Senior Digital Marketing Specialist</h4>
+                        <p class="job-meta">Full-time | Remote | Experience: 5+ years</p>
+                        <p>We're seeking a seasoned digital marketer to lead our client campaigns. The ideal candidate
+                            will have extensive experience in SEO, SEM, social media, and content strategy with a proven
+                            track record of delivering measurable results.</p>
+                        <a href="mailto:careers@aaravtech.net?subject=Application for Senior Digital Marketing Specialist"
+                            class="btn apply-btn">Apply Now</a>
                     </div>
                 </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="job-listing-card">
+                        <h4>Front-End Web Developer</h4>
+                        <p class="job-meta">Full-time | On-site | Experience: 2+ years</p>
+                        <p>We are looking for a creative and skilled Front-End Developer to join our web team. You will
+                            be responsible for building user-friendly and responsive websites, working with technologies
+                            like HTML, CSS, JavaScript, and modern frameworks.</p>
+                        <a href="mailto:careers@aaravtech.net?subject=Application for Front-End Web Developer"
+                            class="btn apply-btn">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="job-listing-card">
+                        <h4>Graphic Designer</h4>
+                        <p class="job-meta">Full-time | Hybrid | Experience: 3+ years</p>
+                        <p>Join our design team to create stunning visuals for our clients. We're looking for a designer
+                            with a strong portfolio in brand identity, marketing materials, and digital graphics who is
+                            proficient in Adobe Creative Suite.</p>
+                        <a href="mailto:careers@aaravtech.net?subject=Application for Graphic Designer"
+                            class="btn apply-btn">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="job-listing-card">
+                        <h4>BPO Operations Manager</h4>
+                        <p class="job-meta">Full-time | On-site | Experience: 4+ years</p>
+                        <p>Lead our BPO team and ensure the smooth operation of all outsourced services. The ideal
+                            candidate will have experience in managing teams, optimizing workflows, and maintaining high
+                            standards of quality and efficiency.</p>
+                        <a href="mailto:careers@aaravtech.net?subject=Application for BPO Operations Manager"
+                            class="btn apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 wow fadeInUp" data-wow-delay="1.1s">
+                <p class="fs-5">Didn't find a suitable position? Feel free to send your resume to <a
+                        href="mailto:careers@aaravtech.net" class="text-primary fw-bold">careers@aaravtech.net</a>. We
+                    are always on the lookout for great talent!</p>
             </div>
         </div>
     </div>
     <section class="cta-section outer-section" style="background-image: url('img/sl_070722_51460_26.jpg');">
         <div class="cta-content">
             <h1 class="" style="color: #191133;">
-                Ready to take your business to the next level?
-                <br>Let's discuss how digital marketing can <span class="highlight" style="color: #4f4c9d;">transform
-                    your online presence.</span>
+                Ready to make a difference?
+                <br>Let's build something <span class="highlight" style="color: #4f4c9d;">innovative together.</span>
             </h1>
             <div class="cta-buttons">
                 <a href="contact.php" class="btn btn-dark">Request a Quote</a>
@@ -284,14 +312,14 @@
 
     <script src="js/main.js"></script>
     <script>
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
     </script>
     <script src="./index.js"></script>
 </body>

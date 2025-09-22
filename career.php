@@ -84,7 +84,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="/" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <!-- <a href="solution.html" class="nav-item nav-link">Solution</a> -->
                     <div class="nav-item dropdown">
@@ -257,7 +257,7 @@
             <div class="column">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="index.html#testimonials">Testimonials</a></li>
                     <li><a href="career.php">Careers</a></li>

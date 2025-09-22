@@ -121,10 +121,13 @@
                         style="color: #191133; font-size: 3rem; font-weight: bold;">Shape the Future of Digital with Us
                     </h1>
                     <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">In today's fast-paced digital world, a
-                        strong online presence is no longer optional—it's essential for success. At <b>Aarav Tech</b>,
-                        we're your dedicated partner in navigating this landscape, offering a comprehensive suite of
-                        tech services designed to help your business thrive.</p>
+                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">Work in a highly-paced team environment
+                        and develop with a company that embraces innovation, teamwork and career advancement. Our
+                        possibilities are amazing and varied in terms of roles where your talents and ideas can be
+                        really impactful. We promote an inclusive work culture in Aarav Tech Services LLP to support
+                        learning, creativity, and career growth. No matter how experienced you are or whether you are a
+                        fresh graduate, you will get a good environment to develop your future. Research our available
+                        opportunities and start pursuing a promising career at our company. </p>
                     <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
                         Started</a>
                 </div>
@@ -205,7 +208,7 @@
 
             <div class="text-center mt-5 wow fadeInUp" data-wow-delay="1.1s">
                 <p class="fs-5">Didn't find a suitable position? Feel free to send your resume to <a
-                        href="mailto:careers@aaravtech.net" class="text-primary fw-bold">careers@aaravtech.net</a>. We
+                        href="mailto:careers@aaravtech.net" class="text-primary fw-bold">hr@aaravtech.net</a>. We
                     are always on the lookout for great talent!</p>
             </div>
         </div>

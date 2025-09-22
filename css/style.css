@@ -1785,7 +1785,7 @@
 .footer-logo {
   background: #3a3284;
   color: white;
-  width: 55px;
+  width: 50px !important;
   height: 40px;
   display: inline-block;
   border-radius: 10px;

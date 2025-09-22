@@ -92,7 +92,7 @@
                         <div class="dropdown-menu m-0">
                             <a href="digital_marketing.html" class="dropdown-item">Digital Marketing</a>
                             <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
-                            <a href="software_development.html" class="dropdown-item">Web Development</a>
+                            <a href="web_development.html" class="dropdown-item">Web Development</a>
                             <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
                             <a href="bpo.html" class="dropdown-item">BPO Service</a>
                         </div>
@@ -269,7 +269,7 @@
                 <ul>
                     <li><a href="digital_marketing.html">Digital Marketing</a></li>
                     <!-- <li><a href="seo.html">Search Engine Omtimization</a></li> -->
-                    <li><a href="web_development">Web Development</a></li>
+                    <li><a href="web_development.html">Web Development</a></li>
                     <li><a href="graphic_designing.html">Graphic Designing</a></li>
                     <li><a href="bpo.html">BPO Service</a></li>
                 </ul>

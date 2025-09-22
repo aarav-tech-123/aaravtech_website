@@ -129,7 +129,8 @@
                         learning, creativity, and career growth. No matter how experienced you are or whether you are a
                         fresh graduate, you will get a good environment to develop your future. Research our available
                         opportunities and start pursuing a promising career at our company. </p>
-                    <a href="/contact.html" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
+                    <a href="/contact.html" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp"
+                        data-wow-delay="0.7s">Get
                         Started</a>
                 </div>
                 <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
@@ -284,10 +285,13 @@
             <div class="column">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://www.linkedin.com/company/aarav-tech-services/?viewAsMember=true"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.instagram.com/aaravtech_services/?next=%2Fstudentaidprograms%2F"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/aarav-tech-services/?viewAsMember=true"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
                 <div class="mt-3">
                     <p><a href="tel:+917318083502"><i class="fa fa-phone"></i>+91 7318083502</a></p>
@@ -298,8 +302,8 @@
         </div>
 
         <div class="footer-bottom">
-            <div class="footer-logo">A</div>
-            <p>© 2025 <span></span>. Designed By <span>Aarav Tech Services LLP</span></p>
+            <div class="footer-logo">ATS</div>
+            <p>© 2025 <span></span>. Designed By <span><a href="https://aravtech.net">Aarav Tech Services LLP</a></span></p>
         </div>
     </section>
 

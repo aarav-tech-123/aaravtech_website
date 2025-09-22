@@ -86,12 +86,12 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="solution.html" class="nav-item nav-link">Solution</a>
+                    <!-- <a href="solution.html" class="nav-item nav-link">Solution</a> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
                             <a href="digital_marketing.html" class="dropdown-item">Digital Marketing</a>
-                            <a href="seo.html" class="dropdown-item">Search Engine Optimization</a>
+                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
                             <a href="software_development.html" class="dropdown-item">Web Development</a>
                             <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
                             <a href="bpo.html" class="dropdown-item">BPO Service</a>

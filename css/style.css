@@ -1288,7 +1288,6 @@
 .icon-circle {
   width: 80px;
   height: 80px;
-  margin: 0 auto 1rem auto;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1384,11 +1383,7 @@
   max-width: 40%;
 }
 
-.subheading {
-  color: #3a3284;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+
 
 .main-heading {
   font-size: 36px;
@@ -1431,7 +1426,7 @@
 
 .subheading {
   color: #3a3284;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 15px;
 }
@@ -1554,13 +1549,6 @@
   max-width: 40%;
 }
 
-.subheading {
-  color: #3a3284;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
 .title {
   font-size: 36px;
   font-weight: bold;
@@ -1661,7 +1649,7 @@
 
 .footer-section {
   background: #eaf0ff;
-  padding: 40px 40px 10px;
+  padding: 40px 60px 10px;
   position: relative;
   text-align: center;
 }
@@ -1680,7 +1668,7 @@
 .newsletter .section-label {
   color: #3a3284;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1rem;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
@@ -1741,7 +1729,7 @@
 
 .footer-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 60px;
   margin-top: 50px;
   flex-wrap: wrap;
@@ -1990,7 +1978,7 @@
 
   .footer-links {
     justify-content: left;
-    gap: 10px;
+    gap: 40px;
     margin-top: 40px;
   }
 }

@@ -65,6 +65,24 @@
         color: #fff;
     }
     </style>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
@@ -303,7 +321,8 @@
 
         <div class="footer-bottom">
             <div class="footer-logo" style="width: 50px;">ATS</div>
-            <p>© 2025 <span></span>. Designed By <span><a href="https://aravtech.net">Aarav Tech Services LLP</a></span></p>
+            <p>© 2025 <span></span>. Designed By <span><a href="https://aravtech.net">Aarav Tech Services LLP</a></span>
+            </p>
         </div>
     </section>
 

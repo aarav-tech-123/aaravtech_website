@@ -274,6 +274,9 @@
 }
 
 @media (min-width: 992px) {
+  .submenu-wrapper:hover .submenu {
+    display: block;
+  }
   .navbar-light {
     position: fixed;
     width: 100%;
@@ -2250,3 +2253,40 @@ pagination {
   background-color: #fff;
   z-index: 10;
 }
+
+
+
+.sticky-head{
+  position: sticky;
+  top: 94.51px;
+  z-index: 20;
+}
+
+.submenu{
+  display: none;
+  width:150%;
+  position:absolute;
+  top:0;
+  left:100%;
+  padding:0;
+  background-color: var(--bs-light);
+}
+
+.submenu-wrapper{
+  position:relative;
+}
+
+
+.submenu.mobile {
+  display: block;
+  position: initial;
+  margin-left: 1rem;
+}
+
+.submenu.desktop {
+  display: block;
+  position: absolute;
+  top:0;
+  left:100%;
+}
+

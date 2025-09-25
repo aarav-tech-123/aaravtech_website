@@ -114,11 +114,46 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
-                            <a href="digital_marketing.html" class="dropdown-item">Digital Marketing</a>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent"  >Digital Marketing</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="seo.html">SEO</a>
+                                    <a class="dropdown-item" href="smo-smm.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="ppc.html">PPC</a>
+                                    <a class="dropdown-item" href="content-marketing.html">Content Marketing</a>
+                                    <a class="dropdown-item" href="paid-marketing.html">Paid Marketing</a>
+                                </div>
+                            </div>
                             <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
-                            <a href="web_development.html" class="dropdown-item">Web Development</a>
-                            <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
-                            <a href="bpo.html" class="dropdown-item">BPO Service</a>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="custom-design.html">Custom Design</a>
+                                    <a class="dropdown-item" href="web-app-development.html">Web/App Development</a>
+                                    <a class="dropdown-item" href="cms.html">CMS</a>
+                                    <a class="dropdown-item" href="e-commerce.html">E Commerce</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="logo-design.html">Custom Design</a>
+                                    <a class="dropdown-item" href="ui-ux-design.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="social-media-graphics.html">Social Media Graphics</a>
+                                    <a class="dropdown-item" href="product-design.html">Product Design</a>
+                                    <a class="dropdown-item" href="marketing-design.html">Marketing Design</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="customer-service-support.html">Customer Service & Support</a>
+                                    <a class="dropdown-item" href="data-entry-management.html">Data Entry & Management</a>
+                                    <a class="dropdown-item" href="back-office-support.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                </div>
+                            </div>
+                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         </div>
                     </div>
                     <a href="blogs.html" class="nav-item nav-link">Blogs</a>

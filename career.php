@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Career - Aarav Tech Services LLP</title>
+    <title>Join Aarav Tech – Careers in Digital, Web & Design</title>
+    <meta name="description"
+        content="Explore exciting roles at Aarav tech services LLP. Expand in digital marketing,
+         website development & more. Apply now to join our innovative, inclusive team!">
     <link rel="canonical" href="https://aaravtech.net/career.php" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">

@@ -1,121 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Choose Aarav Tech?</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Aarav Tech Services LLP</title>
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7fafc;
+        /* Custom CSS to enable nested dropdown on hover */
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
         }
-        .card-container {
-            perspective: 1000px;
+
+        .dropdown-menu .dropdown-item:hover .dropdown-submenu {
+            display: block;
         }
-        .card {
-            transform-style: preserve-3d;
-            transition: transform 0.8s;
-            position: relative;
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #f8f9fa;
         }
-        .card:hover {
-            transform: rotateY(15deg);
+
+        .dropdown-toggle::after {
+            vertical-align: middle;
         }
-        .card-back {
-            transform: rotateY(180deg);
+
+        .dropdown-item i.fas.fa-chevron-right {
+            font-size: 0.7rem;
+            margin-left: 5px;
+            color: #ccc;
         }
-        .card:hover .card-back {
-            transform: rotateY(0deg);
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-delay-1 { animation-delay: 0.2s; }
-        .animate-delay-2 { animation-delay: 0.4s; }
-        .animate-delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-    <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4 animate-fade-in-up">
-                Why Choose <span class="text-blue-600">Aarav Tech?</span>
-            </h2>
-            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto animate-fade-in-up animate-delay-1">
-                We're more than just a service provider. We're your strategic partner in digital success.
-            </p>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-
-            <!-- Card 1: Tailored Strategy, Real Results -->
-            <div class="card-container flex-1">
-                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-2 h-full">
-                    <div>
-                        <div class="text-4xl mb-4 text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.485.647 3 3 0 0 0 4.942 1.478A2.25 2.25 0 0 1 12 18.25V21h4.5v-2.25m-4.5-5.625h3m-3 3.375h3m-3 1.125h3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM7.5 13.5h.008v.008H7.5v-.008Zm1.5-3h.008v.008H9v-.008Zm.5-2.5h.008v.008h-.008V8Zm2.5 1.5h.008v.008H12.5v-.008Zm1.5 1.5h.008v.008H14v-.008Zm1.5-1.5h.008v.008h-.008V11Zm2.5-1.5h.008v.008h-.008V8.5Zm1.5-3h.008v.008H19v-.008Z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Tailored Strategy, Real Results</h3>
-                        <p class="text-gray-600">
-                            Every company is different. Our digital marketing and lead generation techniques are specific to your needs, whether you need increased traffic, conversion, or qualified leads.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Smart, Streamlined Solutions -->
-            <div class="card-container flex-1">
-                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-3 h-full">
-                    <div>
-                        <div class="text-4xl mb-4 text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-10.5m-14.25 0 2.152 2.152m13.5 11.798-11.798-13.5m-1.5 1.5L7.5 7.5m10.5 10.5L16.5 16.5m-5.184 6.364 1.25-1.25m-12.5-12.5 1.25-1.25M12 20.25a8.25 8.25 0 0 1-2.956-6.196L5.32 8.706C5.111 8.5 4.856 8.354 4.582 8.272M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Smart, Streamlined Solutions</h3>
-                        <p class="text-gray-600">
-                            Need anything other than marketing? We provide efficient, consistent services of business process outsourcing that can be implemented from customer care to back-office processes, allowing your organization to grow and work smoothly.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Engaging, Human Touch -->
-            <div class="card-container flex-1">
-                <div class="card bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center justify-between text-center border-t-4 border-blue-500 animate-fade-in-up animate-delay-4 h-full">
-                    <div>
-                        <div class="text-4xl mb-4 text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.079 0-2.15.214-3.157.659M12 6.042a8.967 8.967 0 0 1 6-2.292c1.079 0 2.15.214 3.157.659m-12.75 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.75 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 18.75m0-4.5v4.5m0-4.5h.008v.008H4.5v-.008Zm12.75 0m0-4.5v4.5m0-4.5h.008v.008h-.008v-.008Zm-4.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm.75-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm.75 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-.75 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-.75-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5 1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Zm-1.5-1.5m-4.5 4.5a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Engaging, Human Touch</h3>
-                        <p class="text-gray-600">
-                            We believe in building relationships—not just algorithms. Your brand will have a voice, and your message will not only be heard but will also appeal to the audience as well.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    
+    <!-- Spinner End -->
+
+
+    <!-- Navbar & Hero Section Start -->
+    <div class="container-fluid header position-relative overflow-hidden p-0">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="img/company_logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="solution.html" class="nav-item nav-link">Solution</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <!-- Nested Dropdown for Digital Marketing -->
+                            <a class="dropdown-item" href="digital_marketing.html">
+                                Digital Marketing <i class="fas fa-chevron-right"></i>
+                                <ul class="dropdown-submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="seo.html">Search Engine Optimization</a></li>
+                                    <li><a class="dropdown-item" href="digital_marketing.html#ppc">PPC Advertising</a></li>
+                                    <li><a class="dropdown-item" href="digital_marketing.html#smm">Social Media Marketing</a></li>
+                                </ul>
+                            </a>
+                            <!-- Nested Dropdown for Web Development -->
+                            <a class="dropdown-item" href="web_development.html">
+                                Web Development <i class="fas fa-chevron-right"></i>
+                                <ul class="dropdown-submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="web_development.html#custom">Custom Development</a></li>
+                                    <li><a class="dropdown-item" href="web_development.html#ecommerce">E-commerce Solutions</a></li>
+                                    <li><a class="dropdown-item" href="web_development.html#responsive">Responsive Design</a></li>
+                                </ul>
+                            </a>
+                            <!-- Standalone service links -->
+                            <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
+                            <a href="bpo.html" class="dropdown-item">BPO Service</a>
+                        </div>
+                    </div>
+                    <a href="career.php" class="nav-item nav-link">Career</a>
+                    <a href="contact.php" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="tel:7905355614" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
+            </div>
+        </nav>
+
+
+        <!-- Hero Header Start -->
+        <div class="hero-header overflow-hidden px-5">
+            <div class="rotate-img">
+                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
+                <div class="rotate-sty-2"></div>
+                <div id="rotate-3"></div>
+            </div>
+            <div class="row gy-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h3 class="display-4 text-dark wow fadeInUp" data-wow-delay="0.3s">Empower businesses
+                        through <span class="" style="color: #7872b4;">smart processes</span> and meaningful
+                        <span class="" style="color: #7872b4;">digital impact</span>...
+                    </h3>
+                    <div class="" style="width: 90px; height: 2px; background-color: #293b5f;"></div>
+                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">In today's fast-paced digital world, a
+                        strong online presence is no longer optional—it's essential for success. At <b>Aarav Tech</b>,
+                        we're your dedicated partner in navigating this landscape, offering a comprehensive suite of
+                        tech services designed to help your business thrive.</p>
+                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
+                        Started</a>
+                </div>
+                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
+                    <img src="img/hero-img-1.png" alt="" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="social_icons align-items-center justify-content-center d-flex">
+                                <a href="">
+                                    <i class="fa-brands fa-facebook fa-xl p-4"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-instagram fa-xl p-4"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter fa-xl p-4"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-google-plus fa-xl p-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Header End -->
+    </div>
+    <!-- About Start -->
+    <div class="container-fluid overflow-hidden">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="RotateMoveLeft">
+                        <img src="img/about-1.jpg" style="width: 100%;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="mb-1 text-primary">COMPANY PROFILE</h6>
+                    <h1 class="display-5 mb-4">Your Partner in Digital Transformation</h1>
+                    <p class="mb-4">We are <b>Aarav Tech Services LLP</b>, a dynamic team of tech innovators and
+                        creative
+                        problem-solvers dedicated to helping businesses like yours thrive in the digital age. We believe
+                        that technology should be an enabler, not a barrier. That's why we offer a comprehensive suite
+                        of services—from strategic digital marketing to custom development—to empower our clients and
+                        turn their vision into a digital reality.
+                    </p>
+                    <!-- <a href="about.html" class="btn btn-primary rounded-pill py-3 px-5">About More</a> -->
+                    <div class="outer"
+                        style="display: flex; align-items: center; position: relative; padding-left: 80px;">
+                        <div class="ceo_name">
+                            <h3 style="font-size: 16px; font-weight: 500;">Aarav Tech, <span
+                                    style="color: #727272;">Aarav CEO</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <div class="outer-section" style="background-image: url('img/bg-2.jpg');">
+        <section class="services-section">
+            <div class="wave-bg"></div> <!-- wavy background -->
+
+            <!-- <div class="py-5 text-center">
+            <div class="container d-flex justify-content-center flex-wrap gap-5">
+                <img src="img/test_1.png" alt="Iconic" class="logo-img">
+                <img src="img/test_2.png" alt="Retro" class="logo-img">
+                <img src="img/test_3.png" alt="Everyday" class="logo-img">
+                <img src="img/test_4.jpg" alt="Blackmark" class="logo-img">
+            </div>
+        </div> -->
+
+            <section class="services-section">
+                <div class="services-content">
+                    <div class="text-left">
+                        <h5 class="subheading">OUR SERVICES <span class="zigzag">〰〰</span></h5>
+                        <h2 class="main-heading">Empowering Your Digital Success.</h2>
+                        <p class="description">we don't just offer services—we deliver integrated solutions designed to
+                            help
+                            your business thrive in the digital world. We act as your strategic partner, combining
+                            technology, creativity, and data to drive real, measurable growth.</p>
+                        <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Our Services</a>
+                    </div>
+                    <div class="services-grid">
+                        <a href="digital_marketing.html">
+                            <div class="service-card" style="height: 100%;">
+                                <div class="icon-circle" style="background-color:#d9a899;">
+                                    <i class="fa-regular fa-lightbulb fa-2xl" style="color: white;"></i>
+                                </div>
+                                <h4>Digital Marketing</h4>
+                                <p>Get your brand in front of the right people at the right time.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- style="padding-top: 2rem;" -->
+                        <a href="web_development.html">
+                            <div class="service-card" style="height: 100%;">
+                                <div class="icon-circle" style="background-color:#a379f1;">
+                                    <i class="bi bi-briefcase" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                                <h4>Web & Application Development</h4>
+                                <p>Your website and app are the foundation of your digital identity.</p>
+                            </div>
+                        </a>
+
+                        <a href="bpo.html">
+                            <div class="service-card" style="height: 100%;">
+                                <div class="icon-circle" style="background-color:#57c2a1;">
+                                    <i class="bi bi-megaphone" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                                <h4>BPO</h4>
+                                <p>Streamline your operations, reduce costs, and focus on your core business.</p>
+                            </div>
+                        </a>
+
+                        <!-- style="padding-top: 2rem;" -->
+                        <a href="graphic_designing.html">
+                            <div class="service-card" style="height: 100%;">
+                                <div class="icon-circle" style="background-color:#2ca8e1;">
+                                    <i class="bi bi-trophy" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                                <h4>Graphics Designing</h4>
+                                <p>Visuals are a powerful way to tell your brand's story.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="team-section">
+            <div class="team-content">
+                <div class="circle-layout">
+                    <div class="ring center">
+                        <img src="img/blog-1.png" class="team-member center-img" />
+                    </div>
+
+                    <div class="orbit">
+                        <img src="img/testimonial-img-1.jpg" class="team-member" style="top: -60px; left: 50%;" />
+                        <img src="img/testimonial-img-2.jpg" class="team-member" style="top: 20%; right: -50px;" />
+                        <img src="img/testimonial-img-3.jpg" class="team-member" style="bottom: 10%; right: -40px;" />
+                        <img src="img/testimonial-img-3.jpg" class="team-member" style="bottom: -60px; left: 30%;" />
+                        <img src="img/testimonial-img-3.jpg" class="team-member" style="bottom: 20%; left: -40px;" />
+                        <img src="img/testimonial-img-1.jpg" class="team-member" style="top: 10%; left: -50px;" />
+                    </div>
+                </div>
+                <div class="text-side">
+                    <p class="subheading" style="font-size: 0.7rem;">OUR TEAM</p>
+                    <h2 class="main-heading">
+                        An essential aspect of creativity is not being afraid to fail.
+                    </h2>
+                    <p class="description">
+                        Why money’s in that office, right? If she start giving means some bullet about ain’t there, and
+                        we got to go placing else and get it.
+                    </p>
+                    <button class="meet-btn">Meet Our Team</button>
+                </div>
+            </div>
+        </section> -->
+
+            <section>
+                <div class="container mx-auto">
+                    <div class="text-center">
+                        <h2 class="main-heading leading-tight mb-4 animate-fade-in-up" style="color: #191133;">
+                            Why Choose <span style="color: #7872b4;">Aarav Tech Services?</span>
+                        </h2>
+                        <p class="text-lg mx-auto mb-4">
+                            We're more than just a service provider. We're your strategic partner in digital success.
+                        </p>
+                    </div>
+
+                    <div class="row justify-center">
+
+                        <!-- Card 1: Tailored Strategy, Real Results -->
+                        <div class="card-container col-md-4">
+                            <div
+                                class="card bg-white rounded-2xl p-8 items-center justify-between text-center border-t-4 border-blue-500">
+                                <div>
+                                    <div class="mb-4">
+                                        <i class="fas fa-chart-simple fa-2xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Tailored Strategy, Real Results
+                                    </h3>
+                                    <p class="text-gray-600">
+                                        Every company is different. Our digital marketing and lead generation techniques
+                                        are
+                                        specific to your needs, whether you need increased traffic, conversion, or
+                                        qualified
+                                        leads.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Smart, Streamlined Solutions -->
+                        <div class="card-container col-md-4">
+                            <div
+                                class="card bg-white rounded-2xl p-8 items-center justify-between text-center border-t-4 border-blue-500">
+                                <div>
+                                    <div class="mb-4">
+                                        <i class="fas fa-cubes-stacked fa-2xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Smart, Streamlined Solutions</h3>
+                                    <p class="text-gray-600">
+                                        Need anything other than marketing? We provide efficient, consistent services of
+                                        business process outsourcing that can be implemented from customer care to
+                                        back-office processes, allowing your organization to grow and work smoothly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Engaging, Human Touch -->
+                        <div class="card-container col-md-4">
+                            <div
+                                class="card bg-white rounded-2xl p-8 items-center justify-between text-center border-t-4 border-blue-500">
+                                <div>
+                                    <div class="mb-4">
+                                        <i class="fa fa-hand-peace fa-2xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Engaging, Human Touch</h3>
+                                    <p class="text-gray-600">
+                                        We believe in building relationships—not just algorithms. Your brand will have a
+                                        voice, and your message will not only be heard but will also appeal to the
+                                        audience
+                                        as well.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+
+    <div class="outer-section" style="background-image: url('img/8670.jpg');">
+        <section class="case-study-section">
+            <div class="case-study-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="case-left">
+                            <p class="subheading" style="font-size: 0.7rem;">Read Our Blogs</p>
+                            <h2 class="title">
+                                Discover insights, stories, trends, and ideas through our latest blogs.
+                            </h2>
+
+                            <div class="case-nav">
+                                <button class="nav-btn left">&#8592;</button>
+                                <button class="nav-btn right">&#8594;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="case-right">
+                            <div class="image-wrapper">
+                                <div class="image-card">
+                                    <img src="img/xyz.jpg" class="slide active" alt="Case 1" />
+                                    <div class="image-footer text-primary" style="font-weight: bold;">
+                                        Lorem ipsum dolor sit amet. &nbsp; <i
+                                            class="nav-btn arrow-icon fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+
+                                <div class="image-card">
+                                    <img src="img/istockphoto-859321416-612x612.jpg" class="slide" alt="Case 2" />
+                                    <div class="image-footer text-primary" style="font-weight: bold;">
+                                        Lorem ipsum dolor sit amet. &nbsp; <i
+                                            class="nav-btn arrow-icon fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+
+                                <div class="image-card">
+                                    <img src="img/xyz.jpg" class="slide" alt="Case 3" />
+                                    <div class="image-footer text-primary" style="font-weight: bold;">
+                                        Lorem ipsum dolor sit amet. &nbsp; <i
+                                            class="nav-btn arrow-icon fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+
+                                <div class="image-card">
+                                    <img src="img/work-5382501_640.jpg" class="slide" alt="Case 3" />
+                                    <div class="image-footer text-primary" style="font-weight: bold;">
+                                        Lorem ipsum dolor sit amet. &nbsp; <i
+                                            class="nav-btn arrow-icon fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+
+                                <div class="image-card">
+                                    <img src="img/work-5382501_640.jpg" class="slide" alt="Case 5" />
+                                    <div class="image-footer text-primary" style="font-weight: bold;">
+                                        Lorem ipsum dolor sit amet. &nbsp; <i
+                                            class="nav-btn arrow-icon fa fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="testimonial-section">
+            <div class="testimonial-container">
+                <!-- Left Side -->
+                <div class="testimonial-right">
+                    <div class="testimonial-stack">
+                        <!-- Card 1 -->
+                        <div class="testimonial-card">
+                            <img src="img/testimonial-img-1.jpg" class="avatar" />
+                            <div class="quote-text">
+                                <p>“Cum et essent similique. Inani propriae menandri sed in. Pericula expetendis has
+                                    no.”
+                                </p>
+                                <h4 style="color: var(--bs-dark);">Amany Arafa</h4>
+                                <span>Art Director</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="testimonial-card">
+                            <img src="img/testimonial-img-2.jpg" class="avatar" />
+                            <div class="quote-text">
+                                <p>“Kindis Amd Fettsh lorem dolor. Ut lectus arcu bibendum at. Fa ucibus purus in massa
+                                    nec.”</p>
+                                <h4 style="color: var(--bs-dark);">Mark WallGreen</h4>
+                                <span>Designer</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="testimonial-card">
+                            <img src="img/testimonial-img-3.jpg" class="avatar" />
+                            <div class="quote-text">
+                                <p>“Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.”</p>
+                                <h4 style="color: var(--bs-dark);">Sophie Lee</h4>
+                                <span>UX Researcher</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <img src="img/testimonial-img-2.jpg" class="avatar" />
+                            <div class="quote-text">
+                                <p>“Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.”</p>
+                                <h4 style="color: var(--bs-dark);">Sophie Lee</h4>
+                                <span>UX Researcher</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Right Side -->
+                <div class="testimonial-left">
+                    <p class="subheading" style="font-size: 0.7rem;">TESTIMONIALS</p>
+                    <h2 class="title">Authenticity, honesty,<br>& personal voice</h2>
+                    <div class="testimonial-nav">
+                        <button class="nav-btn left_test">&#8592;</button>
+                        <button class="nav-btn right_test">&#8594;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <section class="cta-section outer-section" style="background-image: url('img/sl_070722_51460_26.jpg');">
+        <div class="cta-content">
+            <h1 class="" style="color: #191133;">
+                Let’s create creativity<br>
+                inspiration <span class="highlight" style="color: #4f4c9d;">projects</span> together
+            </h1>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-dark">Request a Quote</a>
+                <a href="#" class="btn btn-red">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footer-section">
+        <div class="newsletter">
+            <p class="section-label" style="font-size: 0.7rem;">NEWSLETTER</p>
+            <h2 style="color: #191133;">Subscribe Company Newsletter</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter Your Fullname">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="example@gmail.com">
+                </div>
+                <button class="submit-btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="column">
+                <img src="img/Company logo.png" alt="" style="width: 200px;">
+                <p style="width: 200px; text-align: justify;" class="mt-1">With a perfect blend of up-to date tools and
+                    industry experience we make sure
+                    that the clients achieve their goals.
+                </p>
+            </div>
+            <div class="column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="digital_marketing.html">Digital Marketing</a></li>
+                    <li><a href="seo.html">Search Engine Omtimization</a></li>
+                    <li><a href="web_development">Web Development</a></li>
+                    <li><a href="graphic_designing.html">Graphic Designing</a></li>
+                    <li><a href="bpo.html">BPO Service</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="term_of_use.html">Terms Of Use</a></li>
+                    <li><a href="privacy_policy.html"></a>Privacy Policy</li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+                <div class="mt-3">
+                    <p><a href="tel:+917318083502"><i class="fa fa-phone"></i>+91 7318083502</a></p>
+                    <p><a href="mailto:info@aaravtech.net"><i class="fa fa-envelope"></i>info@aaravtech.net</a></p>
+                    <p><a href=""><i class="fa fa-location-pin"></i>Kanpur Nagar, Uttar Pradesh, India</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">A</div>
+            <p>© 2025 <span></span>. Designed By <span>Aarav Tech Services LLP</span></p>
+        </div>
+    </section>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn-back-to-top btn-red btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Template JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script src="./index.js"></script>
 </body>
+
 </html>

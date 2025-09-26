@@ -1,73 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+ 
   <!-- Homepage -->
-  <url>
-    <loc>https://aaravtech.net/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/</loc>
+<lastmod>2025-09-25</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+ 
   <!-- About -->
-  <url>
-    <loc>https://aaravtech.net/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/about.html</loc>
+<lastmod>2025-09-20</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+ 
   <!-- Services -->
-  <url>
-    <loc>https://aaravtech.net/digital_marketing.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/web_development.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/graphic_designing.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/bpo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/digital_marketing.html</loc>
+<lastmod>2025-09-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://aaravtech.net/web_development.html</loc>
+<lastmod>2025-09-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://aaravtech.net/graphic_designing.html</loc>
+<lastmod>2025-09-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://aaravtech.net/bpo.html</loc>
+<lastmod>2025-09-18</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+ 
   <!-- Blogs -->
-  <url>
-    <loc>https://aaravtech.net/blogs.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/blogs.html</loc>
+<lastmod>2025-09-22</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+ 
   <!-- Career -->
-  <url>
-    <loc>https://aaravtech.net/career.php</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/career.php</loc>
+<lastmod>2025-09-15</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+ 
   <!-- Contact -->
-  <url>
-    <loc>https://aaravtech.net/contact.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/contact.html</loc>
+<lastmod>2025-09-10</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.5</priority>
+</url>
+ 
   <!-- Policies -->
-  <url>
-    <loc>https://aaravtech.net/privacy_policy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/term_of_use.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
+<url>
+<loc>https://aaravtech.net/privacy_policy.html</loc>
+<lastmod>2025-09-05</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://aaravtech.net/term_of_use.html</loc>
+<lastmod>2025-09-05</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+ 
 </urlset>

@@ -4,27 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <title>Aarav Tech – Web Development Services | Build Your Vision</title>
+    <title>Our Digital Solutions Packages | Aarav Tech Services</title>
     <meta name="description"
-        content="Transform your digital presence with Aarav Tech’s expert web development. Responsive,
-         secure & custom websites that engage visitors and drive business growth.">
-    <link rel="canonical" href="https://aaravtech.net/web_development.html" />
+        content="Explore our comprehensive Digital Marketing, Web Development, Graphic Designing, and Content Marketing packages for guaranteed digital growth.">
+
+    <link rel="canonical" href="https://aaravtech.net/packages.html" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
     <style>
-        .dropdown-item.active {
-            color: #fff;
-            background-color: #4f4c9d !important;
+        .pricing-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #7872b4;
+            /* Primary color */
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .feature-list li {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .feature-list i {
+            color: #57c2a1;
+            /* A nice highlight color */
+            margin-right: 8px;
         }
     </style>
     <!-- Google Tag Manager -->
@@ -62,21 +87,23 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
+                    <!-- <a href="solution.html" class="nav-item nav-link">Solution</a> -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
                             <a href="digital_marketing.html" class="dropdown-item">Digital Marketing</a>
                             <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
-                            <a href="web_development.html" class="dropdown-item active">Web Development</a>
+                            <a href="web_development.html" class="dropdown-item">Web Development</a>
                             <a href="graphic_designing.html" class="dropdown-item">Graphic Designing</a>
                             <a href="bpo.html" class="dropdown-item">BPO Service</a>
                         </div>
                     </div>
                     <a href="blogs.html" class="nav-item nav-link">Blogs</a>
                     <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
                 </div>
                 <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
+                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
             </div>
         </nav>
         <div class="hero-header overflow-hidden px-5">
@@ -89,20 +116,19 @@
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Web
-                                Development
+                        <!-- <li class="breadcrumb-item"><a href="#" class="">Services</a></li> -->
+                        <li class="breadcrumb-item"><a href="packages.html" style="color: #4f4c9d;">Packages
                             </a></li>
                     </ol>
                     <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">Web Development
+                        style="color: #191133; font-size: 3rem; font-weight: bold;">Packages
                     </h1>
                     <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">We are the experts in <b>website design
-                            and development services</b> at Aarav Tech to fulfill your vision. Being a reliable web
-                        development
-                        agency, we combine creativity and technical expertise to create the best-looking, highly
-                        functional, user-friendly websites.</p>
+                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">We are here to serve you with any of
+                        your queries and service requirements. Our team is available to assist you whether you need
+                        assistance or have questions or wish to discuss a project. Contact us using the form below,
+                        email, or even by phone during working hours. Our efforts are to answer as fast as possible and
+                        make sure that your concerns are taken seriously.</p>
                     <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp"
                         data-wow-delay="0.7s">Get
                         Started</a>
@@ -113,100 +139,135 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid service-detail-section">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/wd_about.png" class="service-image" alt="Web Development">
-                </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <p class="subheading">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4">Crafting Digital Experiences That Convert</h1>
-                    <p class="mb-4">Your website is your digital storefront, your first impression, and a powerful tool
-                        for growth. At **Aarav Tech Services LLP**, we don't just build websites; we engineer seamless,
-                        high-performing digital experiences that captivate your audience and drive business results. Our
-                        web development services are tailored to create a platform that is not only visually stunning
-                        but also fast, secure, and easy to use.</p>
-                    <p class="mb-4">We work with the latest technologies to build responsive websites that look and
-                        function flawlessly on any device. Whether you need a simple static site, a robust e-commerce
-                        platform, or a complex web application, our team of expert developers will bring your vision to
-                        life. We focus on clean code, optimal performance, and a user-centric design approach to ensure
-                        your site delivers a superior experience and meets your business objectives.</p>
+
+
+    <div class="container py-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">PRICING PLANS</p>
+            <h1 class="display-5 mb-5">Digital Marketing Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Startup Spark</h3>
+                    <p class="text-muted">Perfect for small businesses starting their online journey.</p>
+                    <div class="price">
+                        $299<small>/mo</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Basic SEO Setup (5 keywords)</li>
+                        <li><i class="fas fa-check"></i> 10 Social Media Posts/mo</li>
+                        <li><i class="fas fa-check"></i> Monthly Performance Report</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Dedicated Campaign Manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Our Web Development
-                        Solutions Include</h2>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/WebsiteDev.png" alt="" style="padding: 20px; width: 100%;">
-                                <h4 class="text-primary mb-3">Custom Website Design & Development</h4>
-                                <p>We build unique websites from scratch, specifically tailored to your brand identity
-                                    and business needs. Our designs are modern, intuitive, and conversion-focused.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/e-commerce.png" alt="" style="padding: 20px; width: 100%;">
-                                <h4 class="text-primary mb-3">E-Commerce Development</h4>
-                                <p>Launch your online store with a secure and scalable e-commerce platform. We integrate
-                                    secure payment gateways, inventory management, and a seamless shopping cart
-                                    experience to maximize your sales.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/ResponsiveWebsiteDev.PNG" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Responsive & Mobile-First Design</h4>
-                                <p>Ensure your website looks and works perfectly on desktops, tablets, and smartphones.
-                                    Our mobile-first approach guarantees a great user experience for every visitor,
-                                    boosting your search rankings and engagement.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/cms.png" alt="" style="padding: 20px; width: 100%;">
-                                <h4 class="text-primary mb-3">Content Management Systems (CMS)</h4>
-                                <p>Take control of your content with easy-to-use CMS platforms like WordPress or
-                                    custom-built solutions. We empower you to update your site's content without needing
-                                    technical expertise.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <h4 class="text-primary mb-3">Web Application Development</h4>
-                                <p>From internal tools to customer-facing portals, we build robust and scalable web
-                                    applications that streamline your business processes and provide new value to your
-                                    clients.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <h4 class="text-primary mb-3">Website Maintenance & Support</h4>
-                                <p>Keep your website running smoothly and securely with our ongoing maintenance and
-                                    support services. We handle updates, security patches, and technical issues so you
-                                    can focus on your business.</p>
-                            </div>
-                        </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Growth Accelerator</h3>
+                    <p class="text-muted">Designed for businesses ready to scale their presence.</p>
+                    <div class="price">
+                        $799<small>/mo</small>
                     </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Advanced SEO (20 keywords)</li>
+                        <li><i class="fas fa-check"></i> 25 Social Media Posts + Ad Management</li>
+                        <li><i class="fas fa-check"></i> Monthly Performance & Strategy Review</li>
+                        <li><i class="fas fa-check"></i> Dedicated Campaign Manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">DESIGN & BUILD</p>
+            <h1 class="display-5 mb-5">Web Development Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Essential Website</h3>
+                    <p class="text-muted">A professional, responsive informational website.</p>
+                    <div class="price">
+                        $999<small>(One-Time)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> 5-Page Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> 2 Revisions</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> E-commerce Functionality</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">E-commerce Pro</h3>
+                    <p class="text-muted">Full-featured online store to sell your products.</p>
+                    <div class="price">
+                        $2499<small>(One-Time)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Unlimited Pages & Products</li>
+                        <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                        <li><i class="fas fa-check"></i> Advanced Security & Caching</li>
+                        <li><i class="fas fa-check"></i> 60 Days Post-Launch Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">BRAND VISUALS</p>
+            <h1 class="display-5 mb-5">Graphic & Content Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Visual Identity</h3>
+                    <p class="text-muted">Cohesive visual assets for a stronger brand.</p>
+                    <div class="price">
+                        $450<small>(Project)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Logo Design & Brand Style Guide</li>
+                        <li><i class="fas fa-check"></i> 5 Social Media Templates</li>
+                        <li><i class="fas fa-check"></i> Business Card Design</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Print Production Management</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Content Power-Up</h3>
+                    <p class="text-muted">High-quality content to drive traffic and authority.</p>
+                    <div class="price">
+                        $350<small>/mo</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> 2 x 1000-Word SEO Blog Posts/mo</li>
+                        <li><i class="fas fa-check"></i> Topic Research & Keyword Integration</li>
+                        <li><i class="fas fa-check"></i> 1 Email Newsletter Draft</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Social Media Content Creation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
                 </div>
             </div>
         </div>
     </div>
-    <section class="cta-section outer-section" style="background-image: url('img/sl_070722_51460_26.jpg');">
-        <div class="cta-content">
-            <h1 class="" style="color: #191133;">
-                Ready to build a powerful online presence?
-                <br>Let's create a website that <span class="highlight" style="color: #4f4c9d;">makes an impact.</span>
-            </h1>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-dark">Request a Quote</a>
-                <a href="tel:" class="btn btn-red">Let's Talk</a>
-            </div>
-        </div>
-    </section>
+
 
     <section class="footer-section">
         <div class="newsletter">

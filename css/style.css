@@ -2253,3 +2253,32 @@ pagination {
   background-color: #fff;
   z-index: 10;
 }
+
+
+.submenu{
+  display: none;
+  width:150%;
+  position:absolute;
+  top:0;
+  left:100%;
+  padding:0;
+  background-color: var(--bs-light);
+}
+
+.submenu-wrapper{
+  position:relative;
+}
+
+
+.submenu.mobile {
+  display: block;
+  position: initial;
+  margin-left: 1rem;
+}
+
+.submenu.desktop {
+  display: block;
+  position: absolute;
+  top:0;
+  left:100%;
+}

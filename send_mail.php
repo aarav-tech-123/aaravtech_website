@@ -15,7 +15,7 @@ require 'PHPMailer/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. reCAPTCHA verification
-    $secretKey = "6Ld29s0rAAAAALA0SDvjS8cFk9DZ6gXTAwkqx-Yx"; // <-- Replace with your real secret key
+    $secretKey = "6Le2LtkrAAAAANO7FjghcMy7uzwxncWQ0yDJuBTs"; // <-- Replace with your real secret key
     $responseKey = $_POST['g-recaptcha-response'] ?? '';
     $userIP = $_SERVER['REMOTE_ADDR'];
 

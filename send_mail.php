@@ -1,19 +1,20 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+ 
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+
+$mail = new PHPMailer(true);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
-<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-require 'PHPMailer/Exception.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. reCAPTCHA verification
     $secretKey = "6Le2LtkrAAAAANO7FjghcMy7uzwxncWQ0yDJuBTs"; // <-- Replace with your real secret key
     $responseKey = $_POST['g-recaptcha-response'] ?? '';
@@ -34,8 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject  = htmlspecialchars($_POST['subject'] ?? '');
     $message  = htmlspecialchars($_POST['message'] ?? '');
 
-    // 3. Setup PHPMailer
-    $mail = new PHPMailer(true);
+
 
     try {
         $mail->isSMTP();
@@ -74,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid Request.";
 }
-?>
 
     $to = "aaravtech"; // Replace with your email address
     $subject = "$subject";
@@ -89,5 +88,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo '<div style="text-align:center; align-items: center; justify-content: center; margin-top: 10%;"><h2>Sorry, there was an error sending your message. Please try again later.</h2><a href="/index.html" style="background: #333; color: #fff; border: 0; padding: 15px 25px; cursor: pointer; border-radius: 5px;">Go Back</button></div>';
     }
-}
 ?>

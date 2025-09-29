@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Design</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        .pricing-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #7872b4;
+            /* Primary color */
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .feature-list li {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .feature-list i {
+            color: #57c2a1;
+            /* A nice highlight color */
+            margin-right: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="container-fluid header position-relative p-0">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+            <a href="/" class="navbar-brand p-0">
+                <img src="img/AARAV_TECH_SERVICES-removebg-preview.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="/" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <!-- <a href="solution.html" class="nav-item nav-link">Solution</a> -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent"  >Digital Marketing</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="seo.html">SEO</a>
+                                    <a class="dropdown-item" href="smo-smm.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="ppc.html">PPC</a>
+                                    <a class="dropdown-item" href="content-marketing.html">Content Marketing</a>
+                                    <a class="dropdown-item" href="paid-marketing.html">Paid Marketing</a>
+                                </div>
+                            </div>
+                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="custom-design.html">Custom Design</a>
+                                    <a class="dropdown-item" href="web-app-development.html">Web/App Development</a>
+                                    <a class="dropdown-item" href="cms.html">CMS</a>
+                                    <a class="dropdown-item" href="e-commerce.html">E Commerce</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="logo-design.html">Custom Design</a>
+                                    <a class="dropdown-item" href="ui-ux-design.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="social-media-graphics.html">Social Media Graphics</a>
+                                    <a class="dropdown-item" href="product-design.html">Product Design</a>
+                                    <a class="dropdown-item" href="marketing-design.html">Marketing Design</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="customer-service-support.html">Customer Service & Support</a>
+                                    <a class="dropdown-item" href="data-entry-management.html">Data Entry & Management</a>
+                                    <a class="dropdown-item" href="back-office-support.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                </div>
+                            </div>
+                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
+                        </div>
+                    </div>
+                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
+                    <a href="career.php" class="nav-item nav-link">Career</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
+            </div>
+        </nav>
+
+        <div class="hero-header overflow-hidden px-5">
+            <div class="rotate-img">
+                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
+                <div class="rotate-sty-2"></div>
+                <div id="rotate-3"></div>
+            </div>
+            <div class="row gy-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
+                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
+                                Marketing</a></li>
+                    </ol>
+                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
+                        style="color: #191133; font-size: 3rem; font-weight: bold;">Digital Marketing Solution
+                    </h1>
+                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
+                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">At Aarav Tech, we don’t just offer
+                        digital marketing services—we become your strategic growth partner. Our campaigns are expected
+                        to not only look impressive but also spread your story, attract the proper audience, and create
+                        a long-lasting brand name. A combination of data-driven strategy and creativity allows us to
+                        make each click, post, and ad worth action, regardless of your size of a startup, small
+                        business, or an established enterprise.</p>
+                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
+                        Started</a>
+                </div>
+                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
+                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid service-detail-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
+                </div>
+                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
+                    <p class="subheading">OUR SERVICE</h6>
+                    <h1 class="display-5 mb-4" style="color: #191133;">Ignite Your Online Presence with Strategic
+                        Digital Marketing</h1>
+                    <p class="mb-4">In the ever-evolving digital landscape, a strong online presence is no longer a
+                        luxury—it's a necessity. Our digital marketing services are designed to get your brand in front
+                        of the right people, at the right time, and in the right way. We use a data-driven approach to
+                        craft campaigns that not only increase your visibility but also drive measurable results, from
+                        brand awareness to lead generation and customer conversions.</p>
+                    <p class="mb-4">At Aarav Tech Services LLP, we understand that every business is unique. We don't
+                        believe in one-size-fits-all solutions. Our team of digital marketing experts works closely with
+                        you to understand your business goals, target audience, and competitive landscape. We then build
+                        a customized strategy that leverages the most effective channels to achieve your specific
+                        objectives.</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Our Digital Marketing
+                        Services Include</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/SearchEngineOptimization.png" alt="" style="width: 100%; padding: 20px;">
+                                <h4 class="text-primary mb-3">Search Engine Optimization (SEO)</h4>
+                                <p>Improve your website's visibility on search engines like Google. We help you rank
+                                    higher for relevant keywords, driving organic traffic and attracting potential
+                                    customers actively looking for your products or services.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/SocialMediaMarketing.png" alt="" style="width: 100%;">
+                                <h4 class="text-primary mb-3">Social Media Marketing (SMM)</h4>
+                                <p>Build a strong brand community and engage with your audience on platforms like
+                                    Facebook, Instagram, Twitter, and LinkedIn. We create compelling content, manage
+                                    your social presence, and run targeted ad campaigns to boost your reach and
+                                    conversions.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/PayPerClick.png" alt="" style="width: 100%; padding: 20px;">
+                                <h4 class="text-primary mb-3">Pay-Per-Click (PPC) Advertising</h4>
+                                <p>Get immediate results with strategically managed PPC campaigns. We create and
+                                    optimize ads on platforms like Google Ads and social media, ensuring your budget is
+                                    spent efficiently to generate high-quality leads and sales.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/ContentMarketing.png" alt="" style="width: 100%;">
+                                <h4 class="text-primary mb-3">Content Marketing</h4>
+                                <p>We develop a content strategy that establishes you as an industry leader. Through
+                                    blog posts, articles, infographics, and videos, we attract and educate your
+                                    audience, building trust and guiding them through the sales funnel.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/PaidMarketingCampaigns.png" alt="" style="width: 100%; padding: 20px;">
+                                <h4 class="text-primary mb-3">Paid Marketing Campaigns</h4>
+                                <p>Boost your brand visibility through our targeted paid marketing campaigns. Our
+                                    strategies are calculated to gain the most reach and conversion, which means that
+                                    the correct audience will reach your your business in the most appropriate time,
+                                    providing them with measurable result and sustainable growth.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
+                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
+                                <h4 class="text-primary mb-3">Analytics & Reporting</h4>
+                                <p>We believe in transparency and continuous improvement. We provide detailed reports on
+                                    key metrics, giving you clear insights into campaign performance and allowing us to
+                                    refine our strategies for maximum ROI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">PRICING PLANS</p>
+            <h1 class="display-5 mb-5">Digital Marketing Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Startup Spark</h3>
+                    <p class="text-muted">Perfect for small businesses starting their online journey.</p>
+                    <div class="price">
+                        $299<small>/mo</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Basic SEO Setup (5 keywords)</li>
+                        <li><i class="fas fa-check"></i> 10 Social Media Posts/mo</li>
+                        <li><i class="fas fa-check"></i> Monthly Performance Report</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Dedicated Campaign Manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Growth Accelerator</h3>
+                    <p class="text-muted">Designed for businesses ready to scale their presence.</p>
+                    <div class="price">
+                        $799<small>/mo</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Advanced SEO (20 keywords)</li>
+                        <li><i class="fas fa-check"></i> 25 Social Media Posts + Ad Management</li>
+                        <li><i class="fas fa-check"></i> Monthly Performance & Strategy Review</li>
+                        <li><i class="fas fa-check"></i> Dedicated Campaign Manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">DESIGN & BUILD</p>
+            <h1 class="display-5 mb-5">Web Development Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Essential Website</h3>
+                    <p class="text-muted">A professional, responsive informational website.</p>
+                    <div class="price">
+                        $999<small>(One-Time)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> 5-Page Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> 2 Revisions</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> E-commerce Functionality</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">E-commerce Pro</h3>
+                    <p class="text-muted">Full-featured online store to sell your products.</p>
+                    <div class="price">
+                        $2499<small>(One-Time)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Unlimited Pages & Products</li>
+                        <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                        <li><i class="fas fa-check"></i> Advanced Security & Caching</li>
+                        <li><i class="fas fa-check"></i> 60 Days Post-Launch Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <p class="subheading">BRAND VISUALS</p>
+            <h1 class="display-5 mb-5">Graphic & Content Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center mb-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Visual Identity</h3>
+                    <p class="text-muted">Cohesive visual assets for a stronger brand.</p>
+                    <div class="price">
+                        $450<small>(Project)</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> Logo Design & Brand Style Guide</li>
+                        <li><i class="fas fa-check"></i> 5 Social Media Templates</li>
+                        <li><i class="fas fa-check"></i> Business Card Design</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Print Production Management</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="pricing-card text-center">
+                    <h3 class="mb-3 text-dark">Content Power-Up</h3>
+                    <p class="text-muted">High-quality content to drive traffic and authority.</p>
+                    <div class="price">
+                        $350<small>/mo</small>
+                    </div>
+                    <ul class="feature-list px-0">
+                        <li><i class="fas fa-check"></i> 2 x 1000-Word SEO Blog Posts/mo</li>
+                        <li><i class="fas fa-check"></i> Topic Research & Keyword Integration</li>
+                        <li><i class="fas fa-check"></i> 1 Email Newsletter Draft</li>
+                        <li><i class="fas fa-times" style="color: red;"></i> Social Media Content Creation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="footer-section">
+        <div class="newsletter">
+            <p class="section-label">NEWSLETTER</p>
+            <h2 style="color: #191133;">Subscribe Company Newsletter</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter Your Fullname">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="example@gmail.com">
+                </div>
+                <button class="submit-btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="column">
+                <img src="img/Company logo.png" alt="" style="width: 200px;">
+                <p style="width: 200px; text-align: justify;" class="mt-1">With a perfect blend of up-to date tools and
+                    industry experience we make sure
+                    that the clients achieve their goals.
+                </p>
+            </div>
+            <div class="column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="career.php">Careers</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="digital_marketing.html">Digital Marketing</a></li>
+                    <!-- <li><a href="seo.html">Search Engine Omtimization</a></li> -->
+                    <li><a href="web_development.html">Web Development</a></li>
+                    <li><a href="graphic_designing.html">Graphic Designing</a></li>
+                    <li><a href="bpo.html">BPO Service</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="term_of_use.html">Terms Of Use</a></li>
+                    <li><a href="privacy_policy.html"></a>Privacy Policy</li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/aarav-tech-services/?viewAsMember=true"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.instagram.com/aaravtech_services/?next=%2Fstudentaidprograms%2F"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/aarav-tech-services/?viewAsMember=true"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="mt-3">
+                    <p><a href="tel:+917318083502"><i class="fa fa-phone"></i>+91 7318083502</a></p>
+                    <p><a href="mailto:info@aaravtech.net"><i class="fa fa-envelope"></i>info@aaravtech.net</a></p>
+                    <p><a href=""><i class="fa fa-location-pin"></i>Kanpur Nagar, Uttar Pradesh, India</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo" style="width: 50px;">ATS</div>
+            <p>© 2025 <span></span>. Designed By <span><a href="https://aravtech.net">Aarav Tech Services LLP</a></span>
+            </p>
+        </div>
+    </section>
+
+    <a href="#" class="btn-back-to-top btn-red btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>

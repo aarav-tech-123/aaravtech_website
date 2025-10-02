@@ -2282,3 +2282,43 @@ pagination {
   top:0;
   left:100%;
 }
+
+.custom-accordion .accordion-button:focus {
+  box-shadow: none;             /* Remove blue/red glow */
+  border-color: transparent;    /* Or use your custom color */
+  outline: none;                /* Optional: remove outline */
+} 
+
+  .custom-accordion .accordion-button {
+    background-color: var(--bs-light); /* Blue background */
+    color: #3a3284;              /* White text */
+  }
+
+  .custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #dddaef; /* Darker blue when open */
+    color:  var(--bs-primary);
+  }
+
+
+.cta-container{
+  background-image: linear-gradient(to bottom left, #332e7e,#635ca5,#100e1b );
+}
+
+.cta-title{
+  color:var(--bs-light);
+  margin-bottom:0;
+}
+.cta-text{
+  color:var(--bs-light);
+  font-weight: 500;
+}
+.cta-btn{
+  background-color:var(--bs-light) !important;
+  color:var(--bs-primary) !important;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+h1{
+  text-transform:capitalize !important;
+}

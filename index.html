@@ -24,7 +24,11 @@
         content="Looking for fast, reliable digital growth? Choose Aarav Tech Services India’s best digital marketing agency to scale your brand with proven SEO & ad campaigns." />
     <meta name="twitter:image" content="https://aaravtech.net/img/company_logo.png" />
 
-
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
 
     <link rel="canonical" href="https://aaravtech.net/" />
     <!-- Icon Font Stylesheet -->
@@ -39,6 +43,12 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- Google Font -->
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -90,7 +100,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent"  >Digital Marketing</a>
+                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
                                 <div class="submenu ">
                                     <a class="dropdown-item " href="seo.html">SEO</a>
                                     <a class="dropdown-item" href="smo-smm.html">SMO/SMM</a>
@@ -122,8 +132,10 @@
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item " href="customer-service-support.html">Customer Service & Support</a>
-                                    <a class="dropdown-item" href="data-entry-management.html">Data Entry & Management</a>
+                                    <a class="dropdown-item " href="customer-service-support.html">Customer Service &
+                                        Support</a>
+                                    <a class="dropdown-item" href="data-entry-management.html">Data Entry &
+                                        Management</a>
                                     <a class="dropdown-item" href="back-office-support.html">Back Office Support</a>
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
@@ -153,8 +165,8 @@
             <div class="row gy-5">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
                     <h3 class="display-4 text-dark wow fadeInUp" data-wow-delay="0.3s">Empower Businesses
-                        Through <span class="" style="color: #7872b4;">Smart Processes</span> And Meaningful
-                        <span class="" style="color: #7872b4;">Digital Impact</span>...
+                        Through <span class="" style="color: #7872b4; font-family: Prata, serif;">Smart Processes</span> And Meaningful
+                        <span class="" style="color: #7872b4; font-family: Prata, serif;">Digital Impact</span>...
                     </h3>
                     <div class="" style="width: 90px; height: 2px; background-color: #293b5f;"></div>
                     <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">In today's fast-paced digital world, a
@@ -609,8 +621,7 @@
             <div class="column">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/AaravTechServicesLLP/"><i
-                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/AaravTechServicesLLP/"><i class="fab fa-facebook-f"></i></a>
                     <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
                     <a href="https://www.instagram.com/aaravtech_services/?next=%2Fstudentaidprograms%2F"><i
                             class="fab fa-instagram"></i></a>
@@ -619,7 +630,8 @@
                 </div>
                 <div class="mt-3">
                     <p><a href="tel:+917318083502"><i class="fa fa-phone"></i>+91 7318083502</a></p>
-                    <p><a href="mailto:info@aaravtech.net"><i class="fa fa-envelope"></i>info@aaravtech.net</a></p>
+                    <p><a href="mailto:support@aaravtech.net "><i class="fa fa-envelope"></i>support@aaravtech.net </a>
+                    </p>
                     <p><a href=""><i class="fa fa-location-pin"></i>Kanpur Nagar, Uttar Pradesh, India</a></p>
                 </div>
             </div>
@@ -657,34 +669,34 @@
 
         let current = 0;
         let slidesToShow = window.innerWidth > 768 ? 2 : 1; // Default based on screen size
-        
+
         function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i >= index && i < index + slidesToShow) {
-            slide.classList.add('active');
-            }
-        });
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i >= index && i < index + slidesToShow) {
+                    slide.classList.add('active');
+                }
+            });
         }
 
         // Update slidesToShow on window resize
         window.addEventListener("resize", () => {
-        slidesToShow = window.innerWidth > 768 ? 2 : 1;
-        showSlide(current);
+            slidesToShow = window.innerWidth > 768 ? 2 : 1;
+            showSlide(current);
         });
 
         leftBtn.addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
         });
 
         rightBtn.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+            current = (current + 1) % slides.length;
+            showSlide(current);
         });
 
         // Initialize
-        showSlide(current+1);
+        showSlide(current + 1);
 
         const cards = document.querySelectorAll('.testimonial-card');
         const prevBtn = document.querySelector('.nav-btn.left_test');
@@ -693,27 +705,27 @@
         let current_card = 0;
 
         function updateCards() {
-        cards.forEach((card, index) => {
-            card.classList.remove('active', 'prev', 'next');
+            cards.forEach((card, index) => {
+                card.classList.remove('active', 'prev', 'next');
 
-            if (index === current_card) {
-            card.classList.add('active');
-            } else if (index === (current_card - 1 + cards.length) % cards.length) {
-            card.classList.add('prev');
-            } else if (index === (current_card + 1) % cards.length) {
-            card.classList.add('next');
-            }
-        });
+                if (index === current_card) {
+                    card.classList.add('active');
+                } else if (index === (current_card - 1 + cards.length) % cards.length) {
+                    card.classList.add('prev');
+                } else if (index === (current_card + 1) % cards.length) {
+                    card.classList.add('next');
+                }
+            });
         }
 
         prevBtn.addEventListener('click', () => {
-        current_card = (current_card - 1 + cards.length) % cards.length;
-        updateCards();
+            current_card = (current_card - 1 + cards.length) % cards.length;
+            updateCards();
         });
 
         nextBtn.addEventListener('click', () => {
-        current_card = (current_card + 1) % cards.length;
-        updateCards();
+            current_card = (current_card + 1) % cards.length;
+            updateCards();
         });
 
         updateCards(); // initialize
@@ -727,7 +739,7 @@
             }
         });
 
-        
+
 
         // document.addEventListener('DOMContentLoaded', function() {
         // document.querySelectorAll('.submenu-parent').forEach(item => {

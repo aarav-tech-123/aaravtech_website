@@ -1,0 +1,91 @@
+ .service-cards {
+     background-color: #ffff;
+     /* teal shade similar to your image */
+     /* color: #fff; */
+     border-radius: 1rem;
+     padding: 2rem 1.5rem;
+     text-align: center;
+     height: 400px;
+     position: relative;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+     /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
+ }
+
+ .service-cards:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+     /* background-color: #3a3284; */
+     background: linear-gradient(to bottom left, #332e7e, #635ca5, #3c3565ad);
+     /* background-color: #7872b4; */
+     /* background-color: #191133; */
+     color: #fff !important;
+     cursor: pointer;
+
+     .service-title {
+         color: #fff;
+     }
+
+     .service-icon {
+         box-shadow: #ffffff75 0px 5px 15px;
+     }
+ }
+
+ .service-icon {
+     width: 100px;
+     height: 100px;
+     margin-bottom: 1rem;
+     background-color: #fff;
+     border-radius: 50%;
+     box-shadow: #3a328473 0px 5px 15px;
+     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+ }
+
+ .service-title {
+     font-weight: 600;
+     font-size: 1.25rem;
+     margin-bottom: 0.75rem;
+ }
+
+ .service-text {
+     font-size: 0.95rem;
+     line-height: 1.5;
+     margin-bottom: 2rem;
+ }
+
+ .pricing-card {
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     padding: 30px;
+     transition: all 0.3s ease;
+     margin-bottom: 30px;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .pricing-card:hover {
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+     transform: translateY(-5px);
+ }
+
+ .pricing-card .price {
+     font-size: 2.5rem;
+     font-weight: 700;
+     color: #7872b4;
+     /* Primary color */
+     margin-bottom: 15px;
+ }
+
+ .pricing-card .feature-list li {
+     list-style: none;
+     text-align: left;
+     margin-bottom: 10px;
+ }
+
+ .pricing-card .feature-list i {
+     color: #57c2a1;
+     /* A nice highlight color */
+     margin-right: 8px;
+ }

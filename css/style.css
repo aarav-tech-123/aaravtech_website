@@ -147,18 +147,16 @@
 .navbar-light .navbar-nav .nav-link {
   margin-right: 25px;
   padding: 35px 0;
-  /* color: var(--bs-dark) !important; */
-  color: #57c2a1 !important;
+  color: var(--bs-dark) !important;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   outline: none;
   transition: .5s;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
   padding: 20px 0;
-  /* color: var(--dark) !important; */
-  color: #57c2a1 !important;
+  color: var(--dark) !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -262,8 +260,7 @@
   .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 10px 0;
     margin-left: 0;
-    /* color: var(--bs-dark) !important; */
-    color: #57c2a1;
+    color: var(--bs-dark) !important;
   }
 
 

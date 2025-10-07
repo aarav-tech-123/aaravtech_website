@@ -102,17 +102,13 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar & Hero Section Start -->
-    <div class="container-fluid header position-relative overflow-hidden p-0" style="width: 100%; height: 100vh;">
-        <!-- Background Video -->
+    <div class="container-fluid header position-relative  p-0" >
         <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100"
             style="object-fit: cover; z-index: -1;">
             <source src="img/bg-header.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0 scrolled">
             <a href="/" class="navbar-brand p-0">
                 <img src="img/company_logo.png" alt="">
             </a>
@@ -128,39 +124,34 @@
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu">
-                                    <a class="dropdown-item" href="seo-company-in-india.html">SEO</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="content-marketing-services.html">Content
-                                        Marketing</a>
+                                    <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
                                     <a class="dropdown-item" href="paid-marketing-services.html">Paid Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
-                                <div class="submenu">
-                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom
-                                        Website Development</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App
-                                        Development</a>
+                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
-                                <div class="submenu">
-                                    <a class="dropdown-item" href="logo-design-services.html">Logo Design</a>
-                                    <a class="dropdown-item" href="social-media-graphic-design.html">Social Media
-                                        Graphic Design</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="logo-design-services.html">Logo Design</a>
+                                    <a class="dropdown-item" href="social-media-graphic-design.html">Social Media Graphic Design</a>
                                     <a class="dropdown-item" href="marketing-design-services.html">Marketing Design</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
-                                <div class="submenu">
-                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office
-                                        Support</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
@@ -175,8 +166,7 @@
             </div>
         </nav>
 
-        <!-- Hero Header Start -->
-        <div class="overflow-hidden px-5 hero-section">
+        <div class="px-5 hero-section">
             <div class="hero-container">
                 <div class="hero-content wow fadeInLeft" data-wow-delay="0.1s">
                     <h1 class="display-4 wow fadeInUp hero-title" data-wow-delay="0.3s" style="color: #fff;">
@@ -191,33 +181,7 @@
                         style="background-color: #57c2a1; color: #fff;">Get Started</a>
                 </div>
             </div>
-
-            <div class="stats-section">
-                <div class="stats-container">
-                    <div class="stats-card">
-                        <div class="stats-icon">
-                            <img src="img/stats_years.svg" alt="">
-                        </div>
-                        <div class="stats-label" style="color: #fff;">Years of Excellence</div>
-                    </div>
-
-                    <div class="stats-card">
-                        <div class="stats-icon">
-                            <img src="img/stats_success.svg" alt="">
-                        </div>
-                        <div class="stats-label" style="color: #fff;">Success Rate</div>
-                    </div>
-
-                    <div class="stats-card">
-                        <div class="stats-icon">
-                            <img src="img/stats_support.svg" alt="">
-                        </div>
-                        <div class="stats-label" style="color: #fff;">Customer Support</div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- Hero Header End -->
     </div>
 
 
@@ -747,15 +711,15 @@
         });
 
         updateCards(); // initialize
-        window.addEventListener('scroll', function () {
-            console.log("scrolled")
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+        // window.addEventListener('scroll', function () {
+        //     console.log("scrolled")
+        //     const navbar = document.querySelector('.navbar');
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('scrolled');
+        //     } else {
+        //         navbar.classList.remove('scrolled');
+        //     }
+        // });
 
 
 

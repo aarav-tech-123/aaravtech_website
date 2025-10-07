@@ -84,6 +84,11 @@
             position: relative;
             z-index: 1;
         }
+        .navbar-container.scrolled {
+            background: #00000065;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -101,26 +106,20 @@
     </div>
     <!-- Spinner End -->
 
-
-    <div class="container-fluid header position-relative  p-0" >
-        <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100"
-            style="object-fit: cover; z-index: -1;">
-            <source src="img/bg-header.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0 scrolled">
+    <div class="navbar-container" style="  transition: all 0.4s ease-in-out;">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <img src="img/company_logo.png" alt="">
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                    <a href="about.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -157,17 +156,26 @@
                             </div>
                         </div>
                     </div>
-                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="blogs.html" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
                 </div>
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
-                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem;">Let's Talk</a>
+                <a href="packages.html" class="glass-btn nav-link-btn">Packages</a>
             </div>
         </nav>
+    </div>
+
+
+    <div class="container-fluid header position-relative  p-0 hero-section" style="margin-top:-94px; height: 110vh;" >
+        <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100"
+            style="object-fit: cover; z-index: -1;">
+            <source src="img/bg-header.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
 
         <div class="px-5 hero-section">
-            <div class="hero-container">
+            <div class="hero-container" id="hero-container">
                 <div class="hero-content wow fadeInLeft" data-wow-delay="0.1s">
                     <h1 class="display-4 wow fadeInUp hero-title" data-wow-delay="0.3s" style="color: #fff;">
                         Empower Businesses Through <span style="font-weight: 700;">Smart Processes</span> And Meaningful
@@ -177,15 +185,11 @@
                         In today's fast-paced digital world, a strong online presence is no longer optional—it's
                         essential for success.
                     </p>
-                    <a href="contact.html" class="btn rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s"
-                        style="background-color: #57c2a1; color: #fff;">Get Started</a>
+                    <a href="contact.html" class=" glass-btn  wow fadeInUp " data-wow-delay="0.7s">Get Started</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <!-- About Start -->
     <div class="container-fluid overflow-hidden" style="margin-top: -40px;">
@@ -711,15 +715,46 @@
         });
 
         updateCards(); // initialize
-        // window.addEventListener('scroll', function () {
-        //     console.log("scrolled")
-        //     const navbar = document.querySelector('.navbar');
-        //     if (window.scrollY > 50) {
-        //         navbar.classList.add('scrolled');
-        //     } else {
-        //         navbar.classList.remove('scrolled');
-        //     }
-        // });
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar-container');
+            const hero = document.querySelector('#hero-container');
+
+            const scrolled = window.scrollY > 100;
+
+            // Only update classes if state changes
+            navbar.classList.toggle('home-nav-scrolled', scrolled);
+            hero.classList.toggle('hero-scrolled', scrolled);
+            const navLinkBtns = document.querySelectorAll('.nav-link-btn');
+            const navLinks = document.querySelectorAll('.nav-link')
+
+            const img = document.getElementById('toggleImg');
+
+            // if(scrolled){
+            //     img.src =  'img/company_logo_primary.svg' ;
+            //     navLinkBtns.forEach(item => {
+            //         item.classList.add('btn', true);
+            //         item.classList.add('btn-primary', true);
+            //         item.classList.add('rounded-pill', true);
+            //         item.classList.remove('glass-btn', true);
+            //     });
+            //     navLinks.forEach(item => {
+            //         item.classList.remove('nav-link-white')
+            //     })
+
+            // } else {
+            //     img.src =  'img/company_logo_white.svg' ;
+            //     navLinkBtns.forEach(item => {
+            //         item.classList.remove('btn', true);
+            //         item.classList.remove('btn-primary', true);
+            //         item.classList.remove('rounded-pill', true);
+            //         item.classList.add('glass-btn', true);
+            //     });
+            //     navLinks.forEach(item => {
+            //         item.classList.add('nav-link-white')
+            //     })
+            // }
+
+        });
 
 
 

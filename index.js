@@ -30,6 +30,7 @@ document.querySelectorAll('.submenu-parent').forEach(item => {
           openSubmenu.classList.remove('mobile');
         }
       });
+
     } else {
       e.preventDefault();
       e.stopPropagation();
@@ -48,7 +49,26 @@ document.querySelectorAll('.submenu-parent').forEach(item => {
  
 });
 
+const navbarButton = document.querySelector('.navbar-toggler');
+navbarButton.addEventListener('click',() => {
+  console.log('clicked');
+  const navbar = document.querySelector('.navbar');
+  if(window.innerWidth < 992){
+      navbarButton.classList.toggle('navbar-primary');
+      navbar.classList.toggle('navbar-white');
+      const navLinkBtns = document.querySelectorAll('.nav-link-btn');
 
+      navLinkBtns.forEach(item => {
+        item.classList.toggle('btn', true);
+        item.classList.toggle('btn-primary', true);
+        item.classList.toggle('rounded-pill', true);
+        item.classList.toggle('glass-btn', true);
+      });
+      const img = document.getElementById('toggleImg');
+      img.src =   img.src.includes('company_logo_white.svg') ? 'img/company_logo_primary.svg' : 'img/company_logo_white.svg'
+
+  }
+})
 
 
 

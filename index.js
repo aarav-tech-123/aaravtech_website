@@ -1,3 +1,4 @@
+const navLinks = document.querySelectorAll('.nav-link');
 
 
 window.addEventListener('resize', () => {
@@ -5,6 +6,9 @@ window.addEventListener('resize', () => {
     document.querySelectorAll('.submenu.mobile').forEach(submenu => {
       submenu.classList.remove('mobile');
     });
+    navLinks.forEach((item) => {
+      item.setAttribute('style','color: var(--bs-white) !important;')
+    })
   }
   document.querySelectorAll('.submenu.desktop').forEach(submenu => {
     submenu.classList.remove('desktop');
@@ -66,7 +70,9 @@ navbarButton.addEventListener('click',() => {
       });
       const img = document.getElementById('toggleImg');
       img.src =   img.src.includes('company_logo_white.svg') ? 'img/company_logo_primary.svg' : 'img/company_logo_white.svg'
-
+      navLinks.forEach((item) => {
+        item.removeAttribute('style')
+      })
   }
 })
 

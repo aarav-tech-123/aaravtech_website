@@ -9,6 +9,14 @@ window.addEventListener('resize', () => {
     navLinks.forEach((item) => {
       item.setAttribute('style','color: var(--bs-white) !important;')
     })
+    const navLinkBtns = document.querySelectorAll('.nav-link-btn');
+
+      navLinkBtns.forEach(item => {
+        item.classList.remove('btn', true);
+        item.classList.remove('btn-primary', true);
+        item.classList.remove('rounded-pill', true);
+        item.classList.add('glass-btn', true);
+      });
   }
   document.querySelectorAll('.submenu.desktop').forEach(submenu => {
     submenu.classList.remove('desktop');

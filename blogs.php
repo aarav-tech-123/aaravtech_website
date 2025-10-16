@@ -15,8 +15,11 @@ if ($conn->connect_error) {
     die("❌ Connection failed: " . $conn->connect_error);
 }
 
-// ✅ Fetch blog posts
-$sql = "SELECT ID, post_title, post_content, post_date, post_author FROM wp_posts ORDER BY post_date DESC";
+// Fetch published blog posts
+$sql = "SELECT ID, post_title, post_content, post_date, post_author
+        FROM wp_posts
+        WHERE post_type='post' AND post_status='publish'
+        ORDER BY post_date DESC";
 $result = $conn->query($sql);
 if ($result === false) {
     die("❌ SQL Error: " . $conn->error);

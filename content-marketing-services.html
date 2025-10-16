@@ -19,41 +19,1054 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
-        .pricing-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+            h1{
+                color:var(--bs-white);
+            }
+        }
+
+
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .breadcrumb-item{
+            font-size: .8rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            position: relative;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            font-size: 32px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .pricing-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: var(--gradient-pricing);
+            border-radius: 20px;
+            padding: 40px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            height: 100%;
+            align-items:center;
         }
-
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
         .pricing-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
         }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
+        
+        .pricing-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-header-card {
+            margin-bottom: 25px;
+            flex-shrink: 0;
+        }
+        
+        .pricing-title {
+            font-size: 22px;
             font-weight: 700;
-            color: #7872b4;
-            /* Primary color */
+            margin-bottom: 8px;
+            color: var(--bs-light);
+        }
+        
+        .pricing-subtitle {
+            color: rgba(246, 246, 250, 0.7);
+            font-size: 14px;
             margin-bottom: 15px;
         }
-
-        .pricing-card .feature-list li {
+        
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price small {
+            font-size: 14px;
+            color: rgba(246, 246, 250, 0.7);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
             list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
             text-align: left;
-            margin-bottom: 10px;
+        }
+        
+        .pricing-features li i {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .pricing-button {
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+        
+        /* Comparison Section */
+        
+        .comparison {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to { background-position: 200% center; }
+        }
+        
+        .accordion.custom-accordion {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-button {
+            background: var(--gradient-pricing);
+            color: var(--bs-light);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 20px 25px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: none !important;
+        }
+        
+        .accordion.custom-accordion .accordion-button:hover {
+            background: rgba(138, 43, 226, 0.1);
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed) {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--bs-light);
+            box-shadow: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s;
+            background-image: none !important;
+            width: auto;
+            height: auto;
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '-';
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-body {
+            padding: 0;
+            background: rgba(11, 1, 28, 0.5);
         }
 
-        .pricing-card .feature-list i {
-            color: #57c2a1;
-            /* A nice highlight color */
-            margin-right: 8px;
+        .faq-accordion-body{
+            padding:1rem .5rem !important;
+        }
+        
+        /* Table Styling */
+        .comparison-table {
+            width: 100%;
+            margin-bottom: 0;
+            background: transparent;
+            color: var(--bs-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: rgba(30, 14, 69, 0.8);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+            background: rgba(11, 1, 28, 0.8);
+            width: 25%;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            background: rgba(11, 1, 28, 0.3);
+        }
+        
+        .comparison-table .text-start {
+            text-align: left !important;
+        }
+        
+        .comparison-table .align-middle {
+            vertical-align: middle !important;
+        }
+        
+        .comparison-table .text-center {
+            text-align: center !important;
+        }
+        
+        /* Package Header Styling */
+        .comparison-table .bg-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-warning {
+            background: linear-gradient(135deg, #ffd93d 0%, #ffcd3c 100%) !important;
+            color: #1a1a1a !important;
+        }
+        
+        .comparison-table .bg-dark {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .table-light {
+            background: rgba(30, 14, 69, 0.9) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        .comparison-table .bg-white {
+            background: rgba(11, 1, 28, 0.8) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        /* Check and Cross Styling */
+        .check {
+            color: #00ff88 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .cross {
+            color: #ff4444 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Small text in headers */
+        .comparison-table th small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* FAQ section*/
+       
+        .faq-section {
+            padding: 5rem 0;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #0c0c1f 0%, #161632 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .custom-accordion .accordion-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-item:hover {
+            border-color: rgba(106, 17, 203, 0.5);
+            box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
+        }
+        
+        .custom-accordion .accordion-button {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.25rem 1.5rem;
+            border: none;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed) {
+            background-color: rgba(106, 17, 203, 0.1);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+        
+        .custom-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(106, 17, 203, 0.5);
+        }
+        
+        .custom-accordion .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e2e8f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236a11cb'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .custom-accordion .accordion-body {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .custom-accordion .accordion-body strong {
+            color: var(--text-primary);
+        }
+        
+        .glow-effect {
+            position: relative;
+        }
+        
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .custom-accordion .accordion-button {
+                font-size: 1rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+        
+        .support-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .support-badge i {
+            margin-right: 5px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .accordion.custom-accordion .accordion-button {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .comparison-table th small {
+                font-size: 10px;
+            }
+            
+            .check,
+            .cross {
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .comparison-table {
+                font-size: 11px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 6px 8px;
+            }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--bs-light);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+        
+      
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 42px;
+            }
+            
+            .cta-section h2 {
+                font-size: 42px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero {
+                padding: 30px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta-section h2 {
+                font-size: 36px;
+            }
+            
+            .comparison-table {
+                font-size: 12px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
         }
     </style>
 
@@ -65,22 +1078,22 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+    
     <div class="container-fluid header position-relative p-0">
+    <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <!-- <h1 class="display-6 text-primary m-0"></h1> -->
-                <img src="img/company_logo.png" alt="">
-                <!-- <h1 class="display-6 text-primary m-0"><img src="img/logo.png" alt="Logo">Aarav Tech Services LLP</h1> -->
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -89,10 +1102,8 @@
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
                                     <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
-                                    <a class="dropdown-item" href="paid-marketing-services.html">Paid Marketing</a>
                                 </div>
                             </div>
-                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
@@ -102,12 +1113,7 @@
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="logo-design-services.html">Logo Design</a>
-                                    <a class="dropdown-item" href="social-media-graphic-design.html">Social Media Graphic Design</a>
-                                    <a class="dropdown-item" href="marketing-design-services.html">Marketing Design</a>
-                                </div>
+                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
@@ -116,270 +1122,283 @@
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
-                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         </div>
                     </div>
-                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="blogs.html" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
                 </div>
-                <!-- <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
-                    In</a> -->
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
-                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
-            </div>
-        </nav>  
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+        </nav>
 
-        <div class="hero-header overflow-hidden px-5">
-            <div class="rotate-img">
-                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                <div class="rotate-sty-2"></div>
-                <div id="rotate-3"></div>
-            </div>
-            <div class="row gy-5">
-                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
-                                Marketing</a></li>
-                    </ol>
-                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">
-                        Drive Engagement with Expert Content Marketing Services 
-                    </h1>
-                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">
-                        Increase your brand recognition, credibility, and conversion with compelling stories and campaigns that are strategy-oriented. Attracting the right audience, engaging them, and creating long-term loyalty with quantifiable business impact are effective results of our content marketing services. We create content that is engaging, action-oriented, and empowering your brand online presence. By providing strategic planning and innovative solutions, your business will be able to reach the right audience at the right time and on the right place. 
-                    </p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
-                        Started</a>
-                </div>
-                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
-                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid service-detail-section">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
-                </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <p class="subheading">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4" style="color: #191133;">
-                        Maximizing Growth with Content That Converts 
-                    </h1>
-                    <p class="mb-4" style="font-size: 1.5rem;" >
-                       Content is not just words—it’s strategy. We are the best content marketing agency and create powerful campaigns based on profound understanding of the audience, optimization of the website’s contents through the use of search engine optimization, and interesting stories. Our strategy is different in making content calendars, Web page optimization or brand authority.   
-                    </p>
-                    <p class="mb-4" style="font-size: 1.5rem;">
-                       Performance tracking is also another strength. We utilise to evaluate outcomes, adjust strategies, and maximize ROI. Whether you’re a new business or an established brand, our customized plans provide a long-term growth and make you rank high in a digital space.                    
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="display-5" style="text-align: center;">Our Content Marketing Services</h2>
-                    <p class="pricing-sub" style=" margin:0 auto 2rem; text-align: center; font-size: 1.5rem;  ">
-                        The content strategies we develop are both creative and data-driven, which make each of them meaningful and effective. Find out about our services to support your brand online. 
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SearchEngineOptimization.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    Audience Persona Development
-                                </h4>
-                                <p>
-                                    Prepare detailed customer personas using research and additional information about them to create specific content that addresses the needs, problems, and purchasing habits of the audiences.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SocialMediaMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Content Creation</h4>
-                                <p>
-                                    Design blogs, articles, videos and infographics that motivate, educate, and promote the reputation of your brand in the online world.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PayPerClick.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Website Content Optimization</h4>
-                                <p>
-                                    Optimize the content of the websites so that they can be optimized to search engines as well as in their readability and conversion so as to maximize the rankings, user experience and lead generation.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/ContentMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Social Media Management</h4>
-                                <p>
-                                    Plan and strategically make and manage posts that foster visibility, more engagement, and brand authority on the social platforms.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PaidMarketingCampaigns.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Content Calendar Creation</h4>
-                                <p>
-                                    Plan, organize, and schedule content efficiently to proceed with a steady flow, ensure timely publishing and maximize audience engagement.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    Analytics and Performance Monitoring
-                                </h4>
-                                <p>
-                                    Track KPIs, analyze information, and optimize approach based on actionable data to ensure content is delivering measurable results and long-term growth.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
+                <li class="breadcrumb-item"><a href="digital_marketing.html" class="">Digital Marketing</a></li>
+                <li class="breadcrumb-item"><a href="content-marketing-services.html" style="color: #a085b9;">Content Marketing</a></li>
+            </ol>
 
-    <div class="container py-5">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <p class="subheading">PRICING PLANS</p>
-            <h2 class="display-5">Our Content Marketing Packages for Your Business</h2>
-            <p class="pricing-sub" style="margin:0 auto 2rem; text-align: center; font-size: 1.5rem; ">
-                You can start with our content marketing packages that are flexible and can be used to meet any business size and goal. Select the package that best aligns with your objectives and your brand story will be shared with the most impact with the right audience.
+            <div class="hero-badge">
+                <i class="fas fa-pen-nib"></i> Professional Content Marketing Services
+            </div>
+
+            <h1>Drive Engagement with <span class="gradient-text">Expert Content Marketing</span> Strategies</h1>
+            <p>
+               Production and distribution of useful content to capture, communicate, and create trust with your target audience in a natural way.
             </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary">Get Started <i class="fas fa-bullhorn"></i></button>
+            </div>
         </div>
-        <div class="row g-4 justify-content-center mb-5">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="pricing-card text-center">
-                    <h3 class="mb-3 text-dark">Startup Spark</h3>
-                    <p class="text-muted">Perfect for small businesses starting their online journey.</p>
-                    <div class="price">
-                        $299<small>/mo</small>
-                    </div>
-                    <ul class="feature-list px-0">
-                        <li><i class="fas fa-check"></i> Basic SEO Setup (5 keywords)</li>
-                        <li><i class="fas fa-check"></i> 10 Social Media Posts/mo</li>
-                        <li><i class="fas fa-check"></i> Monthly Performance Report</li>
-                        <li><i class="fas fa-times" style="color: red;"></i> Dedicated Campaign Manager</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
-                </div>
+    </section>
+    </div>
+
+    <!-- Content Marketing Section (Updated to Icons) -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span class="gradient-text">Content Marketing Services</span></h2>
+                <p>The content strategies we develop are both creative and data-driven, making each campaign meaningful and effective.</p>
             </div>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="pricing-card text-center">
-                    <h3 class="mb-3 text-dark">Growth Accelerator</h3>
-                    <p class="text-muted">Designed for businesses ready to scale their presence.</p>
-                    <div class="price">
-                        $799<small>/mo</small>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-friends"></i>
                     </div>
-                    <ul class="feature-list px-0">
-                        <li><i class="fas fa-check"></i> Advanced SEO (20 keywords)</li>
-                        <li><i class="fas fa-check"></i> 25 Social Media Posts + Ad Management</li>
-                        <li><i class="fas fa-check"></i> Monthly Performance & Strategy Review</li>
-                        <li><i class="fas fa-check"></i> Dedicated Campaign Manager</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
+                    <h3>Audience Persona Development</h3>
+                    <p>Build detailed customer personas using data and insights to craft content that addresses real audience needs, behaviors, and motivations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Develop blogs, articles, videos, and infographics that educate, inspire, and enhance your brand’s authority and visibility.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Content Optimization</h3>
+                    <p>Refine web copy for better SEO, readability, and conversion rates, ensuring your site performs well in both rankings and user engagement.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Media Management</h3>
+                    <p>Create and manage content that grows engagement, visibility, and trust across all major social media platforms.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Content Calendar Creation</h3>
+                    <p>Plan, organize, and schedule content to maintain consistent messaging and maximize your brand’s digital presence year-round.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics and Performance Monitoring</h3>
+                    <p>Measure KPIs, track results, and optimize content strategies based on data-driven insights for sustainable growth.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container" style="max-width: 1000px;">
+            <div class="section-title">
+                <div class="pricing-badge">
+                    <i class="fas fa-bullhorn"></i> CONTENT MARKETING PACKAGES
+                </div>
+                <h2>Our <span class="gradient-text">Content Marketing Packages</span></h2>
+                <p class="section-title">Choose a content marketing plan that fits your business goals and audience reach.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- BASIC Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header-card">
+                        <h3 class="pricing-title">Basic</h3>
+                        <p class="pricing-subtitle">For Small Businesses</p>
+                        <div class="price">$249<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 2 Blogs Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> 2 Article Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> High Quality Images for Blogs</li>
+                        <li><i class="fas fa-check"></i> Blog: 600 Words | Article: 900 Words</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <button class="btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- ADVANCED Package -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header-card">
+                        <h3 class="pricing-title">Advanced</h3>
+                        <p class="pricing-subtitle">For Growing Brands</p>
+                        <div class="price">$349<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 4 Blogs Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> 4 Article Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> High Quality Images for Blogs</li>
+                        <li><i class="fas fa-check"></i> Blog: 600 Words | Article: 900 Words</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <button class="btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- PROFESSIONAL Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header-card">
+                        <h3 class="pricing-title">Professional</h3>
+                        <p class="pricing-subtitle">For Established Brands</p>
+                        <div class="price">$449<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 8 Blogs Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> 8 Article Writing & Publishing</li>
+                        <li><i class="fas fa-check"></i> High Quality Images for Blogs</li>
+                        <li><i class="fas fa-check"></i> Blog: 600 Words | Article: 900 Words</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <button class="btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container-fluid cta-container" style="padding:6rem 0;">
-        <div class="container mx-auto my-0" style="padding: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 1rem;">
-            <h2 class="display-5 cta-title" style="text-align: center; text-transform: capitalize;">
-                Why Choose Us for Effective Content Marketing
-            </h2>
-            <h5 class="pricing-sub cta-text" style=" margin:0 auto; text-align: center; width: 100%; line-height: 135%; ">
-                We work at AARAV TECH SERVICES and we are experts at providing effective content marketing strategies that yield quantifiable outcomes. Our team of professionals will make sure that your brand is visible, have authority, and will grow over the long term, with the help of strategic content, innovative storytelling, and transparent performance monitoring.
-            </h5>
-            <a href="tel:" class=" rounded-pill py-3 px-4 cta-btn" style="font-size: 20px;">Contact Us Now</a>
-        </div>
-    </div>
-    <section class="py-5">
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Frequently Asked Questions</h2>
+            <div class="cta-content">
+                <h2>Ready To Transform Your Digital Strategy?</h2>
+                <p>Let's discuss how our data-driven SEO solutions can drive measurable growth for your business.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Request a Proposal <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Find answers to common questions about our Content Marketing services and process.</p>
+            </div>
+
             <div class="accordion custom-accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a1">
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             What is content marketing?
                         </button>
                     </h2>
-                    <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Content marketing is a tactical process of producing and distributing valuable content that is relevant in order to attract, engage and retain a target audience while driving profitable customer actions.
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            <strong>Content marketing</strong> is a strategic approach focused on creating and sharing valuable, relevant, and consistent content to attract and retain a clearly defined audience — and ultimately, drive profitable customer action.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a2">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Why is content marketing important for my business?
                         </button>
                     </h2>
-                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            It will help it to build trust, more brand awareness, and natural traffic and transform leads into loyal customers through meaningful information rather than direct sales talks.
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Content marketing builds <strong>brand trust, awareness, and authority</strong>. It helps attract organic traffic, nurture leads, and convert prospects into loyal customers through storytelling and value-driven information.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a3">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             How long does it take to see results with content marketing?
                         </button>
                     </h2>
-                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Content marketing is a long-term strategy. Whereas it can be seen that small improvements can be made during weeks, regular work tends to provide observable increases in traffic and engagement within 3–6 months.
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Content marketing is a <strong>long-term strategy</strong>. While small improvements can appear within weeks, consistent efforts typically lead to significant engagement and visibility growth within <strong>3–6 months</strong>.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a4">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             What types of content do you create?
+                            <span class="support-badge"><i class="fas fa-pen-nib"></i> Creative</span>
                         </button>
                     </h2>
-                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We create blogs, articles, web copy, infographics, videos, social media posts and so on, making sure that content is in line with the goals of your brand and the likes of your audience.
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            We create a wide range of content, including <strong>blogs, articles, web copy, infographics, videos, and social media posts</strong> — all tailored to your brand voice, audience preferences, and business goals.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a5">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                             How do you measure the success of content marketing campaigns?
+                            <span class="support-badge"><i class="fas fa-chart-line"></i> Analytics</span>
                         </button>
                     </h2>
-                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The use of metrics such as the website traffic, engagement, lead generation, conversion rate, and ROI measure success, which is then substituted with detailed analytics and periodic reports of performance.
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Success is measured using <strong>KPIs</strong> like website traffic, engagement rate, lead generation, conversion rate, and ROI. We provide <strong>in-depth analytics and regular reports</strong> to track progress and performance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Do you provide ongoing content strategy support?
+                            <span class="support-badge"><i class="fas fa-headset"></i> Support</span>
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes, we offer <strong>continuous support and content optimization</strong>, including editorial planning, performance review, and strategic updates to keep your content relevant and impactful over time.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <footer>
+
+    <footer>
         <div class="footer-shape">
         </div>
         

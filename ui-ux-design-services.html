@@ -21,41 +21,1054 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
-        .pricing-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+            h1{
+                color:var(--bs-white);
+            }
+        }
+
+
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .breadcrumb-item{
+            font-size: .8rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            position: relative;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            font-size: 32px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .pricing-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: var(--gradient-pricing);
+            border-radius: 20px;
+            padding: 40px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            height: 100%;
+            align-items:center;
         }
-
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
         .pricing-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
         }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
+        
+        .pricing-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-header-card {
+            margin-bottom: 25px;
+            flex-shrink: 0;
+        }
+        
+        .pricing-title {
+            font-size: 22px;
             font-weight: 700;
-            color: #7872b4;
-            /* Primary color */
+            margin-bottom: 8px;
+            color: var(--bs-light);
+        }
+        
+        .pricing-subtitle {
+            color: rgba(246, 246, 250, 0.7);
+            font-size: 14px;
             margin-bottom: 15px;
         }
-
-        .pricing-card .feature-list li {
+        
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price small {
+            font-size: 14px;
+            color: rgba(246, 246, 250, 0.7);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
             list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
             text-align: left;
-            margin-bottom: 10px;
+        }
+        
+        .pricing-features li i {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .pricing-button {
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+        
+        /* Comparison Section */
+        
+        .comparison {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to { background-position: 200% center; }
+        }
+        
+        .accordion.custom-accordion {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-button {
+            background: var(--gradient-pricing);
+            color: var(--bs-light);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 20px 25px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: none !important;
+        }
+        
+        .accordion.custom-accordion .accordion-button:hover {
+            background: rgba(138, 43, 226, 0.1);
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed) {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--bs-light);
+            box-shadow: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s;
+            background-image: none !important;
+            width: auto;
+            height: auto;
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '-';
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-body {
+            padding: 0;
+            background: rgba(11, 1, 28, 0.5);
         }
 
-        .pricing-card .feature-list i {
-            color: #57c2a1;
-            /* A nice highlight color */
-            margin-right: 8px;
+        .faq-accordion-body{
+            padding:1rem .5rem !important;
+        }
+        
+        /* Table Styling */
+        .comparison-table {
+            width: 100%;
+            margin-bottom: 0;
+            background: transparent;
+            color: var(--bs-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: rgba(30, 14, 69, 0.8);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+            background: rgba(11, 1, 28, 0.8);
+            width: 25%;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            background: rgba(11, 1, 28, 0.3);
+        }
+        
+        .comparison-table .text-start {
+            text-align: left !important;
+        }
+        
+        .comparison-table .align-middle {
+            vertical-align: middle !important;
+        }
+        
+        .comparison-table .text-center {
+            text-align: center !important;
+        }
+        
+        /* Package Header Styling */
+        .comparison-table .bg-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-warning {
+            background: linear-gradient(135deg, #ffd93d 0%, #ffcd3c 100%) !important;
+            color: #1a1a1a !important;
+        }
+        
+        .comparison-table .bg-dark {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .table-light {
+            background: rgba(30, 14, 69, 0.9) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        .comparison-table .bg-white {
+            background: rgba(11, 1, 28, 0.8) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        /* Check and Cross Styling */
+        .check {
+            color: #00ff88 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .cross {
+            color: #ff4444 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Small text in headers */
+        .comparison-table th small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* FAQ section*/
+       
+        .faq-section {
+            padding: 5rem 0;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #0c0c1f 0%, #161632 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .custom-accordion .accordion-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-item:hover {
+            border-color: rgba(106, 17, 203, 0.5);
+            box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
+        }
+        
+        .custom-accordion .accordion-button {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.25rem 1.5rem;
+            border: none;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed) {
+            background-color: rgba(106, 17, 203, 0.1);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+        
+        .custom-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(106, 17, 203, 0.5);
+        }
+        
+        .custom-accordion .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e2e8f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236a11cb'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .custom-accordion .accordion-body {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .custom-accordion .accordion-body strong {
+            color: var(--text-primary);
+        }
+        
+        .glow-effect {
+            position: relative;
+        }
+        
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .custom-accordion .accordion-button {
+                font-size: 1rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+        
+        .support-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .support-badge i {
+            margin-right: 5px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .accordion.custom-accordion .accordion-button {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .comparison-table th small {
+                font-size: 10px;
+            }
+            
+            .check,
+            .cross {
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .comparison-table {
+                font-size: 11px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 6px 8px;
+            }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--bs-light);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+        
+      
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 42px;
+            }
+            
+            .cta-section h2 {
+                font-size: 42px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero {
+                padding: 30px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta-section h2 {
+                font-size: 36px;
+            }
+            
+            .comparison-table {
+                font-size: 12px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
         }
     </style>
 
@@ -67,22 +1080,21 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+    <!-- Header + Hero Section (Themed Layout with New Content) -->
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <!-- <h1 class="display-6 text-primary m-0"></h1> -->
-                <img src="img/company_logo.png" alt="">
-                <!-- <h1 class="display-6 text-primary m-0"><img src="img/logo.png" alt="Logo">Aarav Tech Services LLP</h1> -->
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -91,10 +1103,8 @@
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
                                     <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
-                                    <a class="dropdown-item" href="paid-marketing-services.html">Paid Marketing</a>
                                 </div>
                             </div>
-                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
@@ -104,12 +1114,7 @@
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="logo-design-services.html">Logo Design</a>
-                                    <a class="dropdown-item" href="social-media-graphic-design.html">Social Media Graphic Design</a>
-                                    <a class="dropdown-item" href="marketing-design-services.html">Marketing Design</a>
-                                </div>
+                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
@@ -118,270 +1123,292 @@
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
-                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         </div>
                     </div>
-                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="blogs.html" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
                 </div>
-                <!-- <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
-                    In</a> -->
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
-                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
-            </div>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
         </nav>
 
-        <div class="hero-header overflow-hidden px-5">
-            <div class="rotate-img">
-                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                <div class="rotate-sty-2"></div>
-                <div id="rotate-3"></div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
+                <li class="breadcrumb-item"><a href="web-development.html" class="">Web Development</a></li>
+                <li class="breadcrumb-item"><a href="ui-ux-design-services.html" style="color: #a085b9;">UI/UX Design</a></li>
+            </ol>
+            <div class="hero-badge">
+                <i class="fas fa-pencil-ruler"></i> UI/UX Design Services
             </div>
-            <div class="row gy-5">
-                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
-                                Marketing</a></li>
-                    </ol>
-                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">
-                        Craft Stunning Digital Experiences with Our UI UX Design Services
-                    </h1>
-                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">
-                        Change the experience that users have with your brand by designing experiences that are thoughtful. Our UI UX design services revolves around the aesthetic and functionality to create user friendly and engaging and conversion oriented interfaces. Need a revamp of your website, mobile app, or platform? We develop a design that makes an impression.
-                    </p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
-                        Started</a>
-                </div>
-                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
-                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
-                </div>
+            <h1>Craft <span class="gradient-text">Stunning Digital Experiences</span> with Our UI/UX Design Services</h1>
+            <p>
+                Designing interactive creatives, user-friendly experiences that maximize interaction, simplify navigation, and build brand equity on the platforms.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></button>
             </div>
-        </div>
-    </div>
-    <div class="container-fluid service-detail-section">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
-                </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <p class="subheading">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4" style="color: #191133;">
-                        Creating Seamless Interactions with Expert UI/UX Design
-                    </h1>
-                    <p class="mb-4" style="font-size: 1.5rem;" >
-                       Good design is not only about appearance, but it is also about experience. Being a reputable ui ux design agency, we specialize in understanding user behaviour, intuitive mapping and designing of interfaces that facilitate satisfaction. We make sure that all the elements are aligned with usability and creativity, starting with wireframing, through prototyping, to the final design. 
-                    </p>
-                    <p class="mb-4" style="font-size: 1.5rem;">
-                       Our team will provide easy navigation, responsive layouts, and attractive interfaces that will establish trust and increase brand interaction. Our tailored strategy will ensure you record meaningful solutions that will provide real business growth, regardless of whether you are a start-up or an enterprise.
-                    </p>
-                </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="display-5" style="text-align: center;">Our UI/UX Design Services – “Designs that Delight”</h2>
-                    <p class="pricing-sub" style=" margin:0 auto 2rem; text-align: center; font-size: 1.5rem;  ">
-                        Our creative and functional UI/UX solutions bring satisfaction to the user, and enhance business performance. Every service will make your online presence interesting, effective and outcome-driven.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SearchEngineOptimization.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    User Research & Analysis
-                                </h4>
-                                <p>
-                                    Understand the needs, behaviours and pain points of customers by conducting detailed research and analysis in order to come up with solutions that actually appeal to the target audience.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SocialMediaMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Wireframing & Prototyping</h4>
-                                <p>
-                                    Build clear visual representations and interactive models which show functionality at the outset before full development and save time and align the design.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PayPerClick.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Mobile App UI/UX Design</h4>
-                                <p>
-                                    Deliver smooth, responsive, and easy mobile content between iOS and Android that optimizes the value and creates more engagement.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/ContentMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Website UI/UX Design</h4>
-                                <p>
-                                    Develop attractive fast and intuitive websites with responsive design, smooth navigation and interactive features that provide an ideal online experience.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PaidMarketingCampaigns.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Usability Testing & Optimization</h4>
-                                <p>
-                                    Test actual user behaviour to detect gaps, improve features, and perfect designs to perform optimally and to satisfy customers.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    Product Design & Redesign
-                                </h4>
-                                <p>
-                                    Modernize and enhance user-friendly designs of your digital products or update old interfaces to a renewed and better user experience.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 
-    <div class="container py-5">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <p class="subheading">PRICING PLANS</p>
-            <h2 class="display-5">Affordable UI/UX Design Packages for Your Business</h2>
-            <p class="pricing-sub" style="margin:0 auto 2rem; text-align: center; font-size: 1.5rem; ">
-                Our flexible UI UX design packages are tailored to startups, SMEs and enterprises. Our transparent pricing, scaled features, and custom solutions will make your digital experience is as ambitious as your business objectives.
+    <!-- Services Section -->
+    <section class="services">
+    <div class="container">
+        <div class="section-title">
+        <h2>Our <span class="gradient-text">UI/UX Design Services</span></h2>
+        <p>
+            Our creative and functional UI/UX solutions delight users and enhance business performance.
+        </p>
+        </div>
+
+        <div class="services-grid">
+        <!-- User Research & Analysis -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-users"></i>
+            </div>
+            <h3>User Research & Analysis</h3>
+            <p>
+            Understand the needs, behaviors, and pain points of your customers through in-depth research and analysis.
+            This helps create solutions that truly resonate with your target audience.
             </p>
         </div>
-        <div class="row g-4 justify-content-center mb-5">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="pricing-card text-center">
-                    <h3 class="mb-3 text-dark">Startup Spark</h3>
-                    <p class="text-muted">Perfect for small businesses starting their online journey.</p>
-                    <div class="price">
-                        $299<small>/mo</small>
-                    </div>
-                    <ul class="feature-list px-0">
-                        <li><i class="fas fa-check"></i> Basic SEO Setup (5 keywords)</li>
-                        <li><i class="fas fa-check"></i> 10 Social Media Posts/mo</li>
-                        <li><i class="fas fa-check"></i> Monthly Performance Report</li>
-                        <li><i class="fas fa-times" style="color: red;"></i> Dedicated Campaign Manager</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="pricing-card text-center">
-                    <h3 class="mb-3 text-dark">Growth Accelerator</h3>
-                    <p class="text-muted">Designed for businesses ready to scale their presence.</p>
-                    <div class="price">
-                        $799<small>/mo</small>
-                    </div>
-                    <ul class="feature-list px-0">
-                        <li><i class="fas fa-check"></i> Advanced SEO (20 keywords)</li>
-                        <li><i class="fas fa-check"></i> 25 Social Media Posts + Ad Management</li>
-                        <li><i class="fas fa-check"></i> Monthly Performance & Strategy Review</li>
-                        <li><i class="fas fa-check"></i> Dedicated Campaign Manager</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4 mt-3">Choose Plan</a>
-                </div>
+        <!-- Wireframing & Prototyping -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-drafting-compass"></i>
             </div>
+            <h3>Wireframing & Prototyping</h3>
+            <p>
+            Create clear visual representations and interactive prototypes to define the structure and flow of your
+            product before full-scale development—saving time and aligning the design process.
+            </p>
+        </div>
+
+        <!-- Mobile App UI/UX Design -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile App UI/UX Design</h3>
+            <p>
+            Deliver smooth, responsive, and intuitive app interfaces for both iOS and Android, optimized for
+            usability and engagement that elevate your brand experience.
+            </p>
+        </div>
+
+        <!-- Website UI/UX Design -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Website UI/UX Design</h3>
+            <p>
+            Develop attractive, fast, and intuitive websites with responsive layouts, smooth navigation, and
+            interactive features to provide an ideal online experience.
+            </p>
+        </div>
+
+        <!-- Usability Testing & Optimization -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-vial"></i>
+            </div>
+            <h3>Usability Testing & Optimization</h3>
+            <p>
+            Evaluate real user interactions to identify usability gaps, refine features, and optimize your
+            designs for performance and satisfaction.
+            </p>
+        </div>
+
+        <!-- Product Design & Redesign -->
+        <div class="service-card">
+            <div class="service-icon">
+            <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Product Design & Redesign</h3>
+            <p>
+            Modernize and elevate your digital products with improved aesthetics and usability, or redesign outdated
+            interfaces for a refreshed user experience.
+            </p>
         </div>
         </div>
     </div>
-    <div class="container-fluid cta-container" style="padding:6rem 0;">
-        <div class="container mx-auto my-0" style="padding: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 1rem;">
-            <h2 class="display-5 cta-title" style="text-align: center; text-transform: capitalize;">
-                Why Choose Us for Impactful UI/UX Design
-            </h2>
-            <h5 class="pricing-sub cta-text" style=" margin:0 auto; text-align: center; width: 100%; line-height: 135%; ">
-                We create compelling, effective, and innovative digital experiences to be the best ui ux company at AARAV TECH SERVICES. Our team represents a combination of several years of research, innovative design, as well as usability testing to help your brand achieve long-term success and measurable results.
-            </h5>
-            <a href="tel:" class=" rounded-pill py-3 px-4 cta-btn" style="font-size: 20px;">Contact Us Now</a>
-        </div>
-    </div>
-    <section class="py-5">
+    </section>
+
+
+        <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Frequently Asked Questions</h2>
-            <div class="accordion custom-accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a1">
-                            What is UI/UX design?
-                        </button>
-                    </h2>
-                    <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            UI UX are digital experiences, which are usable and can be realized through a mix of interface design (UI) and user experience (UX).
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a2">
-                            Why is UI/UX design important for my business?
-                        </button>
-                    </h2>
-                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The good design can increase usability, create trust, maximize conversions and ensure that the customers spend longer time on your site or app.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a3">
-                            How long does a UI/UX design project take?
-                        </button>
-                    </h2>
-                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The timeframe is based on project scope, though it can be several weeks in the case of small projects and several months in the case of larger platforms.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a4">
-                            Do you provide both web and mobile app design?
-                        </button>
-                    </h2>
-                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we are experts in coming up with functional and exciting designs on web and mobile application.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a5">
-                            How do you ensure the design meets user needs?
-                        </button>
-                    </h2>
-                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Our research, usability testing, and constant iteration are undertaken to ensure that designs are in line with the customer expectations and business goals.
-                        </div>
-                    </div>
+            <div class="cta-content">
+                <h2>Ready To Transform Your Digital Strategy?</h2>
+                <p>Let's discuss how our data-driven SEO solutions can drive measurable growth for your business.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Get a Quote <i class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>
     </section>
-        <footer>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+    <div class="container">
+        <div class="section-title">
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p>
+            Find answers to common questions about our UI/UX Design services and creative process.
+        </p>
+        </div>
+
+        <div class="accordion custom-accordion" id="faqAccordionUIUX">
+        <!-- FAQ 1 -->
+        <div class="accordion-item glow-effect">
+            <h2 class="accordion-header" id="headingOneUIUX">
+            <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOneUIUX"
+                aria-expanded="true"
+                aria-controls="collapseOneUIUX"
+            >
+                What is UI/UX design?
+            </button>
+            </h2>
+            <div
+            id="collapseOneUIUX"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOneUIUX"
+            data-bs-parent="#faqAccordionUIUX"
+            >
+            <div class="accordion-body faq-accordion-body">
+                <strong>UI/UX design</strong> focuses on creating visually appealing, functional, and intuitive digital
+                experiences. UI (User Interface) emphasizes layout and aesthetics, while UX (User Experience) ensures the
+                journey is seamless, efficient, and enjoyable for users.
+            </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item glow-effect">
+            <h2 class="accordion-header" id="headingTwoUIUX">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwoUIUX"
+                aria-expanded="false"
+                aria-controls="collapseTwoUIUX"
+            >
+                Why is UI/UX design important for my business?
+            </button>
+            </h2>
+            <div
+            id="collapseTwoUIUX"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwoUIUX"
+            data-bs-parent="#faqAccordionUIUX"
+            >
+            <div class="accordion-body faq-accordion-body">
+                Effective UI/UX design enhances <strong>usability, trust, and conversion rates</strong>. It helps retain
+                users, boosts engagement, and builds brand credibility — ensuring customers have a positive and lasting
+                impression of your digital presence.
+            </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item glow-effect">
+            <h2 class="accordion-header" id="headingThreeUIUX">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThreeUIUX"
+                aria-expanded="false"
+                aria-controls="collapseThreeUIUX"
+            >
+                How long does a UI/UX design project take?
+            </button>
+            </h2>
+            <div
+            id="collapseThreeUIUX"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThreeUIUX"
+            data-bs-parent="#faqAccordionUIUX"
+            >
+            <div class="accordion-body faq-accordion-body">
+                Project timelines vary depending on scope and complexity. Typically, a UI/UX design project can take from
+                <strong>2 to 10 weeks</strong> — covering research, wireframing, prototyping, design, and iteration.
+            </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item glow-effect">
+            <h2 class="accordion-header" id="headingFourUIUX">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFourUIUX"
+                aria-expanded="false"
+                aria-controls="collapseFourUIUX"
+            >
+                Do you design for both web and mobile applications?
+                <span class="support-badge"><i class="fas fa-laptop-mobile"></i> Multi-Platform</span>
+            </button>
+            </h2>
+            <div
+            id="collapseFourUIUX"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFourUIUX"
+            data-bs-parent="#faqAccordionUIUX"
+            >
+            <div class="accordion-body faq-accordion-body">
+                Yes! Our team designs for both <strong>web and mobile platforms</strong> to ensure a consistent, responsive,
+                and engaging user experience across all devices.
+            </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item glow-effect">
+            <h2 class="accordion-header" id="headingFiveUIUX">
+            <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFiveUIUX"
+                aria-expanded="false"
+                aria-controls="collapseFiveUIUX"
+            >
+                How do you ensure the design meets user needs?
+                <span class="support-badge"><i class="fas fa-user-check"></i> User Focused</span>
+            </button>
+            </h2>
+            <div
+            id="collapseFiveUIUX"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFiveUIUX"
+            data-bs-parent="#faqAccordionUIUX"
+            >
+            <div class="accordion-body faq-accordion-body">
+                We perform <strong>user research, usability testing, and iterative improvements</strong> throughout the
+                process. This ensures every design decision aligns with user expectations and your business goals.
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <footer>
         <div class="footer-shape">
         </div>
         

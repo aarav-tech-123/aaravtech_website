@@ -19,41 +19,1054 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
-        .pricing-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+            h1{
+                color:var(--bs-white);
+            }
+        }
+
+
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .breadcrumb-item{
+            font-size: .8rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            position: relative;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            font-size: 32px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .pricing-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: var(--gradient-pricing);
+            border-radius: 20px;
+            padding: 40px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            height: 100%;
+            align-items:center;
         }
-
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
         .pricing-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
         }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
+        
+        .pricing-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-header-card {
+            margin-bottom: 25px;
+            flex-shrink: 0;
+        }
+        
+        .pricing-title {
+            font-size: 22px;
             font-weight: 700;
-            color: #7872b4;
-            /* Primary color */
+            margin-bottom: 8px;
+            color: var(--bs-light);
+        }
+        
+        .pricing-subtitle {
+            color: rgba(246, 246, 250, 0.7);
+            font-size: 14px;
             margin-bottom: 15px;
         }
-
-        .pricing-card .feature-list li {
+        
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .price small {
+            font-size: 14px;
+            color: rgba(246, 246, 250, 0.7);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
             list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
             text-align: left;
-            margin-bottom: 10px;
+        }
+        
+        .pricing-features li i {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .pricing-button {
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+        
+        /* Comparison Section */
+        
+        .comparison {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to { background-position: 200% center; }
+        }
+        
+        .accordion.custom-accordion {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .accordion.custom-accordion .accordion-button {
+            background: var(--gradient-pricing);
+            color: var(--bs-light);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 20px 25px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: none !important;
+        }
+        
+        .accordion.custom-accordion .accordion-button:hover {
+            background: rgba(138, 43, 226, 0.1);
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed) {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--bs-light);
+            box-shadow: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s;
+            background-image: none !important;
+            width: auto;
+            height: auto;
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '-';
+            transform: none;
+        }
+        
+        .accordion.custom-accordion .accordion-body {
+            padding: 0;
+            background: rgba(11, 1, 28, 0.5);
         }
 
-        .pricing-card .feature-list i {
-            color: #57c2a1;
-            /* A nice highlight color */
-            margin-right: 8px;
+        .faq-accordion-body{
+            padding:1rem .5rem !important;
+        }
+        
+        /* Table Styling */
+        .comparison-table {
+            width: 100%;
+            margin-bottom: 0;
+            background: transparent;
+            color: var(--bs-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: rgba(30, 14, 69, 0.8);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table th:first-child {
+            text-align: left;
+            background: rgba(11, 1, 28, 0.8);
+            width: 25%;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            background: rgba(11, 1, 28, 0.3);
+        }
+        
+        .comparison-table .text-start {
+            text-align: left !important;
+        }
+        
+        .comparison-table .align-middle {
+            vertical-align: middle !important;
+        }
+        
+        .comparison-table .text-center {
+            text-align: center !important;
+        }
+        
+        /* Package Header Styling */
+        .comparison-table .bg-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .bg-warning {
+            background: linear-gradient(135deg, #ffd93d 0%, #ffcd3c 100%) !important;
+            color: #1a1a1a !important;
+        }
+        
+        .comparison-table .bg-dark {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
+            color: white !important;
+        }
+        
+        .comparison-table .table-light {
+            background: rgba(30, 14, 69, 0.9) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        .comparison-table .bg-white {
+            background: rgba(11, 1, 28, 0.8) !important;
+            color: var(--bs-light) !important;
+        }
+        
+        /* Check and Cross Styling */
+        .check {
+            color: #00ff88 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .cross {
+            color: #ff4444 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Small text in headers */
+        .comparison-table th small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* FAQ section*/
+       
+        .faq-section {
+            padding: 5rem 0;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #0c0c1f 0%, #161632 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .custom-accordion .accordion-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-item:hover {
+            border-color: rgba(106, 17, 203, 0.5);
+            box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
+        }
+        
+        .custom-accordion .accordion-button {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.25rem 1.5rem;
+            border: none;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed) {
+            background-color: rgba(106, 17, 203, 0.1);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+        
+        .custom-accordion .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(106, 17, 203, 0.5);
+        }
+        
+        .custom-accordion .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e2e8f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-accordion .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236a11cb'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .custom-accordion .accordion-body {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .custom-accordion .accordion-body strong {
+            color: var(--text-primary);
+        }
+        
+        .glow-effect {
+            position: relative;
+        }
+        
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .custom-accordion .accordion-button {
+                font-size: 1rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+        
+        .support-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .support-badge i {
+            margin-right: 5px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .accordion.custom-accordion .accordion-button {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .comparison-table th small {
+                font-size: 10px;
+            }
+            
+            .check,
+            .cross {
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .comparison-table {
+                font-size: 11px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 6px 8px;
+            }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--bs-light);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+        
+      
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 42px;
+            }
+            
+            .cta-section h2 {
+                font-size: 42px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero {
+                padding: 30px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta-section h2 {
+                font-size: 36px;
+            }
+            
+            .comparison-table {
+                font-size: 12px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
         }
     </style>
 
@@ -65,276 +1078,242 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <!-- <h1 class="display-6 text-primary m-0"></h1> -->
-                <img src="img/company_logo.png" alt="">
-                <!-- <h1 class="display-6 text-primary m-0"><img src="img/logo.png" alt="Logo">Aarav Tech Services LLP</h1> -->
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link" style="color:var(--bs-white) !important;">Home</a>
+                    <a href="about.html" class="nav-item nav-link" style="color:var(--bs-white) !important;">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important;">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
+                                <div class="submenu">
+                                    <a class="dropdown-item" href="seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
                                     <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
-                                    <a class="dropdown-item" href="paid-marketing-services.html">Paid Marketing</a>
                                 </div>
                             </div>
-                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
-                                <div class="submenu ">
+                                <div class="submenu">
                                     <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
                                     <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Graphic Designing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="logo-design-services.html">Logo Design</a>
-                                    <a class="dropdown-item" href="social-media-graphic-design.html">Social Media Graphic Design</a>
-                                    <a class="dropdown-item" href="marketing-design-services.html">Marketing Design</a>
-                                </div>
+                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
-                                <div class="submenu ">
+                                <div class="submenu">
                                     <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
-                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         </div>
                     </div>
-                    <a href="blogs.html" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="blogs.html" class="nav-item nav-link" style="color:var(--bs-white) !important;">Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important;">Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important;">Contact</a>
                 </div>
-                <!-- <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
-                    In</a> -->
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
-                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem;">Let's Talk</a>
             </div>
         </nav>
 
-        <div class="hero-header overflow-hidden px-5">
-            <div class="rotate-img">
-                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                <div class="rotate-sty-2"></div>
-                <div id="rotate-3"></div>
-            </div>
-            <div class="row gy-5">
-                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
-                                Marketing</a></li>
-                    </ol>
-                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">
-                        Deliver Seamless Communication with Professional Call Center Services
-                    </h1>
-                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">
-                        Increase customer satisfaction and business effectiveness through our professional call center services. Our team of skilled agents, advanced technology, and well-tested processes are used to manage inquiries, solve problems and establish long-term relationships. Whether it’s sales support, inbound support, and outbound campaigns, we make sure that every interaction adds value to your brand and provides measurable outcomes.
-                    </p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
-                        Started</a>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Services</a></li>
+                    <li class="breadcrumb-item"><a href="bpo-services.html">BPO</a></li>
+                    <li class="breadcrumb-item"><a href="call-centre-services.html" style="color: #a085b9;">Call Centre Services</a></li>
+                </ol>
+
+                <div class="hero-badge">
+                    <i class="fas fa-headset"></i> Professional Call Centre Services
                 </div>
-                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
-                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
+
+                <h1>Deliver <span class="gradient-text">Seamless Communication</span> with Expert Call Centre Solutions</h1>
+                <p>Providing 24/7 inbound and outbound customer solutions in terms of addressing customer needs so that satisfaction, retention, and brand image is strengthened.</p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">Get Started <i class="fas fa-phone-volume"></i></button>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container-fluid service-detail-section">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
-                </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <p class="subheading">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4" style="color: #191133;">
-                        Empowering Businesses with Reliable Customer Support Services
-                    </h1>
-                    <p class="mb-4" style="font-size: 1.5rem;" >
-                        Great businesses are based on superb communication. Our customer support services are designed to provide a fast turnaround time, professional handling of queries, and trusted assistance, through several channels. Our team employs best practices that can be used to streamline operations and minimize any response gaps to enhance customer loyalty. 
-                    </p>
-                    <p class="mb-4" style="font-size: 1.5rem;">
-                        Whether it is dealing with technical solutions or providing after sales support, we empower the brands to build memorable experiences. Startups and businesses can rely on us to provide high-quality, transparency, and scalability to guarantee customer satisfaction and growth overtime.
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="display-5" style="text-align: center;">Our Call Center Services – “Conversations that Build Trust”</h2>
-                    <p class="pricing-sub" style=" margin:0 auto 2rem; text-align: center; font-size: 1.5rem;  ">
-                        Our services include end-to-end call handling services that have enhanced customer response and business performance. All the services are targeted to promote the communication, optimize the efficiency, and raise brand loyalty.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SearchEngineOptimization.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    Inbound Call Handling
-                                </h4>
-                                <p>
-                                    Process incoming queries with professionalism, extend real-time service, resolve them quickly and offer a pleasant experience that fosters customer trust and satisfaction.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SocialMediaMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Outbound Sales Calls</h4>
-                                <p>
-                                    Make sales and conversions by calling out customers with personalised sales campaigns, pitching and following up to convert prospects into customers.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PayPerClick.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Technical Support Assistance</h4>
-                                <p>
-                                    Provide technical support to customers with high-quality, timely, and reliable assistance in troubleshooting, installation, and guidance.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/ContentMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Order Processing & Tracking</h4>
-                                <p>
-                                    Enhance the purchase process by assisting customers in placing orders, receiving confirmations, and tracking shipments for seamless post-sale service.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PaidMarketingCampaigns.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Appointment Scheduling</h4>
-                                <p>
-                                    Schedule appointments accurately and efficiently to improve customer access across various industries and service offerings.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">
-                                    24/7 Multichannel Support
-                                </h4>
-                                <p>
-                                    Provide round-the-clock support through multiple channels including phone, email, chat, and social media to ensure global accessibility and customer convenience.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 
-    <div class="container-fluid cta-container" style="padding:6rem 0;">
-        <div class="container mx-auto my-0" style="padding: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 1rem;">
-            <h2 class="display-5 cta-title" style="text-align: center; text-transform: capitalize;">
-                Why Choose Us as Your Call Center Staffing Agency
-            </h2>
-            <h5 class="pricing-sub cta-text" style=" margin:0 auto; text-align: center; width: 100%; line-height: 135%; ">
-                We are not just a service provider—we are your dedicated call center staffing agency. Our strength lies in offering highly trained professionals, scalable teams as well as customized solutions to unique business requirements. Through integration of both human expertise and the latest communication technology we will be able to be efficient, reliable, and able to ensure constant customer satisfaction. Collaboration with us will ensure that your operations are cost-efficient, results in quantifiable outcomes, and customers will have an experience that drives long-term loyalty.            
-            </h5>
-            <a href="tel:" class=" rounded-pill py-3 px-4 cta-btn" style="font-size: 20px;">Contact Us Now</a>
-        </div>
-    </div>
-    <section class="py-5">
+    <!-- Services Section -->
+    <section class="services">
         <div class="container">
-            <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Frequently Asked Questions</h2>
-            <div class="accordion custom-accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="q1">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a1">
+            <div class="section-title">
+                <h2>Our <span class="gradient-text">Call Center Services</span></h2>
+                <p>Our services include end-to-end call handling designed to enhance customer response and business performance.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Inbound Call Handling</h3>
+                    <p>Process incoming queries professionally, deliver real-time service, resolve issues quickly, and create positive customer experiences that foster trust and satisfaction.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Outbound Sales Calls</h3>
+                    <p>Generate leads and boost conversions through personalized outbound campaigns, effective pitching, and consistent follow-ups to turn prospects into loyal customers.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Technical Support Assistance</h3>
+                    <p>Deliver reliable and timely technical support to assist customers with troubleshooting, installation, and technical guidance, ensuring smooth user experiences.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Order Processing & Tracking</h3>
+                    <p>Assist customers in placing orders, confirming transactions, and tracking deliveries — ensuring seamless post-purchase support and satisfaction.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Coordinate and manage appointments efficiently to streamline customer interactions and improve accessibility across multiple industries and services.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Multichannel Support</h3>
+                    <p>Offer round-the-clock assistance through phone, email, chat, and social media — ensuring global availability and superior customer convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready To Transform Your Digital Strategy?</h2>
+                <p>Let's discuss how our data-driven SEO solutions can drive measurable growth for your business.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Request a Proposal <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Find answers to common questions about our Call Center services and processes.</p>
+            </div>
+            
+            <div class="accordion custom-accordion" id="faqAccordionCallCenter">
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingCC1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCC1" aria-expanded="true" aria-controls="collapseCC1">
                             What are call center services?
                         </button>
                     </h2>
-                    <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Call center services deal with both inbound and outbound communication with the customers. These involve activities such as sales, order processing, technical support and customer assistance.
+                    <div id="collapseCC1" class="accordion-collapse collapse show" aria-labelledby="headingCC1" data-bs-parent="#faqAccordionCallCenter">
+                        <div class="accordion-body faq-accordion-body">
+                            Call center services deal with both inbound and outbound communication with customers. These involve activities such as <strong>sales, order processing, technical support, and customer assistance.</strong>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="q2">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a2">
-                            Do you provide 24/7 support?
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingCC2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCC2" aria-expanded="false" aria-controls="collapseCC2">
+                                Do you provide 24/7 support?
+                            <span class="support-badge"><i class="fas fa-clock"></i> 24/7</span>
                         </button>
                     </h2>
-                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we provide round-the-clock service by phone, chat, email, and other channels so that your customers could always receive timely assistance.
+                    <div id="collapseCC2" class="accordion-collapse collapse" aria-labelledby="headingCC2" data-bs-parent="#faqAccordionCallCenter">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes, we provide <strong>round-the-clock service</strong> by phone, chat, email, and other channels so that your customers always receive timely assistance.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="q3">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a3">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingCC3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCC3" aria-expanded="false" aria-controls="collapseCC3">
                             How do you ensure quality in customer interactions?
                         </button>
                     </h2>
-                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We offer vast training, apply the modern tools of call monitoring, and adhere to the strict performance rules in order to achieve high-quality communication.
+                    <div id="collapseCC3" class="accordion-collapse collapse" aria-labelledby="headingCC3" data-bs-parent="#faqAccordionCallCenter">
+                        <div class="accordion-body faq-accordion-body">
+                            We provide extensive <strong>training, use modern call monitoring tools,</strong> and adhere to strict performance standards to ensure top-quality communication.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="q4">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a4">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingCC4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCC4" aria-expanded="false" aria-controls="collapseCC4">
                             Can your call center scale with my business needs?
                         </button>
                     </h2>
-                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Absolutely. Working as a call center staff agency, we provide scalable teams to accommodate seasonal demand, business expansion or special campaigns.
+                    <div id="collapseCC4" class="accordion-collapse collapse" aria-labelledby="headingCC4" data-bs-parent="#faqAccordionCallCenter">
+                        <div class="accordion-body faq-accordion-body">
+                            Absolutely. As a professional call center staffing agency, we offer <strong>scalable teams</strong> to accommodate seasonal demand, business expansion, or special campaigns.
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="q5">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#a5">
+
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingCC5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCC5" aria-expanded="false" aria-controls="collapseCC5">
                             What industries do you serve?
+                            <span class="support-badge"><i class="fas fa-briefcase"></i> Multi-Sector</span>
                         </button>
                     </h2>
-                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We serve e-commerce, healthcare, finance, travel, technology and more. We tailor our solution to suit the special needs of each industry.
+                    <div id="collapseCC5" class="accordion-collapse collapse" aria-labelledby="headingCC5" data-bs-parent="#faqAccordionCallCenter">
+                        <div class="accordion-body faq-accordion-body">
+                            We serve a wide range of industries including <strong>e-commerce, healthcare, finance, travel, and technology.</strong> Our solutions are customized to meet the unique needs of each sector.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <footer>
+
+
+    <footer>
         <div class="footer-shape">
         </div>
         

@@ -8,7 +8,7 @@ include('config/db.php');
 
 $post_id = $_GET['id'] ?? null;
 if (!$post_id) {
-    header('Location: posts.php');
+    header('Location: post.php');
     exit;
 }
 

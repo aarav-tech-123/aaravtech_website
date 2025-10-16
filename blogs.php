@@ -5,9 +5,9 @@ ini_set('display_errors', 1);
 
 // ✅ Connect to local XAMPP MySQL database
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "aaravtech_db"; // ⚠️ Change this to your actual DB name
+$username = "u868210921_OWGYP";
+$password = "Aaravtech@1234";
+$dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

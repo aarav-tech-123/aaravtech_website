@@ -16,14 +16,17 @@ if ($conn->connect_error) {
 }
 
 // Fetch published blog posts
-$sql = "SELECT ID, post_title, post_content, post_date, post_author
+$sql = "SELECT ID, post_title, post_content, post_date, post_author,post_name
         FROM wp_posts
         WHERE post_type='post' AND post_status='publish'
         ORDER BY post_date DESC";
 $result = $conn->query($sql);
+
 if ($result === false) {
     die("❌ SQL Error: " . $conn->error);
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -796,7 +799,7 @@ if ($result === false) {
                                 </div>
                                 <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
                                 <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                <a href="blog-page.php?id=<?php echo $row['ID']; ?>" class="read-more">Read More</a>
+                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
                             </div>
                         </div>
                     <?php endwhile; ?>

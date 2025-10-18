@@ -21,9 +21,706 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .dropdown-item.active {
-            color: #fff;
-            background-color: #4f4c9d !important;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            color: var(--bs-light);
+        }
+
+        .breadcrumb-item {
+            font-size: .8rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 0 40px;
+            color: rgba(246, 246, 250, 0.8);
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--bs-light);
+            border: 2px solid var(--accent);
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(138, 43, 226, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Service Detail Section */
+        .service-detail-section {
+            padding: 120px 0;
+            position: relative;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .service-content {
+            padding-left: 30px;
+        }
+        
+        .subheading {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .service-content h1 {
+            font-size: 42px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .service-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .service-card img {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 25px;
+            display: block;
+        }
+        
+        .service-card h4 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        /* Pricing Section */
+        .seo-packages-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--gradient-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .pricing-table th {
+            background: rgba(30, 14, 69, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 16px;
+            vertical-align: middle;
+            color: var(--bs-light);
+        }
+        
+        .pricing-table th:first-child {
+            text-align: left;
+            background: rgba(11, 1, 28, 0.9);
+            width: 25%;
+        }
+        
+        .pricing-table td {
+            padding: 15px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        
+        .pricing-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            background: rgba(11, 1, 28, 0.3);
+        }
+        
+        .package-header {
+            background: var(--gradient-primary) !important;
+            color: white !important;
+        }
+        
+        .package-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .checkmark {
+            color: #00ff88 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .crossmark {
+            color: #ff4444 !important;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h1 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--bs-light);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-section h1 .highlight {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+        
+  
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title h2 {
+                font-size: 42px;
+            }
+            
+            .cta-section h1 {
+                font-size: 42px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .pricing-table {
+                font-size: 12px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero {
+                padding: 150px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-outline {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .service-content {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta-section h1 {
+                font-size: 36px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .pricing-table {
+                font-size: 10px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .cta-section h1 {
+                font-size: 32px;
+            }
+            
+            .pricing-table {
+                font-size: 9px;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 6px 8px;
+            }
+        }
+        .scrolled {
+            background-color: #0e0d0da1 !important;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3px);
+            /* optional for nice effect */
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            left: 0;
+            width: 100%;
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            font-size: 32px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
     </style>
     <!-- Google Tag Manager -->
@@ -99,682 +796,110 @@
                 </div>
                 <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
         </nav>
-        <div class="hero-header overflow-hidden px-5">
-            <div class="rotate-img">
-                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                <div class="rotate-sty-2"></div>
-                <div id="rotate-3"></div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i> Digital Marketing
+                </div>
+                <h1>Digital Marketing <span class="gradient-text">Solution</span></h1>
+                <p>At Aarav Tech, we don’t just offer digital marketing services—we become your strategic growth partner. Our campaigns are expected to not only look impressive but also spread your story, attract the proper audience, and create a long-lasting brand name. A combination of data-driven strategy and creativity allows us to make each click, post, and ad worth action, regardless of your size of a startup, small business, or an established enterprise.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Get Started</button>
+                </div>
             </div>
-            <div class="row gy-5">
-                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Digital
-                                Marketing</a></li>
-                    </ol>
-                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">Digital Marketing Solution
-                    </h1>
-                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">At Aarav Tech, we don’t just offer
-                        digital marketing services—we become your strategic growth partner. Our campaigns are expected
-                        to not only look impressive but also spread your story, attract the proper audience, and create
-                        a long-lasting brand name. A combination of data-driven strategy and creativity allows us to
-                        make each click, post, and ad worth action, regardless of your size of a startup, small
-                        business, or an established enterprise.</p>
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
-                        Started</a>
-                </div>
-                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
-                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
-                </div>
+        </section>
+    </div>
+
+
+<!-- Service Detail Section -->
+<div class="service-detail-section">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
+            </div>
+            <div class="col-lg-6 service-content">
+                <p class="subheading">OUR SERVICE</p>
+                <h1>Ignite Your Online Presence with Strategic Digital Marketing</h1>
+                <p>In the ever-evolving digital landscape, a strong online presence is no longer a luxury—it's a necessity. Our digital marketing services are designed to get your brand in front of the right people, at the right time, and in the right way. We use a data-driven approach to craft campaigns that not only increase your visibility but also drive measurable results, from brand awareness to lead generation and customer conversions.</p>
+                <p>At Aarav Tech Services LLP, we understand that every business is unique. We don't believe in one-size-fits-all solutions. Our team of digital marketing experts works closely with you to understand your business goals, target audience, and competitive landscape. We then build a customized strategy that leverages the most effective channels to achieve your specific objectives.</p>
             </div>
         </div>
-    </div>
-    <div class="container-fluid service-detail-section">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="img/dm_about.png" class="service-image" alt="Digital Marketing">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Our Digital Marketing <span class="gradient-text">Services Include</span></h2>
                 </div>
-                <div class="col-lg-6 wow fadeInUp service-content" data-wow-delay="0.3s">
-                    <p class="subheading">OUR SERVICE</h6>
-                    <h1 class="display-5 mb-4" style="color: #191133;">Ignite Your Online Presence with Strategic
-                        Digital Marketing</h1>
-                    <p class="mb-4">In the ever-evolving digital landscape, a strong online presence is no longer a
-                        luxury—it's a necessity. Our digital marketing services are designed to get your brand in front
-                        of the right people, at the right time, and in the right way. We use a data-driven approach to
-                        craft campaigns that not only increase your visibility but also drive measurable results, from
-                        brand awareness to lead generation and customer conversions.</p>
-                    <p class="mb-4">At Aarav Tech Services LLP, we understand that every business is unique. We don't
-                        believe in one-size-fits-all solutions. Our team of digital marketing experts works closely with
-                        you to understand your business goals, target audience, and competitive landscape. We then build
-                        a customized strategy that leverages the most effective channels to achieve your specific
-                        objectives.</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="text-center mb-4" style="color: #191133; font-weight: bold;">Our Digital Marketing
-                        Services Include</h2>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SearchEngineOptimization.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Search Engine Optimization (SEO)</h4>
-                                <p>Improve your website's visibility on search engines like Google. We help you rank
-                                    higher for relevant keywords, driving organic traffic and attracting potential
-                                    customers actively looking for your products or services.</p>
-                            </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/SocialMediaMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Social Media Marketing (SMM)</h4>
-                                <p>Build a strong brand community and engage with your audience on platforms like
-                                    Facebook, Instagram, Twitter, and LinkedIn. We create compelling content, manage
-                                    your social presence, and run targeted ad campaigns to boost your reach and
-                                    conversions.</p>
-                            </div>
+                        <h3>Search Engine Optimization (SEO)</h3>
+                        <p>Improve your website's visibility on search engines like Google. We help you rank higher for relevant keywords, driving organic traffic and attracting potential customers actively looking for your products or services.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-share-alt"></i>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PayPerClick.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Pay-Per-Click (PPC) Advertising</h4>
-                                <p>Get immediate results with strategically managed PPC campaigns. We create and
-                                    optimize ads on platforms like Google Ads and social media, ensuring your budget is
-                                    spent efficiently to generate high-quality leads and sales.</p>
-                            </div>
+                        <h3>Social Media Marketing (SMM)</h3>
+                        <p>Build a strong brand community and engage with your audience on platforms like Facebook, Instagram, Twitter, and LinkedIn. We create compelling content, manage your social presence, and run targeted ad campaigns to boost your reach and conversions.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ad"></i>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/ContentMarketing.png" alt="" style="width: 100%;">
-                                <h4 class="text-primary mb-3">Content Marketing</h4>
-                                <p>We develop a content strategy that establishes you as an industry leader. Through
-                                    blog posts, articles, infographics, and videos, we attract and educate your
-                                    audience, building trust and guiding them through the sales funnel.</p>
-                            </div>
+                        <h3>Pay-Per-Click (PPC) Advertising</h3>
+                        <p>Get immediate results with strategically managed PPC campaigns. We create and optimize ads on platforms like Google Ads and social media, ensuring your budget is spent efficiently to generate high-quality leads and sales.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/PaidMarketingCampaigns.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Paid Marketing Campaigns</h4>
-                                <p>Boost your brand visibility through our targeted paid marketing campaigns. Our
-                                    strategies are calculated to gain the most reach and conversion, which means that
-                                    the correct audience will reach your your business in the most appropriate time,
-                                    providing them with measurable result and sustainable growth.</p>
-                            </div>
+                        <h3>Content Marketing</h3>
+                        <p>We develop a content strategy that establishes you as an industry leader. Through blog posts, articles, infographics, and videos, we attract and educate your audience, building trust and guiding them through the sales funnel.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="h-100 p-4 rounded-4" style="background-color: #f8f9fa;">
-                                <img src="img/Analytics & Reporting.png" alt="" style="width: 100%; padding: 20px;">
-                                <h4 class="text-primary mb-3">Analytics & Reporting</h4>
-                                <p>We believe in transparency and continuous improvement. We provide detailed reports on
-                                    key metrics, giving you clear insights into campaign performance and allowing us to
-                                    refine our strategies for maximum ROI.</p>
-                            </div>
+                        <h3>Paid Marketing Campaigns</h3>
+                        <p>Boost your brand visibility through our targeted paid marketing campaigns. Our strategies are calculated to gain the most reach and conversion, which means that the correct audience will reach your your business in the most appropriate time, providing them with measurable result and sustainable growth.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
+                        <h3>Analytics & Reporting</h3>
+                        <p>We believe in transparency and continuous improvement. We provide detailed reports on key metrics, giving you clear insights into campaign performance and allowing us to refine our strategies for maximum ROI.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid seo-packages-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="mb-1 text-primary">PRICING PLANS</h6>
-                <h1 class="display-5 mb-5">Find the Right SEO Plan for Your Business</h1>
-            </div>
-
-            <div class="table-responsive wow fadeInUp" data-wow-delay="0.3s">
-                <div style="width:100%; height:100%;">
-                    <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th class="sticky-col sticky-head">Activity / Service</th>
-                            <th class="package-header sticky-head">
-                                <div class="package-price">$549</div>
-                                <div>SEO Essential</div>
-                            </th>
-                            <th class="package-header sticky-head">
-                                <div class="package-price">$949</div>
-                                <div>SEO Advanced</div>
-                            </th>
-                            <th class="package-header sticky-head">
-                                <div class="package-price">$1249</div>
-                                <div>SEO Professional</div>
-                            </th>
-                            <th class="package-header sticky-head">
-                                <div class="package-price">$1949</div>
-                                <div>SEO Enterprise</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th colspan="5">First Hand SEO Analysis</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Pre-Optimization Analysis</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Competitor Analysis</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Keyword Research & Analysis</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Baseline Ranking Check</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Duplicate Content Check</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Google Penalty Check</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Backlinks Analysis (If required)</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="5">On-Page Optimization Activities</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Onsite Recommendations & Implementation</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Website Canonical Check</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Title Tag Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">META Tags Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Heading Tags Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Image Alt Tags Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Content Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">SEO Friendly URL Setup</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Site Navigation Analysis</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">404 Page Implementation</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Mobile Friendliness Check & Optimization</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Broken Links Check</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">301 Redirect Check & Fix</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Website Speed Check</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Google Indexed Pages Check</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Robots.txt Creation</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Google XML Sitemap</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">HTML Sitemap Setup</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Google Webmaster Tools Setup</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Google Analytics Setup</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Structured Data Setup</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">On-Site Blog Section Creation</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">On-Site Blog Posting</td>
-                            <td>2 On-Site Blog Posting</td>
-                            <td>3 On-Site Blog Posting</td>
-                            <td>4 On-Site Blog Posting</td>
-                            <td>5 On-Site Blog Posting</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Linking to Social Profiles</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="5">Off-Page Optimization Activities</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Search Engine Submission - Manual</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Article Writing</td>
-                            <td>1 Article Writing</td>
-                            <td>2 Article Writing</td>
-                            <td>3 Article Writing</td>
-                            <td>4 Article Writing</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Article Submission</td>
-                            <td>1 Article Submission</td>
-                            <td>2 Article Submission</td>
-                            <td>3 Article Submission</td>
-                            <td>4 Article Submission</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Article Marketing</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Classified Submissions</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Business Listing</td>
-                            <td>5 Business Listing</td>
-                            <td>10 Business Listing</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Blog Creation (One-Time)</td>
-                            <td>1 Blog Creation (One-Time)</td>
-                            <td>2 Blog Creation (One-Time)</td>
-                            <td>3 Blog Creation (One-Time)</td>
-                            <td>4 Blog Creation (One-Time)</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Blog Writing</td>
-                            <td>1 Blog Writing</td>
-                            <td>2 Blog Writing</td>
-                            <td>3 Blog Writing</td>
-                            <td>4 Blog Writing</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Blog Posting</td>
-                            <td>1 Blog Posting</td>
-                            <td>2 Blog Posting</td>
-                            <td>3 Blog Posting</td>
-                            <td>4 Blog Posting</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Blog Marketing</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Third Party Blog Pinging</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">PDF Posting</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Image Sharing</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Reddit Posting</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>2 Reddit Posting</td>
-                            <td>3 Reddit Posting</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Web 2.0 Submission</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>1 Web 2.0 Submission</td>
-                            <td>2 Web 2.0 Submission</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">PPT Submissions</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>1 PPT Submissions</td>
-                            <td>2 PPT Submissions</td>
-                            <td>3 PPT Submissions</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Social Bookmarking</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Profile Creation</td>
-                            <td>5</td>
-                            <td>15</td>
-                            <td>20</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Product Listing</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>2 Product Listing (eCommerce)</td>
-                            <td>3 Product Listing (eCommerce)</td>
-                            <td>4 Product Listing (eCommerce)</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Video Marketing</td>
-                            <td>3 Video Marketing</td>
-                            <td>4 Video Marketing</td>
-                            <td>6 Video Marketing</td>
-                            <td>8 Video Marketing</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">QSB Marketing</td>
-                            <td>2 QSB Marketing</td>
-                            <td>4 QSB Marketing</td>
-                            <td>6 QSB Marketing</td>
-                            <td>8 QSB Marketing</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Quora Q&A</td>
-                            <td>1 Quora Q&A</td>
-                            <td>2 Quora Q&A</td>
-                            <td>3 Quora Q&A</td>
-                            <td>4 Quora Q&A</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Infographic Submission</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>1 Infographic Submission</td>
-                            <td>2 Infographic Submission</td>
-                            <td>3 Infographic Submission</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Guest Post</td>
-                            <td>On Free Sites (If Possible)</td>
-                            <td>On Free Sites (If Possible)</td>
-                            <td>On Free Sites (If Possible)</td>
-                            <td>On Free Sites (If Possible)</td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="5">Social Media Optimization (SMO) Activities</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Facebook</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>Facebook - 8 Posts/month</td>
-                            <td>Facebook - 16 Posts/month</td>
-                            <td>Facebook - 20 Posts/month</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Instagram</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>Instagram - 8 Posts/month</td>
-                            <td>Instagram - 16 Posts/month</td>
-                            <td>Instagram - 20 Posts/month</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Twitter</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>Twitter - 8 Posts/month</td>
-                            <td>Twitter - 16 Posts/month</td>
-                            <td>Twitter - 20 Posts/month</td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">LinkedIn</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td>LinkedIn - 8 Posts/month</td>
-                            <td>LinkedIn - 16 Posts/month</td>
-                            <td>LinkedIn - 20 Posts/month</td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="5">Reports</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Weekly Report</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Monthly Website Analytics Report</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Monthly Keywords Ranking Report</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Monthly Off Page Submission Report</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Bi-Monthly Website Progress Report</td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-
-                        <tr>
-                            <th colspan="5">Customer Support</th>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Email</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Phone</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Chat</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="sticky-col">Monthly Google/Zoom Meeting</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="cta-content">
+                <h1>Ready to take your business to the next level?<br>Let's discuss how digital marketing can <span class="highlight">transform your online presence.</span></h1>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Request a Quote</button>
+                    <button class="btn-outline">Let's Talk</button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <section class="cta-section outer-section" style="background-image: url('img/sl_070722_51460_26.jpg');">
-        <div class="cta-content">
-            <h1 class="" style="color: #191133;">
-                Ready to take your business to the next level?
-                <br>Let's discuss how digital marketing can <span class="highlight" style="color: #4f4c9d;">transform
-                    your online presence.</span>
-            </h1>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-dark">Request a Quote</a>
-                <a href="tel:" class="btn btn-red">Let's Talk</a>
             </div>
         </div>
     </section>
 
-        <footer>
+    <!-- Footer -->
+    <footer>
         <div class="footer-shape">
         </div>
         
@@ -782,19 +907,6 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <!-- SVG Logo -->
-                        <!-- <svg width="50" height="50" viewBox="0 0 50 50">
-                            <defs>
-                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4dabf7" />
-                                    <stop offset="100%" stop-color="#1a2a6c" />
-                                </linearGradient>
-                            </defs>
-                            <rect x="5" y="5" width="40" height="40" rx="8" fill="url(#logoGradient)" />
-                            <path d="M15,15 L35,15 L35,35 L15,35 Z" fill="none" stroke="white" stroke-width="2" />
-                            <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
-                            <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
-                        </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
@@ -865,9 +977,6 @@
             </div>
         </div>
     </footer>
-
-    <a href="#" class="btn-back-to-top btn-red btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -888,7 +997,6 @@
             }
         });
     </script>
-    <script src="./index.js"></script>
 </body>
 
 </html>

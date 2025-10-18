@@ -32,19 +32,11 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 }
 
-$blog_id = intval($_GET['id']);
- 
-// --------------------
 
-// Fetch blog post
-
-// --------------------
-
-$sql = "SELECT * FROM wp_posts WHERE id = ?";
-
+$slug = $_GET['slug'];
+$sql = "SELECT * FROM wp_posts WHERE post_name = ?";
 $stmt = $conn->prepare($sql);
-
-$stmt->bind_param("i", $blog_id);
+$stmt->bind_param("s", $slug);;
 
 $stmt->execute();
 
@@ -77,7 +69,7 @@ $conn->close();
  
     <!-- CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+<!-- <link href="css/style.css" rel="stylesheet"> -->
 <link href="lib/animate/animate.min.css" rel="stylesheet">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">

@@ -26,6 +26,17 @@ if ($result === false) {
     die("❌ SQL Error: " . $conn->error);
 }
 
+// Create an array to store data
+$data = [];
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+}
+
+// Convert to JSON
+$jsonData = json_encode($data);
 
 ?>
 
@@ -921,6 +932,8 @@ if ($result === false) {
                 navbar.classList.remove('scrolled');
             }
         });
+        const resultData = <?php echo $jsonData; ?>;
+        console.log("Query Result:", resultData);
     </script>
 </body>
 

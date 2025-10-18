@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 
 if (!isset($_GET['slug'])) {
 
-    die("Invalid blog ID");
+    die("Invalid blog slug");
 
 }
 

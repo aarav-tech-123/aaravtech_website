@@ -26,17 +26,17 @@ if ($result === false) {
     die("❌ SQL Error: " . $conn->error);
 }
 
-// Create an array to store data
-$data = [];
+// // Create an array to store data
+// $data = [];
 
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
-}
+// if ($result && $result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $data[] = $row;
+//     }
+// }
 
-// Convert to JSON
-$jsonData = json_encode($data);
+// // Convert to JSON
+// $jsonData = json_encode($data);
 
 ?>
 
@@ -411,172 +411,7 @@ $jsonData = json_encode($data);
             color: rgba(246, 246, 250, 0.8);
         }
 
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #0B011C 0%, #1E0E45 100%);
-            padding: 80px 0 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: var(--bs-light);
-            font-weight: 600;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .footer-column p {
-            color: rgba(246, 246, 250, 0.7);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bs-light);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--gradient-primary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: rgba(246, 246, 250, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-            transform: translateX(5px);
-        }
-        
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            color: rgba(246, 246, 250, 0.7);
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--accent);
-            margin-top: 3px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            margin-top: 15px;
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px 0 0 30px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--bs-light);
-            outline: none;
-        }
-        
-        .newsletter-form input::placeholder {
-            color: rgba(246, 246, 250, 0.5);
-        }
-        
-        .newsletter-form button {
-            padding: 12px 20px;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 0 30px 30px 0;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .newsletter-form button:hover {
-            background: var(--accent);
-        }
-        
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-bottom p {
-            color: rgba(246, 246, 250, 0.5);
-            font-size: 14px;
-        }
-        
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .footer-bottom-links a {
-            color: rgba(246, 246, 250, 0.5);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        
-        .footer-bottom-links a:hover {
-            color: var(--accent);
-        }
-
+      
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
@@ -591,12 +426,7 @@ $jsonData = json_encode($data);
                 font-size: 42px;
             }
         }
-        
-        @media (max-width: 900px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
+
         
         @media (max-width: 768px) {
             .hero {
@@ -622,16 +452,7 @@ $jsonData = json_encode($data);
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
+
         }
         
         @media (max-width: 576px) {
@@ -810,7 +631,7 @@ $jsonData = json_encode($data);
                                 </div>
                                 <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
                                 <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
+                                <a href="http://localhost/aaravtech_website/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -838,7 +659,7 @@ $jsonData = json_encode($data);
 
     <!-- ✅ Footer -->
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
@@ -932,8 +753,6 @@ $jsonData = json_encode($data);
                 navbar.classList.remove('scrolled');
             }
         });
-        const resultData = <?php echo $jsonData; ?>;
-        console.log("Query Result:", resultData);
     </script>
 </body>
 

@@ -21,59 +21,521 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .contact-section {
-            padding-top: 100px;
-            padding-bottom: 50px;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            color: var(--bs-light);
         }
 
-        .contact-info-card,
-        .contact-form-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .breadcrumb-item {
+            font-size: .8rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-light);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-light);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 0 40px;
+            color: rgba(246, 246, 250, 0.8);
+            font-weight: 400;
+            text-align:center;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 120px 0;
+            position: relative;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h1 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .section-title h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+        
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .subheading {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Contact Cards */
+        .contact-form-card,
+        .contact-info-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
             height: 100%;
         }
-
-        .contact-info-card .icon-circle {
-            background-color: #7872b4;
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        
+        .contact-form-card:hover,
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: transparent;
+        }
+        
+        .contact-form-card::before,
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+        
+        .contact-form-card:hover::before,
+        .contact-info-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        /* Form Styling */
+        .form-control {
+            background: rgba(11, 1, 28, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--bs-light);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            background: rgba(11, 1, 28, 0.8);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+            color: var(--bs-light);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(246, 246, 250, 0.5);
+        }
+        
+        .form-floating label {
+            color: rgba(246, 246, 250, 0.7);
+        }
+        
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: var(--accent);
+        }
+        
+        /* Contact Info Cards */
+        .contact-info-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-right: 20px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            font-size: 28px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            flex-shrink: 0;
         }
-
+        
         .contact-info-card h4 {
-            color: #191133;
-            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--bs-light);
+            font-weight: 600;
         }
-
-        .contact-info-card a {
-            color: #555;
+        
+        .contact-info-card a,
+        .contact-info-card p {
+            color: rgba(246, 246, 250, 0.8);
             text-decoration: none;
+            transition: color 0.3s;
+            margin: 0;
         }
-
-        .contact-form-card .form-control {
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 15px;
+        
+        .contact-info-card a:hover {
+            color: var(--accent);
         }
-
-        .contact-form-card .btn-primary {
-            width: 100%;
-            padding: 15px;
-            font-weight: bold;
-        }
-
+        
+        /* Map Container */
         .map-container {
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            margin-top: 25px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title h1 {
+                font-size: 42px;
+            }
+            
+
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero {
+                padding: 150px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .section-title h1 {
+                font-size: 36px;
+            }
+            
+            .contact-info-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .icon-circle {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h1 {
+                font-size: 32px;
+            }
         }
     </style>
     <!-- Google Tag Manager -->
@@ -99,22 +561,20 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <div class="container-fluid header position-relative p-0">
+       <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <!-- <h1 class="display-6 text-primary m-0"></h1> -->
-                <img src="img/company_logo.png" alt="">
-                <!-- <h1 class="display-6 text-primary m-0"><img src="img/logo.png" alt="Logo">Aarav Tech Services LLP</h1> -->
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -125,7 +585,6 @@
                                     <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
-                            <!-- <a href="seo.html" class="dropdown-item">Search Engine Optimization</a> -->
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
@@ -135,7 +594,7 @@
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="logo-design-services.html" class="dropdown-item ">Logo Design</a>
+                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
@@ -144,60 +603,41 @@
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
-                            <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                         </div>
                     </div>
-                    <a href="blogs.php" class="nav-item nav-link">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link">Career</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
                 </div>
-                <!-- <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
-                    In</a> -->
-                <a href="tel:" class="btn btn-primary rounded-pill text-white py-2 px-4">Let's Talk</a>
-                <a href="packages.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">Packages</a>
-            </div>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
         </nav>
-        <div class="hero-header overflow-hidden px-5">
-            <div class="rotate-img">
-                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                <div class="rotate-sty-2"></div>
-                <div id="rotate-3"></div>
-            </div>
-            <div class="row gy-5">
-                <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                        <li class="breadcrumb-item"><a href="digital_marketing.html" style="color: #4f4c9d;">Contact Us
-                            </a></li>
-                    </ol>
-                    <h1 class="wow fadeInUp mt-3 mb-0" data-wow-delay="0.3s"
-                        style="color: #191133; font-size: 3rem; font-weight: bold;">Contact Us
-                    </h1>
-                    <!-- <div class="mt-0" style="width: 90px; height: 2px; background-color: #293b5f;"></div> -->
-                    <p class="fs-4 mb-4 wow fadeInUp mt-4" data-wow-delay="0.5s">We are here to serve you with any of
-                        your queries and service requirements. Our team is available to assist you whether you need
-                        assistance or have questions or wish to discuss a project. Contact us using the form below,
-                        email, or even by phone during working hours. Our efforts are to answer as fast as possible and
-                        make sure that your concerns are taken seriously.</p>
-                    <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp"
-                        data-wow-delay="0.7s">Get
-                        Started</a>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i> Contact Us
                 </div>
-                <div class="col-lg-5 wow fadeInRight p-0" data-wow-delay="0.2s">
-                    <img src="img/header_img.jpg" alt="" style="width: 100%;">
+                <h1>Get In <span class="gradient-text">Touch With Us</span></h1>
+                <p>We are here to serve you with any of your queries and service requirements. Our team is available to assist you whether you need assistance or have questions or wish to discuss a project. Contact us using the form below, email, or even by phone during working hours. Our efforts are to answer as fast as possible and make sure that your concerns are taken seriously.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Get Started</button>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-    <div class="container-fluid contact-section">
+  
+
+
+
+    <!-- Contact Section -->
+    <div class="contact-section">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <p class="subheading">GET IN TOUCH</h6>
-                <h1 class="display-5 mb-5">Have a question? We'd love to hear from you.</h1>
+            <div class="section-title">
+                <p class="subheading">GET IN TOUCH</p>
+                <h1>Have a question? We'd love to hear from you.</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-6">
                     <div class="contact-form-card">
                         <form action="send_mail.php" method="POST">
                             <div class="row g-3">
@@ -238,45 +678,44 @@
                                 </div>
                                 <div class="g-recaptcha" data-sitekey="6Le2LtkrAAAAAAN7z1yULcq0sZF0IYAx8tiWK8HP"></div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send
-                                        Message</button>
+                                    <button class="btn-primary" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-6">
                     <div class="row g-4 h-100">
                         <div class="col-12">
-                            <div class="contact-info-card d-flex align-items-center">
-                                <div class="icon-circle me-3">
+                            <div class="contact-info-card">
+                                <div class="icon-circle">
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div>
                                     <h4>Phone</h4>
-                                    <a href="tel:+917318083502" class="d-block text-dark">+91 7318083502</a>
+                                    <a href="tel:+917318083502">+91 7318083502</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="contact-info-card d-flex align-items-center">
-                                <div class="icon-circle me-3">
+                            <div class="contact-info-card">
+                                <div class="icon-circle">
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <div>
                                     <h4>Email</h4>
-                                    <a href="mailto:support@aaravtech.net " class="d-block text-dark">support@aaravtech.net </a>
+                                    <a href="mailto:support@aaravtech.net">support@aaravtech.net</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="contact-info-card d-flex align-items-center">
-                                <div class="icon-circle me-3">
+                            <div class="contact-info-card">
+                                <div class="icon-circle">
                                     <i class="fa fa-location-dot"></i>
                                 </div>
                                 <div>
                                     <h4>Address</h4>
-                                    <p class="mb-0 text-dark">Kanpur Nagar, Uttar Pradesh, India</p>
+                                    <p>Kanpur Nagar, Uttar Pradesh, India</p>
                                 </div>
                             </div>
                         </div>
@@ -293,27 +732,14 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-shape">
-        </div>
-        
-        <div class="container-fluid footer-container" style="padding: 0 2rem;">
+        <div class="footer-shape"></div>
+        <div class="container-fluid footer-container">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <!-- SVG Logo -->
-                        <!-- <svg width="50" height="50" viewBox="0 0 50 50">
-                            <defs>
-                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4dabf7" />
-                                    <stop offset="100%" stop-color="#1a2a6c" />
-                                </linearGradient>
-                            </defs>
-                            <rect x="5" y="5" width="40" height="40" rx="8" fill="url(#logoGradient)" />
-                            <path d="M15,15 L35,15 L35,35 L15,35 Z" fill="none" stroke="white" stroke-width="2" />
-                            <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
-                            <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
-                        </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
@@ -385,7 +811,6 @@
         </div>
     </footer>
 
-    <a href="#" class="btn-back-to-top btn-red btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -407,7 +832,6 @@
             }
         });
     </script>
-    <script src="./index.js"></script>
 </body>
 
 </html>

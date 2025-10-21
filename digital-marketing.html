@@ -56,8 +56,8 @@
             padding: 0 20px;
         }
         
-        h1 {
-            color: var(--bs-light);
+        h1, h3 {
+            color: var(--bs-light) !important;
         }
 
         .breadcrumb-item {
@@ -194,6 +194,9 @@
             z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
+            p {
+                text-align:center;
+            }
         }
         
         .hero-badge {
@@ -326,6 +329,9 @@
         
         .service-content {
             padding-left: 30px;
+        }
+        .service-content{
+            padding:0 20px;
         }
         
         .subheading {
@@ -538,6 +544,10 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .cta-section h1 {
@@ -889,7 +899,7 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h1>Ready to take your business to the next level?<br>Let's discuss how digital marketing can <span class="highlight">transform your online presence.</span></h1>
+                <h1>Let's discuss how digital marketing can <span class="highlight">transform your online presence.</span></h1>
                 <div class="hero-buttons">
                     <button class="btn-primary">Request a Quote</button>
                     <button class="btn-outline">Let's Talk</button>

@@ -36,7 +36,7 @@ if ($result->num_rows === 0) {
  
 $blog = $result->fetch_assoc();
 $stmt->close();
-$conn->close();
+
 
 ?>
  
@@ -53,6 +53,7 @@ $conn->close();
  
     <!-- CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
 <link href="lib/animate/animate.min.css" rel="stylesheet">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
@@ -72,6 +73,7 @@ $conn->close();
         --accent: #8A2BE2;
         --accent-light: #9D4EDD;
         --accent-lighter: #E9D8FD;
+        --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
         --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
         --gradient-light: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
         --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F7FAFC 100%);
@@ -224,11 +226,21 @@ $conn->close();
         padding: 180px 0 80px;
         position: relative;
         overflow: hidden;
-        background: var(--gradient-light);
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+            var(--gradient-bg);
         text-align: center;
         border-bottom: var(--border-light);
     }
-    
+
+    .blog-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+
     .blog-hero-badge {
         display: inline-flex;
         align-items: center;
@@ -249,7 +261,7 @@ $conn->close();
         font-weight: 800;
         line-height: 1.2;
         letter-spacing: -1px;
-        color: var(--bs-dark);
+        color: var(--bs-light);
     }
     
     .blog-hero h1 .gradient-text {
@@ -260,6 +272,27 @@ $conn->close();
         background-size: 200% auto;
         animation: textShine 3s linear infinite;
     }
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+        color: var(--accent);
+        padding: 10px 22px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        border: 1px solid rgba(138, 43, 226, 0.3);
+        backdrop-filter: blur(10px);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+    }
+        
     
     @keyframes textShine {
         to {
@@ -284,7 +317,6 @@ $conn->close();
     
     /* Blog Content Section */
     .blog-content-section {
-        padding: 80px 0;
         position: relative;
         background: var(--bs-bg-light);
     }
@@ -298,9 +330,9 @@ $conn->close();
         transition: transform 0.3s ease;
     }
     
-    .blog-content-wrapper:hover {
+    /* .blog-content-wrapper:hover {
         transform: translateY(-5px);
-    }
+    } */
     
     .blog-featured-image {
         width: 100%;
@@ -580,96 +612,123 @@ $conn->close();
  
 <body>
     <!-- Header -->
-    <div class="container-fluid header position-relative p-0">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-            <a href="/" class="navbar-brand p-0">
-                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
-            </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
-                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
-                        <div class="dropdown-menu m-0">
-                            <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
-                                    <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
+        <?php
+        $author_id = $blog['post_author'];
+        $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+        $author = ($author_result && $author_result->num_rows > 0)
+            ? $author_result->fetch_assoc()['display_name']
+            : "Unknown";
+
+        $image_result = $conn->query("
+            SELECT meta_value FROM wp_postmeta
+            WHERE post_id = {$blog['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+        ");
+        $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+            ? $image_result->fetch_assoc()['meta_value']
+            : 0;
+
+        $img_url = '';
+        if ($thumbnail_id) {
+            $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+            $img_url = ($guid_result && $guid_result->num_rows > 0)
+                ? $guid_result->fetch_assoc()['guid']
+                : '';
+        }
+        ?>
+        <div class="container-fluid header position-relative p-0">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+                <a href="/" class="navbar-brand p-0">
+                    <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                </a>
+                <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                        <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                            <div class="dropdown-menu m-0">
+                                <div class="submenu-wrapper">
+                                    <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
+                                    <div class="submenu ">
+                                        <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
+                                        <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
+                                        <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
+                                        <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
-                                    <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                <div class="submenu-wrapper">
+                                    <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                    <div class="submenu ">
+                                        <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
+                                        <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
+                                        <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="submenu-wrapper">
-                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
-                            </div>
-                            <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                <div class="submenu-wrapper">
+                                    <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
+                                </div>
+                                <div class="submenu-wrapper">
+                                    <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                    <div class="submenu ">
+                                        <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
+                                        <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                        <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                        <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
                     </div>
-                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
-                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
-                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                    <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+            </nav>
+            <!-- Blog Hero Section -->
+
+            <section class="blog-hero">
+                <div class="container">
+                    <div class="hero-badge">
+                        <i class="fas fa-newspaper"></i> Blos Post
+                    </div>
+                    <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>
+                        <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
+                    </div>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
-        </nav>
-        <!-- Blog Hero Section -->
-        <section class="blog-hero">
+            </section>
+        </div>
+
+        <!-- Blog Content Section -->
+        <section class="blog-content-section">
             <div class="container">
-                <div class="blog-hero-badge">
-                    <i class="fas fa-newspaper"></i> Blog Post
-                </div>
-                <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
-                <div class="blog-meta">
-                    <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>
-                    <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($blog['post_author']); ?></span>
+                <div class="blog-content-wrapper">
+                    <?php if ($img_url): ?>
+                        <img src="<?php echo $img_url; ?>" class="blog-image"
+                            alt="<?php echo htmlspecialchars($row['post_title']); ?>">
+                    <?php else: ?>
+                        <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
+                        </div>
+                    <?php endif; ?>
+                    
+                    <div class="blog-content">
+                        <?php echo $blog['post_content']; ?>
+                    </div>
+                    
+                    <!-- Blog Tags -->
+                    <!-- <div class="blog-tags mt-5 pt-4 border-top">
+                        <strong class="text-dark me-3">Tags:</strong>
+                        <span class="badge bg-light text-dark border me-2">Digital Marketing</span>
+                        <span class="badge bg-light text-dark border me-2">SEO</span>
+                        <span class="badge bg-light text-dark border me-2">Web Development</span>
+                    </div> -->
                 </div>
             </div>
         </section>
-    </div>
 
- 
-    <!-- Blog Content Section -->
-    <section class="blog-content-section">
-        <div class="container">
-            <div class="blog-content-wrapper">
-                <?php if (!empty($blog['image'])): ?>
-                    <img src="uploads/<?php echo htmlspecialchars($blog['image']); ?>" 
-                         alt="<?php echo htmlspecialchars($blog['post_title']); ?>" 
-                         class="blog-featured-image">
-                <?php endif; ?>
-                
-                <div class="blog-content">
-                    <?php echo $blog['post_content']; ?>
-                </div>
-                
-                <!-- Blog Tags -->
-                <div class="blog-tags mt-5 pt-4 border-top">
-                    <strong class="text-dark me-3">Tags:</strong>
-                    <span class="badge bg-light text-dark border me-2">Digital Marketing</span>
-                    <span class="badge bg-light text-dark border me-2">SEO</span>
-                    <span class="badge bg-light text-dark border me-2">Web Development</span>
-                </div>
-            </div>
-        </div>
-    </section>
  
     <!-- Call To Action -->
     <section class="cta-section">
@@ -808,3 +867,6 @@ $conn->close();
     </script>
 </body>
 </html>
+<?php
+    $conn->close();
+?>

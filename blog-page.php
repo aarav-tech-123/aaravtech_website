@@ -64,16 +64,22 @@ $conn->close();
 
 <style>
     :root {
-        --bs-bg-dark: #0B011C;
-        --bs-light: #F6F6FA;
-        --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+        --bs-bg-light: #FFFFFF;
+        --bs-dark: #1A1A2E;
+        --bs-text-primary: #2D3748;
+        --bs-text-secondary: #4A5568;
+        --bs-text-muted: #718096;
         --accent: #8A2BE2;
         --accent-light: #9D4EDD;
+        --accent-lighter: #E9D8FD;
         --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
-        --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
-        --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+        --gradient-light: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+        --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F7FAFC 100%);
         --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
-        --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --border-light: 1px solid #E2E8F0;
     }
     
     * {
@@ -84,8 +90,8 @@ $conn->close();
     }
     
     body {
-        background: var(--gradient-bg);
-        color: var(--bs-light);
+        background: var(--bs-bg-light);
+        color: var(--bs-text-primary);
         line-height: 1.6;
         overflow-x: hidden;
         min-height: 100vh;
@@ -100,15 +106,16 @@ $conn->close();
     
     /* Header Styles */
     header {
-        background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+        border-bottom: var(--border-light);
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
         transition: all 0.4s ease;
+        box-shadow: var(--shadow-sm);
     }
     
     .header-container {
@@ -123,7 +130,7 @@ $conn->close();
         align-items: center;
         font-weight: 800;
         font-size: 28px;
-        color: var(--bs-light);
+        color: var(--bs-dark);
         text-decoration: none;
         letter-spacing: -0.5px;
     }
@@ -146,7 +153,7 @@ $conn->close();
     
     nav ul li a {
         text-decoration: none;
-        color: var(--bs-light);
+        color: var(--bs-text-primary);
         font-weight: 500;
         transition: all 0.3s;
         position: relative;
@@ -184,7 +191,7 @@ $conn->close();
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        box-shadow: var(--shadow-md);
         display: flex;
         align-items: center;
         gap: 8px;
@@ -208,8 +215,8 @@ $conn->close();
     }
     
     .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
     }
     
     /* Blog Hero Section */
@@ -217,25 +224,23 @@ $conn->close();
         padding: 180px 0 80px;
         position: relative;
         overflow: hidden;
-        background: 
-            radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
-            var(--gradient-bg);
+        background: var(--gradient-light);
         text-align: center;
+        border-bottom: var(--border-light);
     }
     
     .blog-hero-badge {
         display: inline-flex;
         align-items: center;
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+        background: var(--accent-lighter);
         color: var(--accent);
         padding: 10px 22px;
         border-radius: 30px;
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 24px;
-        border: 1px solid rgba(138, 43, 226, 0.3);
-        backdrop-filter: blur(10px);
+        border: 1px solid rgba(138, 43, 226, 0.2);
+        box-shadow: var(--shadow-sm);
     }
     
     .blog-hero h1 {
@@ -244,6 +249,7 @@ $conn->close();
         font-weight: 800;
         line-height: 1.2;
         letter-spacing: -1px;
+        color: var(--bs-dark);
     }
     
     .blog-hero h1 .gradient-text {
@@ -266,7 +272,7 @@ $conn->close();
         justify-content: center;
         align-items: center;
         gap: 20px;
-        color: rgba(246, 246, 250, 0.7);
+        color: var(--bs-text-muted);
         font-size: 16px;
         margin-bottom: 40px;
     }
@@ -280,10 +286,7 @@ $conn->close();
     .blog-content-section {
         padding: 80px 0;
         position: relative;
-        background: 
-            radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
-            var(--gradient-bg);
+        background: var(--bs-bg-light);
     }
     
     .blog-content-wrapper {
@@ -292,41 +295,59 @@ $conn->close();
         background: var(--gradient-card);
         border-radius: 20px;
         padding: 50px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+    }
+    
+    .blog-content-wrapper:hover {
+        transform: translateY(-5px);
     }
     
     .blog-featured-image {
         width: 100%;
         border-radius: 15px;
         margin-bottom: 40px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--shadow-md);
     }
     
     .blog-content {
         font-size: 18px;
         line-height: 1.8;
-        color: rgba(246, 246, 250, 0.9);
+        color: var(--bs-text-primary);
     }
     
     .blog-content h1,
     .blog-content h2,
     .blog-content h3,
     .blog-content h4 {
-        color: var(--bs-light);
+        color: var(--bs-dark);
         margin: 30px 0 20px;
         font-weight: 600;
     }
     
+    .blog-content h1 {
+        font-size: 32px;
+        border-bottom: 2px solid var(--accent-lighter);
+        padding-bottom: 10px;
+    }
+    
+    .blog-content h2 {
+        font-size: 28px;
+    }
+    
+    .blog-content h3 {
+        font-size: 24px;
+    }
+    
     .blog-content p {
         margin-bottom: 20px;
+        color: var(--bs-text-secondary);
     }
     
     .blog-content a {
         color: var(--accent);
         text-decoration: none;
         transition: all 0.3s;
+        font-weight: 500;
     }
     
     .blog-content a:hover {
@@ -338,6 +359,7 @@ $conn->close();
     .blog-content ol {
         margin: 20px 0;
         padding-left: 30px;
+        color: var(--bs-text-secondary);
     }
     
     .blog-content li {
@@ -346,10 +368,31 @@ $conn->close();
     
     .blog-content blockquote {
         border-left: 4px solid var(--accent);
-        padding-left: 20px;
+        padding: 20px 20px 20px 30px;
         margin: 30px 0;
         font-style: italic;
-        color: rgba(246, 246, 250, 0.8);
+        color: var(--bs-text-secondary);
+        background: var(--accent-lighter);
+        border-radius: 0 10px 10px 0;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .blog-content code {
+        background: var(--accent-lighter);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        color: var(--accent);
+    }
+    
+    .blog-content pre {
+        background: var(--bs-dark);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin: 20px 0;
+        box-shadow: var(--shadow-md);
     }
     
     /* CTA Section */
@@ -358,10 +401,8 @@ $conn->close();
         text-align: center;
         position: relative;
         overflow: hidden;
-        background: 
-            radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
-            linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        background: var(--gradient-light);
+        border-top: var(--border-light);
     }
     
     .cta-content {
@@ -374,7 +415,7 @@ $conn->close();
     .cta-section h2 {
         font-size: 36px;
         margin-bottom: 20px;
-        color: var(--bs-light);
+        color: var(--bs-dark);
         font-weight: 700;
         line-height: 1.2;
     }
@@ -383,7 +424,7 @@ $conn->close();
         font-size: 18px;
         max-width: 600px;
         margin: 0 auto 30px;
-        color: rgba(246, 246, 250, 0.8);
+        color: var(--bs-text-secondary);
     }
     
     .btn-primary {
@@ -395,7 +436,7 @@ $conn->close();
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        box-shadow: var(--shadow-md);
         display: inline-flex;
         align-items: center;
         gap: 10px;
@@ -421,48 +462,36 @@ $conn->close();
     }
     
     .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
         color: white;
         text-decoration: none;
     }
     
-    /* Footer Styles */
-    footer {
-        position: relative;
-        background: linear-gradient(180deg, #05000D 0%, #0B011C 100%);
-        color: var(--bs-light);
-        padding: 60px 0 30px;
-        border-top: 1px solid rgba(138, 43, 226, 0.2);
-        text-align: center;
+    
+    
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--gradient-primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s;
+        z-index: 1000;
     }
     
-    .footer-shape {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: 
-            radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%);
-        z-index: 0;
-    }
-    
-    .footer-container {
-        position: relative;
-        z-index: 1;
-    }
-    
-    .footer-bottom {
-        padding-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .footer-bottom p {
-        color: rgba(246, 246, 250, 0.5);
-        font-size: 14px;
-        margin: 0;
+    .back-to-top:hover {
+        transform: translateY(-3px);
+        color: white;
     }
     
     /* Responsive Design */
@@ -512,6 +541,13 @@ $conn->close();
         .cta-section h2 {
             font-size: 28px;
         }
+        
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+        }
     }
     
     @media (max-width: 576px) {
@@ -522,43 +558,93 @@ $conn->close();
         .cta-section h2 {
             font-size: 24px;
         }
+        
+        .blog-content {
+            font-size: 16px;
+        }
+        
+        .blog-content h1 {
+            font-size: 28px;
+        }
+        
+        .blog-content h2 {
+            font-size: 24px;
+        }
+        
+        .blog-content h3 {
+            font-size: 20px;
+        }
     }
 </style>
 </head>
  
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="/" class="logo">
-                <span>AaravTech</span>
+    <div class="container-fluid header position-relative p-0">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+            <a href="/" class="navbar-brand p-0">
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
             </a>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blogs.php" class="active">Blogs</a></li>
-                    <li><a href="career.php">Career</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="cta-button">Let's Talk <i class="fas fa-comments"></i></button>
-        </div>
-    </header>
- 
-    <!-- Blog Hero Section -->
-    <section class="blog-hero">
-        <div class="container">
-            <div class="blog-hero-badge">
-                <i class="fas fa-newspaper"></i> Blog Post
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                        <div class="dropdown-menu m-0">
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
+                                    <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
+                                    <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
+                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                </div>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+        </nav>
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="blog-hero-badge">
+                    <i class="fas fa-newspaper"></i> Blog Post
+                </div>
+                <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
+                <div class="blog-meta">
+                    <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>
+                    <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($blog['post_author']); ?></span>
+                </div>
             </div>
-            <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
-            <div class="blog-meta">
-                <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>
-                <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($blog['post_author']); ?></span>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
  
     <!-- Blog Content Section -->
     <section class="blog-content-section">
@@ -573,6 +659,14 @@ $conn->close();
                 <div class="blog-content">
                     <?php echo $blog['post_content']; ?>
                 </div>
+                
+                <!-- Blog Tags -->
+                <div class="blog-tags mt-5 pt-4 border-top">
+                    <strong class="text-dark me-3">Tags:</strong>
+                    <span class="badge bg-light text-dark border me-2">Digital Marketing</span>
+                    <span class="badge bg-light text-dark border me-2">SEO</span>
+                    <span class="badge bg-light text-dark border me-2">Web Development</span>
+                </div>
             </div>
         </div>
     </section>
@@ -582,13 +676,96 @@ $conn->close();
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to boost your business growth?</h2>
-                <p>Contact us today to get your digital strategy started!</p>
-                <a href="contact.html" class="btn-primary">Get Started</a>
+                <p>Contact us today to get your digital strategy started and take your business to the next level with our expert services.</p>
+                <a href="contact.html" class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
  
+    <!-- Footer -->
+    <footer>
+        <div class="footer-shape">
+        </div>
+        
+        <div class="container-fluid footer-container" style="padding: 0 2rem;">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-text">AaravTechServices</div>
+                    </div>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kanpur Nagar, Uttar Pradesh, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7318083502</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>support@aaravtech.net</span>
+                        </li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
+                    <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
  
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -603,13 +780,30 @@ $conn->close();
     
     <script>
         window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
+            const backToTop = document.querySelector('.back-to-top');
+            
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(11, 1, 28, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
+                backToTop.style.display = 'flex';
             } else {
-                header.style.background = 'linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%)';
+                backToTop.style.display = 'none';
             }
+        });
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for back to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>

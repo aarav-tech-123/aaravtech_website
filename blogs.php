@@ -631,7 +631,7 @@ if ($result === false) {
                                 </div>
                                 <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
                                 <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                <a href="http://localhost/aaravtech_website/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
+                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
                             </div>
                         </div>
                     <?php endwhile; ?>

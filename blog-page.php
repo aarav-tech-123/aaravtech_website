@@ -705,11 +705,12 @@ $stmt->close();
         <!-- Blog Content Section -->
         <section class="blog-content-section">
             <div class="container">
-                <div class="blog-content-wrapper">
-                    <?php if ($img_url): ?>
+                                    <?php if ($img_url): ?>
                         <img src="<?php echo $img_url; ?>" class="blog-image"
                         alt="<?php echo htmlspecialchars($row['post_title']); ?>">
                     <?php else: ?>
+                <div class="blog-content-wrapper">
+
                         <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
                             <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
                         </div>

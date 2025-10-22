@@ -101,7 +101,7 @@ $stmt->close();
     
     .container {
         width: 100%;
-        max-width: 1200px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 20px 0 20px;
     }
@@ -239,6 +239,7 @@ $stmt->close();
         height: 100%;
         object-fit: cover;
         border-radius: 20px 20px 0 0;
+        margin-bottom:40px;
     }
 
     .blog-hero-badge {

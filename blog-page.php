@@ -637,8 +637,8 @@ $stmt->close();
         ?>
         <div class="container-fluid header position-relative p-0">
             <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-                <a href="/" class="navbar-brand p-0">
-                    <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                <a href="https://aaravtech.net/" class="navbar-brand p-0">
+                    <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
                 </a>
                 <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>

@@ -52,8 +52,8 @@ $stmt->close();
 <link rel="canonical" href="https://aaravtech.net/blog-page.php?id=<?php echo $blog_id; ?>" />
  
     <!-- CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css">
+<link href="https://aaravtech.net/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://aaravtech.net/css/style.css">
 <link href="lib/animate/animate.min.css" rel="stylesheet">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">

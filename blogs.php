@@ -59,8 +59,8 @@ if ($result === false) {
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="https://aaravtech.net/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://aaravtech.net/css/style.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <style>
         :root {
             --bs-bg-dark: #0B011C;
@@ -503,7 +503,7 @@ if ($result === false) {
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">

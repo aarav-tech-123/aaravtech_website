@@ -223,7 +223,7 @@ $stmt->close();
     
     /* Blog Hero Section */
     .blog-hero {
-        padding: 180px 0 80px;
+        padding: 150px 0 80px;
         position: relative;
         overflow: hidden;
         background: 
@@ -257,7 +257,7 @@ $stmt->close();
     }
     
     .blog-hero h1 {
-        font-size: 48px;
+        font-size: 35px;
         margin-bottom: 24px;
         font-weight: 800;
         line-height: 1.2;
@@ -690,9 +690,6 @@ $stmt->close();
 
             <section class="blog-hero">
                 <div class="container">
-                    <div class="hero-badge">
-                        <i class="fas fa-newspaper"></i> Blos Post
-                    </div>
                     <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
                     <div class="blog-meta">
                         <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>

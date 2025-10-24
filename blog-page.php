@@ -4,7 +4,7 @@
 // Database connection
 // --------------------
 // ✅ Connect to local XAMPP MySQL database
-$servername = "srv1017.hstgr.io";
+$servername = "localhost";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ";  // your DB name

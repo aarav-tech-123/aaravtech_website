@@ -4,7 +4,7 @@
 // Database connection
 // --------------------
 // ✅ Connect to local XAMPP MySQL database
-$servername = "localhost";
+$servername = "185.224.138.7";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ";  // your DB name
@@ -116,6 +116,10 @@ $stmt_meta->close();
         line-height: 1.6;
         overflow-x: hidden;
         min-height: 100vh;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     
     .container {
@@ -782,7 +786,7 @@ $stmt_meta->close();
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="https://aaravtech.net/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="https://aaravtech.net/index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="https://aaravtech.net/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="https://aaravtech.net/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="https://aaravtech.net/career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
@@ -883,6 +887,18 @@ $stmt_meta->close();
             });
         });
     </script>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable text selection
+        document.addEventListener('selectstart', event => event.preventDefault());
+
+        // Disable copy and cut
+        document.addEventListener('copy', event => event.preventDefault());
+        document.addEventListener('cut', event => event.preventDefault());
+    </script>
+
 </body>
 </html>
 <?php

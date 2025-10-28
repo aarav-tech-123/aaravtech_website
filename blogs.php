@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // ✅ Connect to local XAMPP MySQL database
-$servername = "localhost";
+$servername = "185.224.138.7";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name
@@ -349,6 +349,7 @@ if ($result === false) {
             color: var(--bs-light);
             font-weight: 600;
             line-height: 1.4;
+            padding:0;
         }
         
         .blog-excerpt {
@@ -677,7 +678,7 @@ if ($result === false) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>

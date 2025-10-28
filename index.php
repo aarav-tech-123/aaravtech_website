@@ -1,3 +1,46 @@
+<?php
+// ✅ Enable debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// ✅ Connect to local XAMPP MySQL database
+$servername = "185.224.138.7";
+$username = "u868210921_OWGYP";
+$password = "pQTZ0sfkdM";
+$dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("❌ Connection failed: " . $conn->connect_error);
+}
+
+// Fetch published blog posts
+$sql = "SELECT ID, post_title, post_content, post_date, post_author,post_name
+        FROM wp_posts
+        WHERE post_type='post' AND post_status='publish'
+        ORDER BY post_date DESC";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("❌ SQL Error: " . $conn->error);
+}
+
+// // Create an array to store data
+// $data = [];
+
+// if ($result && $result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $data[] = $row;
+//     }
+// }
+
+// // Convert to JSON
+// $jsonData = json_encode($data);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -345,57 +388,57 @@
       </button>
 
       <div class="blog-slider">
-        <!-- Blog 1 -->
-        <div class="blog-card">
-          <h3 class="blog-title">Designing for Digital Impact</h3>
-          <div class="blog-image">
-            <img src="img/blog1.jpg" alt="Blog 1" />
-            <div class="overlay"></div>
-          </div>
-          <div class="blog-content">
-            <p>Explore how design and strategy merge to create experiences that leave a lasting impression.</p>
-            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
+        <?php if ($result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <?php
+                    $author_id = $row['post_author'];
+                    $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+                    $author = ($author_result && $author_result->num_rows > 0)
+                        ? $author_result->fetch_assoc()['display_name']
+                        : "Unknown";
 
-        <!-- Blog 2 -->
-        <div class="blog-card">
-          <h3 class="blog-title">The Future of Digital Marketing</h3>
-          <div class="blog-image">
-            <img src="img/blog2.jpg" alt="Blog 2" />
-            <div class="overlay"></div>
-          </div>
-          <div class="blog-content">
-            <p>Discover upcoming trends shaping the digital marketing landscape for 2025 and beyond.</p>
-            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
+                    $image_result = $conn->query("
+                        SELECT meta_value FROM wp_postmeta
+                        WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                    ");
+                    $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+                        ? $image_result->fetch_assoc()['meta_value']
+                        : 0;
 
-        <!-- Blog 3 -->
-        <div class="blog-card">
-          <h3 class="blog-title">Innovation in Tech Branding</h3>
-          <div class="blog-image">
-            <img src="img/blog3.jpg" alt="Blog 3" />
-            <div class="overlay"></div>
-          </div>
-          <div class="blog-content">
-            <p>Learn how innovative brands leverage technology to redefine engagement and authenticity.</p>
-            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
+                    $img_url = '';
+                    if ($thumbnail_id) {
+                        $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+                        $img_url = ($guid_result && $guid_result->num_rows > 0)
+                            ? $guid_result->fetch_assoc()['guid']
+                            : '';
+                    }
+                ?>
+                <div class="blog-card">
+                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                    <?php if ($img_url): ?>
+                        <div class="blog-image">
+                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                            <div class="overlay"></div>
+                        </div>
+                    <?php else: ?>
+                        <div class="blog-image">
+                            <img src="img/about_us.png" alt="Blog 1" />
+                            <div class="overlay"></div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="blog-content">
+                    <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>                        
+                    <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <div class="col-12 text-center">
+                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
+            </div>
+        <?php endif; ?>
 
-        <!-- Blog 4 -->
-        <div class="blog-card">
-          <h3 class="blog-title">Crafting Seamless UX Journeys</h3>
-          <div class="blog-image">
-            <img src="img/blog4.jpg" alt="Blog 4" />
-            <div class="overlay"></div>
-          </div>
-          <div class="blog-content">
-            <p>Building experiences that users love while keeping business goals in focus.</p>
-            <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
+
       </div>
 
       <button class="slider-btn right">
@@ -452,7 +495,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.php#testimonials">Testimonials</a></li>
                     <li><a href="career.php">Careers</a></li>
                 </ul>
             </div>
@@ -524,7 +567,7 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>

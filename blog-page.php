@@ -37,6 +37,23 @@ if ($result->num_rows === 0) {
 $blog = $result->fetch_assoc();
 $stmt->close();
 
+$sql_meta = "
+    SELECT meta_key, meta_value
+    FROM wp_postmeta
+    WHERE post_id = ?
+";
+
+$stmt_meta = $conn->prepare($sql_meta);
+$stmt_meta->bind_param("i", $blog['ID']);
+$stmt_meta->execute();
+$result_meta = $stmt_meta->get_result();
+
+$post_meta = [];
+while ($row = $result_meta->fetch_assoc()) {
+    $post_meta[$row['meta_key']] = $row['meta_value'];
+}
+
+$stmt_meta->close();
 
 ?>
  
@@ -47,9 +64,11 @@ $stmt->close();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title><?php echo htmlspecialchars($blog['post_title']); ?> | AaravTech Blog</title>
-<meta name="description" content="<?php echo substr(strip_tags($blog['post_content']), 0, 150); ?>">
-<link rel="canonical" href="https://aaravtech.net/blog-page.php?id=<?php echo $blog_id; ?>" />
+<meta name="title" content="<?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?>">
+<meta name="description" content="<?php echo htmlspecialchars($post_meta['rank_math_description'] ?? 'Default meta description here.'); ?>">
+<meta name="keywords" content="<?php echo htmlspecialchars($post_meta['rank_math_focus_keyword'] ?? ''); ?>">
+<link rel="canonical" href="https://aaravtech.net/blogs/<?php echo $slug;?>" />
+<title><?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?></title>
  
     <!-- CSS -->
 <link href="https://aaravtech.net/css/bootstrap.min.css" rel="stylesheet">

@@ -616,25 +616,26 @@ if ($result === false) {
                                 : '';
                         }
                         ?>
-                        <div class="blog-card">
-                            <?php if ($img_url): ?>
-                                <img src="<?php echo $img_url; ?>" class="blog-image"
-                                    alt="<?php echo htmlspecialchars($row['post_title']); ?>">
-                            <?php else: ?>
-                                <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
+                        <a  class="blog-card" href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>">
+                                <?php if ($img_url): ?>
+                                    <img src="<?php echo $img_url; ?>" class="blog-image"
+                                        alt="<?php echo htmlspecialchars($row['post_title']); ?>">
+                                <?php else: ?>
+                                    <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($row['post_date'])); ?></span>
+                                        <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
+                                    </div>
+                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
+                                    <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                    <button href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</button>
                                 </div>
-                            <?php endif; ?>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($row['post_date'])); ?></span>
-                                    <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
-                                </div>
-                                <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
-                                <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</a>
-                            </div>
-                        </div>
+                        </a>
+
                     <?php endwhile; ?>
                 <?php else: ?>
                     <div class="col-12 text-center">

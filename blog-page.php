@@ -725,7 +725,7 @@ $stmt_meta->close();
         <!-- Blog Content Section -->
         <section class="blog-content-section">
             <div class="container">
-                                    <?php if ($img_url): ?>
+                    <?php if ($img_url): ?>
                         <img src="<?php echo $img_url; ?>" class="blog-image"
                         alt="<?php echo htmlspecialchars($row['post_title']); ?>">
                     <?php else: ?>

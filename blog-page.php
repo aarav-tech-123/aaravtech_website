@@ -756,9 +756,12 @@ $stmt_meta->close();
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to boost your business growth?</h2>
-                <p>Contact us today to get your digital strategy started and take your business to the next level with our expert services.</p>
-                <a href="https://aaravtech.net/contact.html" class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                <h2>Let's Create Something Amazing Together</h2>
+                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+                    thrive in the digital landscape.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -797,7 +800,7 @@ $stmt_meta->close();
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
@@ -843,7 +846,8 @@ $stmt_meta->close();
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms of Service</a>

@@ -575,9 +575,6 @@ if ($result === false) {
                 </div>
                 <h1 style="color:var(--bs-white)" >Our<span class="gradient-text"> Blogs</span></h1>
                 <p>A place where new ideas meet practical insights. Discover our blogs to keep you informed and inspired.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Explore Articles <i class="fas fa-arrow-right"></i></button>
-                </div>
             </div>
         </section>
     </div>
@@ -650,10 +647,11 @@ if ($result === false) {
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Stay Updated With Our Latest Insights</h2>
-                <p>Subscribe to our newsletter and never miss out on the latest trends, tips, and industry insights that can help grow your business.</p>
+                <h2>Let's Create Something Amazing Together</h2>
+                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+                    thrive in the digital landscape.</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary">Subscribe to Newsletter <i class="fas fa-envelope"></i></button>
+                    <a href="contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </div>
@@ -693,7 +691,7 @@ if ($result === false) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
@@ -739,7 +737,8 @@ if ($result === false) {
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms of Service</a>

@@ -455,6 +455,8 @@ if ($result === false) {
             Let’s create <span class="highlight">creativity</span><br>
             inspiration <span class="highlight-alt">projects</span> together
             </h1>
+            <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+                    thrive in the digital landscape.</p>
             <div class="cta-buttons">
             <a href="contact.html" class="glass-btn">Request a Quote</a>
             </div>
@@ -565,7 +567,7 @@ if ($result === false) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
@@ -611,7 +613,8 @@ if ($result === false) {
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms of Service</a>

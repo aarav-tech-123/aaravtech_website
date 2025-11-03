@@ -765,10 +765,11 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h1>Ready to make a difference?<br>Let's build something <span class="highlight">innovative together.</span></h1>
+                <h2>Let's Create Something Amazing Together</h2>
+                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+                    thrive in the digital landscape.</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary">Request a Quote</button>
-                    <button class="btn-outline">Let's Talk</button>
+                    <a href="contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </div>
@@ -808,7 +809,7 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
@@ -854,7 +855,8 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms of Service</a>

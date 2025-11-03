@@ -800,13 +800,11 @@
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -817,7 +815,6 @@
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
@@ -866,7 +863,6 @@
             </div>
         </div>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>

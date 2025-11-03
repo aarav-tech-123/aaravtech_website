@@ -535,7 +535,7 @@ if ($result === false) {
     <footer>
         <div class="footer-shape">
         </div>
-        
+
         <div class="container-fluid footer-container" style="padding: 0 2rem;">
             <div class="footer-content">
                 <div class="footer-column">
@@ -616,8 +616,8 @@ if ($result === false) {
             <div class="footer-bottom">
                 <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms of Service</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>

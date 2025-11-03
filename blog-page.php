@@ -8,13 +8,13 @@ $servername = "localhost";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ";  // your DB name
- 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Database Connection failed: " . $conn->connect_error);
 }
- 
+
 // --------------------
 // Validate blog ID
 // --------------------
@@ -29,11 +29,11 @@ $stmt->bind_param("s", $slug);;
 
 $stmt->execute();
 $result = $stmt->get_result();
- 
+
 if ($result->num_rows === 0) {
     die("Blog not found!");
 }
- 
+
 $blog = $result->fetch_assoc();
 $stmt->close();
 
@@ -261,7 +261,7 @@ $stmt_meta->close();
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 20px 20px 0 0;
+        border-radius: 20px;
         margin-bottom:40px;
     }
 
@@ -767,11 +767,24 @@ $stmt_meta->close();
     <footer>
         <div class="footer-shape">
         </div>
-        
+
         <div class="container-fluid footer-container" style="padding: 0 2rem;">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
+                        <!-- SVG Logo -->
+                        <!-- <svg width="50" height="50" viewBox="0 0 50 50">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4dabf7" />
+                                    <stop offset="100%" stop-color="#1a2a6c" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="5" y="5" width="40" height="40" rx="8" fill="url(#logoGradient)" />
+                            <path d="M15,15 L35,15 L35,35 L15,35 Z" fill="none" stroke="white" stroke-width="2" />
+                            <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
+                            <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
+                        </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
@@ -786,23 +799,23 @@ $stmt_meta->close();
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="https://aaravtech.net/index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="https://aaravtech.net/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="https://aaravtech.net/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
-                        <li><a href="https://aaravtech.net/career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
-                        <li><a href="https://aaravtech.net/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="https://aaravtech.net/custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="https://aaravtech.net/web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="https://aaravtech.net/graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="https://aaravtech.net/digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="https://aaravtech.net/ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="https://aaravtech.net/bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
                 
@@ -835,8 +848,8 @@ $stmt_meta->close();
             <div class="footer-bottom">
                 <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms of Service</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>

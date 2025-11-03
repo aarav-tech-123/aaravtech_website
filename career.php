@@ -776,11 +776,26 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-shape"></div>
-        <div class="container-fluid footer-container">
+        <div class="footer-shape">
+        </div>
+
+        <div class="container-fluid footer-container" style="padding: 0 2rem;">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
+                        <!-- SVG Logo -->
+                        <!-- <svg width="50" height="50" viewBox="0 0 50 50">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4dabf7" />
+                                    <stop offset="100%" stop-color="#1a2a6c" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="5" y="5" width="40" height="40" rx="8" fill="url(#logoGradient)" />
+                            <path d="M15,15 L35,15 L35,35 L15,35 Z" fill="none" stroke="white" stroke-width="2" />
+                            <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
+                            <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
+                        </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
@@ -844,8 +859,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms of Service</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>

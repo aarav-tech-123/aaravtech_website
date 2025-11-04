@@ -693,7 +693,7 @@
                     <i class="fas fa-rocket"></i> Career Opportunities
                 </div>
                 <h1>Shape the Future of <span class="gradient-text">Digital with Us</span></h1>
-                <p>Work in a highly-paced team environment and develop with a company that embraces innovation, teamwork and career advancement. Our possibilities are amazing and varied in terms of roles where your talents and ideas can be really impactful. We promote an inclusive work culture in Aarav Tech Services LLP to support learning, creativity, and career growth. No matter how experienced you are or whether you are a fresh graduate, you will get a good environment to develop your future. Research our available opportunities and start pursuing a promising career at our company.</p>
+                <p>Work in a fast-paced team-based environment and grow with a company that values innovation, collaboration and professional progression. The opportunities we experience are incredible and numerous regarding the fields your skills and visions might make a tangible difference. In Aarav Tech Services LLP, we encourage a diverse workplace culture to encourage learning, creativity and career development. Whatever your experience or the fact that you are a fresh graduate, you will be provided with a good environment in which to nurture your future. Explore the opportunities which we have and begin an eager career at our company. </p>
                 <div class="hero-buttons">
                     <button class="btn-primary">Get Started</button>
                 </div>
@@ -707,7 +707,7 @@
             <div class="career-intro">
                 <p class="subheading">JOIN OUR TEAM</p>
                 <h1>Shape the Future of Digital with Us</h1>
-                <p>At <strong>Aarav Tech Services LLP</strong>, we believe in fostering a culture of innovation, creativity, and collaboration. We are constantly looking for passionate and talented individuals who are eager to make a meaningful impact. If you're ready to grow your career and work on exciting projects, you've come to the right place.</p>
+                <p>At Aarav Tech Services LLP, we believe in the innovation, creativity and team spirit culture. We are always in search of passionate and talented individuals, who are willing to make a difference. You have found the right place in case you are willing to develop your career and work on exciting projects.</p>
                 <a href="#open-positions" class="btn-primary">View Open Positions</a>
             </div>
 

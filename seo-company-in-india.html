@@ -33,14 +33,14 @@
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -48,20 +48,20 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            
-            h1{
-                color:var(--bs-white);
+
+            h1 {
+                color: var(--bs-white);
             }
         }
 
 
-        
+
         /* Header Styles */
         header {
             background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
@@ -74,7 +74,7 @@
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -82,10 +82,10 @@
             padding: 20px 0;
         }
 
-        .breadcrumb-item{
+        .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -95,23 +95,23 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .logo span {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 32px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: var(--bs-light);
@@ -121,7 +121,7 @@
             padding: 8px 0;
             font-size: 16px;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -132,17 +132,17 @@
             background: var(--gradient-text);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after,
         nav ul li a.active::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover,
         nav ul li a.active {
             color: var(--accent);
         }
-        
+
         .cta-button {
             background: var(--gradient-primary);
             color: white;
@@ -159,7 +159,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -167,30 +167,30 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 120px 0 120px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
@@ -198,7 +198,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -213,13 +213,21 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -227,7 +235,7 @@
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -236,13 +244,13 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
@@ -250,14 +258,14 @@
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
         }
-        
+
         .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -275,7 +283,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -283,41 +291,41 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Services Section */
         .services {
             padding: 120px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .section-title h2 {
             font-size: 48px;
             color: var(--bs-light);
             margin-bottom: 16px;
             font-weight: 700;
         }
-        
+
         .section-title h2 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -325,7 +333,7 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         .section-title p {
             color: rgba(246, 246, 250, 0.7);
             max-width: 700px;
@@ -333,13 +341,13 @@
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-        
+
         .service-card {
             background: var(--gradient-card);
             border-radius: 20px;
@@ -351,7 +359,7 @@
             z-index: 1;
             backdrop-filter: blur(10px);
         }
-        
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -364,17 +372,17 @@
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .service-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -391,37 +399,37 @@
             overflow: hidden;
             transition: all 0.3s;
         }
-        
+
         .service-card:hover .service-icon {
             transform: scale(1.1);
             background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
         }
-        
+
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 16px;
             color: var(--bs-light);
             font-weight: 600;
         }
-        
+
         .service-card p {
             color: rgba(246, 246, 250, 0.7);
             margin-bottom: 25px;
             font-size: 16px;
             line-height: 1.7;
         }
-        
+
         /* Pricing Section */
         .pricing {
             padding: 100px 0;
             background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
         }
-        
+
         .pricing-header {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .pricing-badge {
             display: inline-flex;
             align-items: center;
@@ -436,14 +444,14 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 50px;
         }
-        
+
         .pricing-card {
             background: var(--gradient-pricing);
             border-radius: 20px;
@@ -458,9 +466,9 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            align-items:center;
+            align-items: center;
         }
-        
+
         .pricing-card::before {
             content: '';
             position: absolute;
@@ -473,44 +481,44 @@
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .pricing-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .pricing-card.featured {
             border: 2px solid var(--accent);
             transform: scale(1.05);
         }
-        
+
         .pricing-card.featured:hover {
             transform: scale(1.05) translateY(-10px);
         }
-        
+
         .pricing-header-card {
             margin-bottom: 25px;
             flex-shrink: 0;
         }
-        
+
         .pricing-title {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--bs-light);
         }
-        
+
         .pricing-subtitle {
             color: rgba(246, 246, 250, 0.7);
             font-size: 14px;
             margin-bottom: 15px;
         }
-        
+
         .price {
             font-size: 42px;
             font-weight: 800;
@@ -519,19 +527,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .price small {
             font-size: 14px;
             color: rgba(246, 246, 250, 0.7);
             font-weight: 400;
         }
-        
+
         .pricing-features {
             list-style: none;
             margin-bottom: 25px;
             flex-grow: 1;
         }
-        
+
         .pricing-features li {
             padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -542,34 +550,34 @@
             font-size: 14px;
             text-align: left;
         }
-        
+
         .pricing-features li i {
             color: var(--accent);
             flex-shrink: 0;
         }
-        
+
         .pricing-button {
             margin-top: auto;
             flex-shrink: 0;
         }
-        
+
         /* Comparison Section */
-        
+
         .comparison {
             padding: 60px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-title h2 {
             font-size: 42px;
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
+
         .gradient-text {
             background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             -webkit-background-clip: text;
@@ -577,16 +585,18 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
-            to { background-position: 200% center; }
+            to {
+                background-position: 200% center;
+            }
         }
-        
+
         .accordion.custom-accordion {
             border-radius: 15px;
             overflow: hidden;
         }
-        
+
         .accordion.custom-accordion .accordion-item {
             background: var(--gradient-card);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -594,7 +604,7 @@
             border-radius: 15px;
             overflow: hidden;
         }
-        
+
         .accordion.custom-accordion .accordion-button {
             background: var(--gradient-pricing);
             color: var(--bs-light);
@@ -611,17 +621,17 @@
             align-items: center;
             box-shadow: none !important;
         }
-        
+
         .accordion.custom-accordion .accordion-button:hover {
             background: rgba(138, 43, 226, 0.1);
         }
-        
+
         .accordion.custom-accordion .accordion-button:not(.collapsed) {
             background: rgba(138, 43, 226, 0.15);
             color: var(--bs-light);
             box-shadow: none;
         }
-        
+
         .accordion.custom-accordion .accordion-button::after {
             content: '+';
             font-size: 24px;
@@ -631,21 +641,21 @@
             height: auto;
             transform: none;
         }
-        
+
         .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
             content: '-';
             transform: none;
         }
-        
+
         .accordion.custom-accordion .accordion-body {
             padding: 0;
             background: rgba(11, 1, 28, 0.5);
         }
 
-        .faq-accordion-body{
-            padding:1rem .5rem !important;
+        .faq-accordion-body {
+            padding: 1rem .5rem !important;
         }
-        
+
         /* Table Styling */
         .comparison-table {
             width: 100%;
@@ -654,7 +664,7 @@
             color: var(--bs-light);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .comparison-table th {
             background: rgba(30, 14, 69, 0.8);
             padding: 15px;
@@ -664,13 +674,13 @@
             font-size: 14px;
             vertical-align: middle;
         }
-        
+
         .comparison-table th:first-child {
             text-align: left;
             background: rgba(11, 1, 28, 0.8);
             width: 25%;
         }
-        
+
         .comparison-table td {
             padding: 12px 15px;
             text-align: center;
@@ -679,69 +689,69 @@
             font-size: 14px;
             vertical-align: middle;
         }
-        
+
         .comparison-table td:first-child {
             text-align: left;
             font-weight: 500;
             background: rgba(11, 1, 28, 0.3);
         }
-        
+
         .comparison-table .text-start {
             text-align: left !important;
         }
-        
+
         .comparison-table .align-middle {
             vertical-align: middle !important;
         }
-        
+
         .comparison-table .text-center {
             text-align: center !important;
         }
-        
+
         /* Package Header Styling */
         .comparison-table .bg-primary {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .bg-danger {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .bg-warning {
             background: linear-gradient(135deg, #ffd93d 0%, #ffcd3c 100%) !important;
             color: #1a1a1a !important;
         }
-        
+
         .comparison-table .bg-dark {
             background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .table-light {
             background: rgba(30, 14, 69, 0.9) !important;
             color: var(--bs-light) !important;
         }
-        
+
         .comparison-table .bg-white {
             background: rgba(11, 1, 28, 0.8) !important;
             color: var(--bs-light) !important;
         }
-        
+
         /* Check and Cross Styling */
         .check {
             color: #00ff88 !important;
             font-weight: bold;
             font-size: 16px;
         }
-        
+
         .cross {
             color: #ff4444 !important;
             font-weight: bold;
             font-size: 16px;
         }
-        
+
         /* Small text in headers */
         .comparison-table th small {
             display: block;
@@ -752,40 +762,40 @@
         }
 
         /* FAQ section*/
-       
+
         .faq-section {
             padding: 5rem 0;
             background-color: var(--dark-bg);
             color: var(--text-primary);
             background: linear-gradient(135deg, #0c0c1f 0%, #161632 100%);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
-        
+
         .section-title p {
             font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .custom-accordion .accordion-item {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -794,12 +804,12 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-item:hover {
             border-color: rgba(106, 17, 203, 0.5);
             box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
         }
-        
+
         .custom-accordion .accordion-button {
             background-color: var(--card-bg);
             color: var(--text-primary);
@@ -810,27 +820,27 @@
             box-shadow: none;
             transition: all 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-button:not(.collapsed) {
             background-color: rgba(106, 17, 203, 0.1);
             color: var(--text-primary);
             box-shadow: none;
         }
-        
+
         .custom-accordion .accordion-button:focus {
             box-shadow: none;
             border-color: rgba(106, 17, 203, 0.5);
         }
-        
+
         .custom-accordion .accordion-button::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e2e8f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
             transition: transform 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-button:not(.collapsed)::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236a11cb'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
-        
+
         .custom-accordion .accordion-body {
             padding: 1.5rem;
             background-color: var(--card-bg);
@@ -838,15 +848,15 @@
             line-height: 1.6;
             border-top: 1px solid var(--border-color);
         }
-        
+
         .custom-accordion .accordion-body strong {
             color: var(--text-primary);
         }
-        
+
         .glow-effect {
             position: relative;
         }
-        
+
         .glow-effect::before {
             content: '';
             position: absolute;
@@ -860,22 +870,22 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .glow-effect:hover::before {
             opacity: 1;
         }
-        
+
         @media (max-width: 768px) {
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .custom-accordion .accordion-button {
                 font-size: 1rem;
                 padding: 1rem 1.25rem;
             }
         }
-        
+
         .support-badge {
             display: inline-flex;
             align-items: center;
@@ -886,67 +896,68 @@
             font-size: 0.8rem;
             margin-left: 10px;
         }
-        
+
         .support-badge i {
             margin-right: 5px;
         }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .accordion.custom-accordion .accordion-button {
                 font-size: 16px;
                 padding: 15px 20px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 8px 10px;
                 font-size: 12px;
             }
-            
+
             .comparison-table th small {
                 font-size: 10px;
             }
-            
+
             .check,
             .cross {
                 font-size: 14px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .comparison-table {
                 font-size: 11px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 6px 8px;
             }
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 120px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-section h2 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -954,117 +965,117 @@
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 40px;
             color: rgba(246, 246, 250, 0.8);
         }
-        
-      
-        
+
+
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .section-title h2 {
                 font-size: 42px;
             }
-            
+
             .cta-section h2 {
                 font-size: 42px;
             }
-            
+
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .pricing-card.featured {
                 transform: scale(1);
             }
-            
+
             .pricing-card.featured:hover {
                 transform: translateY(-10px);
             }
         }
-        
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 padding: 15px 0;
             }
-            
+
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             nav ul li {
                 margin: 8px 12px;
             }
-            
+
             .hero {
                 padding: 30px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn-primary {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .section-title h2 {
                 font-size: 36px;
             }
-            
+
             .cta-section h2 {
                 font-size: 36px;
             }
-            
+
             .comparison-table {
                 font-size: 12px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 8px 10px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
-            
+
             .cta-section h2 {
                 font-size: 32px;
             }
@@ -1083,17 +1094,20 @@
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
-                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white"
+                        style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -1101,15 +1115,18 @@
                                     <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
+                                    <a class="dropdown-item" href="content-marketing-services.html">Content
+                                        Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
+                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom
+                                        Website Development</a>
                                     <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App
+                                        Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
@@ -1118,17 +1135,21 @@
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office
+                                        Support</a>
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
-                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
-                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="contact.html" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+                <a href="tel:" class="glass-btn nav-link-btn"
+                    style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+            </div>
         </nav>
         <!-- Hero Section -->
         <section class="hero">
@@ -1136,75 +1157,107 @@
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
                     <li class="breadcrumb-item"><a href="#" class="">Services</a></li>
-                    <li class="breadcrumb-item"><a href="digital-marketing.html" >DigitalMarketing</a></li>
+                    <li class="breadcrumb-item"><a href="digital-marketing.html">DigitalMarketing</a></li>
                     <li class="breadcrumb-item"><a href="seo-company-in-india.html" style="color: #a085b9;">SEO</a></li>
                 </ol>
                 <div class="hero-badge">
                     <i class="fas fa-rocket"></i> Premium SEO Services
                 </div>
-                <h1>Transform Your <span class="gradient-text">Online Visibility</span> With Data-Driven SEO Strategies</h1>
-                <p>Let India's top SEO company make your website a marketing powerhouse.  We help businesses of all sizes grow and measure results using smart, ethical SEO.</p>
+                <h1>Transform Your <span class="gradient-text">Online Visibility</span> With Data-Driven SEO Strategies
+                </h1>
+                <p>Let India's top SEO company make your website a marketing powerhouse. We help businesses of all sizes
+                    grow and measure results using smart, ethical SEO.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary">Get Free SEO Audit <i class="fas fa-chart-line"></i></button>
                 </div>
             </div>
         </section>
     </div>
+
+    <div class="media-section container">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h1 style="">Achieve Top Google Rankings With Best SEO Company in India
+                </h1>
+                <p>In order to maximize your website's potential, you need choose Aarav Tech Services, the top SEO
+                    company in India. Our professional staff employ data-driven approaches to SEO to enhance visibility,
+                    attract qualified leads and boost steady growth. From keyword optimisation to link building, we
+                    ensure long-term digital success for your business.</p>
+                <ul>
+                    <li>In-depth SEO analysis</li>
+                    <li>Keyword and content strategy</li>
+                    <li>Technical SEO excellence</li>
+                    <li>High-authority backlinks</li>
+                    <li>Detailed progress tracking</li>
+                </ul>    
+            </div>
+            <div class="col-md-6">
+                <img src="img/dm_about - Copy.jpg" alt="" style="width: 100%;">
+            </div>
+        </div>
+    </div>
     <!-- Services Section -->
     <section class="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our <span class="gradient-text">SEO Services</span></h2>
-                <p>Comprehensive SEO solutions designed to elevate your brand and drive sustainable growth in the digital landscape.</p>
+                <p>Comprehensive SEO solutions designed to elevate your brand and drive sustainable growth in the
+                    digital landscape.</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>Website Audit</h3>
-                    <p>Comprehensive analysis of your website structure, content, and performance to identify technical issues and optimization opportunities for better search engine visibility.</p>
+                    <p>Comprehensive analysis of your website structure, content, and performance to identify technical
+                        issues and optimization opportunities for better search engine visibility.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-key"></i>
                     </div>
                     <h3>Keyword Research</h3>
-                    <p>Strategic identification of high-value keywords that align with user intent to drive qualified traffic and improve content relevance in competitive markets.</p>
+                    <p>Strategic identification of high-value keywords that align with user intent to drive qualified
+                        traffic and improve content relevance in competitive markets.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Technical SEO</h3>
-                    <p>Optimization of website speed, mobile compatibility, and indexing to ensure search engines can efficiently crawl and rank your site for maximum visibility.</p>
+                    <p>Optimization of website speed, mobile compatibility, and indexing to ensure search engines can
+                        efficiently crawl and rank your site for maximum visibility.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>On-Page SEO</h3>
-                    <p>Strategic optimization of content, meta tags, internal links, and site structure to enhance search engine rankings and user engagement across competitive markets.</p>
+                    <p>Strategic optimization of content, meta tags, internal links, and site structure to enhance
+                        search engine rankings and user engagement across competitive markets.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-link"></i>
                     </div>
                     <h3>Off-Page SEO</h3>
-                    <p>Building authoritative backlinks and online reputation to boost domain authority, improve SERP rankings, and drive sustainable, quality traffic to your website.</p>
+                    <p>Building authoritative backlinks and online reputation to boost domain authority, improve SERP
+                        rankings, and drive sustainable, quality traffic to your website.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>Local SEO</h3>
-                    <p>Optimization of local citations, Google Business Profile, and geo-targeted keywords to enhance visibility in regional searches and attract nearby customers.</p>
+                    <p>Optimization of local citations, Google Business Profile, and geo-targeted keywords to enhance
+                        visibility in regional searches and attract nearby customers.</p>
                 </div>
             </div>
         </div>
@@ -1217,10 +1270,10 @@
                 <div class="pricing-badge">
                     <i class="fas fa-tags"></i> AFFORDABLE SEO PACKAGES
                 </div>
-                <h2 >Our <span class="gradient-text">SEO Packages</span></h2>
+                <h2>Our <span class="gradient-text">SEO Packages</span></h2>
                 <p class="section-title">Find the perfect SEO package for your business needs and budget</p>
             </div>
-            
+
             <div class="pricing-grid">
                 <!-- SEO Essential -->
                 <div class="pricing-card">
@@ -1240,7 +1293,7 @@
                         <button class="btn-primary">Get Started</button>
                     </div>
                 </div>
-                
+
                 <!-- SEO Advanced -->
                 <div class="pricing-card featured">
                     <div class="pricing-header-card">
@@ -1259,7 +1312,7 @@
                         <button class="btn-primary">Get Started</button>
                     </div>
                 </div>
-                
+
                 <!-- SEO Professional -->
                 <div class="pricing-card">
                     <div class="pricing-header-card">
@@ -1278,7 +1331,7 @@
                         <button class="btn-primary">Get Started</button>
                     </div>
                 </div>
-                
+
                 <!-- SEO Enterprise -->
                 <div class="pricing-card">
                     <div class="pricing-header-card">
@@ -1308,13 +1361,14 @@
                 <h2>Compare <span class="gradient-text">SEO Packages</span></h2>
                 <p>Detailed comparison of features across all our SEO packages to help you make the right choice.</p>
             </div>
-            
+
             <div class="accordion custom-accordion" id="seoComparison">
 
                 <!-- First Hand SEO Analysis -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             FIRST HAND SEO ANALYSIS
                         </button>
                     </h2>
@@ -1332,13 +1386,55 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Pre-Optimization Analysis</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Competitor Analysis</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Keyword Research & Analysis</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Baseline Ranking Check</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Duplicate Content Check</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Google Penalty Check</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Backlinks Analysis (If required)</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+                                        <tr>
+                                            <td>Pre-Optimization Analysis</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Competitor Analysis</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Keyword Research & Analysis</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Baseline Ranking Check</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duplicate Content Check</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google Penalty Check</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Backlinks Analysis (If required)</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1346,11 +1442,12 @@
                     </div>
                 </div>
 
-                
+
                 <!-- On-Page Optimization -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             ON-PAGE OPTIMIZATION ACTIVITIES
                         </button>
                     </h2>
@@ -1368,30 +1465,174 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Onsite Recommendations & Implementation</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Website Canonical Check</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Title Tag Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>META Tags Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Heading Tags Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Image Alt Tags Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Content Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>SEO Friendly URL Setup</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Site Navigation Analysis</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>404 Page Implementation</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Mobile Friendliness Check & Optimization</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Broken Links Check</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>301 Redirect Check & Fix</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Website Speed Check</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Google Indexed Pages Check</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Robots.txt Creation</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Google XML Sitemap</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>HTML Sitemap Setup</td><td class="cross">✘</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
-                                        <tr><td>Google Webmaster Tools Setup</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Google Analytics Setup</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Structured Data Setup</td><td class="cross">✘</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
-                                        <tr><td>On-Site Blog Section Creation</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>On-Site Blog Posting</td><td>2 Posts</td><td>3 Posts</td><td>4 Posts</td><td>5 Posts</td></tr>
-                                        <tr><td>Linking to Social Profiles</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+                                        <tr>
+                                            <td>Onsite Recommendations & Implementation</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Canonical Check</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Title Tag Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>META Tags Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heading Tags Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Image Alt Tags Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SEO Friendly URL Setup</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Site Navigation Analysis</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>404 Page Implementation</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile Friendliness Check & Optimization</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Broken Links Check</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>301 Redirect Check & Fix</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Speed Check</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google Indexed Pages Check</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Robots.txt Creation</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google XML Sitemap</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>HTML Sitemap Setup</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google Webmaster Tools Setup</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Google Analytics Setup</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Structured Data Setup</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>On-Site Blog Section Creation</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>On-Site Blog Posting</td>
+                                            <td>2 Posts</td>
+                                            <td>3 Posts</td>
+                                            <td>4 Posts</td>
+                                            <td>5 Posts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Linking to Social Profiles</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1399,11 +1640,12 @@
                     </div>
                 </div>
 
-                
+
                 <!-- Off-Page Optimization -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             OFF-PAGE OPTIMIZATION ACTIVITIES
                         </button>
                     </h2>
@@ -1421,30 +1663,171 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Search Engine Submission (Manual)</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Article Writing</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Article Submission</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Article Marketing</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Classified Submissions</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Business Listing</td><td>5</td><td>10</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Blog Creation (One-Time)</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Blog Writing</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Blog Posting</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Blog Marketing</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Third Party Blog Pinging</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>PDF Posting</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Image Sharing</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Reddit Posting</td><td class="cross">✘</td><td class="cross">✘</td><td>2</td><td>3</td></tr>
-                                        <tr><td>Web 2.0 Submission</td><td class="cross">✘</td><td class="cross">✘</td><td>1</td><td>2</td></tr>
-                                        <tr><td>PPT Submissions</td><td class="cross">✘</td><td>1</td><td>2</td><td>3</td></tr>
-                                        <tr><td>Social Bookmarking</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Profile Creation</td><td>5</td><td>15</td><td>20</td><td>30</td></tr>
-                                        <tr><td>Product Listing (eCommerce)</td><td class="cross">✘</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Video Marketing</td><td>3</td><td>4</td><td>6</td><td>8</td></tr>
-                                        <tr><td>QSB Marketing</td><td>2</td><td>4</td><td>6</td><td>8</td></tr>
-                                        <tr><td>Quora Q&A</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                                        <tr><td>Infographic Submission</td><td class="cross">✘</td><td>1</td><td>2</td><td>3</td></tr>
-                                        <tr><td>Guest Post</td><td colspan="4">On Free Sites (If Possible)</td></tr>
+                                        <tr>
+                                            <td>Search Engine Submission (Manual)</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Article Writing</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Article Submission</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Article Marketing</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Classified Submissions</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Business Listing</td>
+                                            <td>5</td>
+                                            <td>10</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blog Creation (One-Time)</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blog Writing</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blog Posting</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blog Marketing</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Third Party Blog Pinging</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PDF Posting</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Image Sharing</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reddit Posting</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web 2.0 Submission</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PPT Submissions</td>
+                                            <td class="cross">✘</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Social Bookmarking</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Profile Creation</td>
+                                            <td>5</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Product Listing (eCommerce)</td>
+                                            <td class="cross">✘</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Video Marketing</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>6</td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>QSB Marketing</td>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>6</td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quora Q&A</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Infographic Submission</td>
+                                            <td class="cross">✘</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Guest Post</td>
+                                            <td colspan="4">On Free Sites (If Possible)</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1456,7 +1839,8 @@
                 <!-- Social Media Optimization -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             SOCIAL MEDIA OPTIMIZATION (SMO) ACTIVITIES
                         </button>
                     </h2>
@@ -1474,10 +1858,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Facebook</td><td class="cross">✘</td><td>8 Posts/month</td><td>16 Posts/month</td><td>20 Posts/month</td></tr>
-                                        <tr><td>Instagram</td><td class="cross">✘</td><td>8 Posts/month</td><td>16 Posts/month</td><td>20 Posts/month</td></tr>
-                                        <tr><td>Twitter</td><td class="cross">✘</td><td>8 Posts/month</td><td>16 Posts/month</td><td>20 Posts/month</td></tr>
-                                        <tr><td>LinkedIn</td><td class="cross">✘</td><td>8 Posts/month</td><td>16 Posts/month</td><td>20 Posts/month</td></tr>
+                                        <tr>
+                                            <td>Facebook</td>
+                                            <td class="cross">✘</td>
+                                            <td>8 Posts/month</td>
+                                            <td>16 Posts/month</td>
+                                            <td>20 Posts/month</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Instagram</td>
+                                            <td class="cross">✘</td>
+                                            <td>8 Posts/month</td>
+                                            <td>16 Posts/month</td>
+                                            <td>20 Posts/month</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Twitter</td>
+                                            <td class="cross">✘</td>
+                                            <td>8 Posts/month</td>
+                                            <td>16 Posts/month</td>
+                                            <td>20 Posts/month</td>
+                                        </tr>
+                                        <tr>
+                                            <td>LinkedIn</td>
+                                            <td class="cross">✘</td>
+                                            <td>8 Posts/month</td>
+                                            <td>16 Posts/month</td>
+                                            <td>20 Posts/month</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1488,7 +1896,8 @@
                 <!-- Reports -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                             REPORTS
                         </button>
                     </h2>
@@ -1506,11 +1915,41 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Weekly Report</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Monthly Website Analytics Report</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Monthly Keywords Ranking Report</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Monthly Off Page Submission Report</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Bi-Monthly Website Progress Report</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+                                        <tr>
+                                            <td>Weekly Report</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly Website Analytics Report</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly Keywords Ranking Report</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly Off Page Submission Report</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bi-Monthly Website Progress Report</td>
+                                            <td class="cross">✘</td>
+                                            <td class="cross">✘</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1521,7 +1960,8 @@
                 <!-- Customer Support -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                             CUSTOMER SUPPORT
                         </button>
                     </h2>
@@ -1539,10 +1979,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Email</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Phone</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Chat</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-                                        <tr><td>Monthly Google/Zoom Meeting</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chat</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly Google/Zoom Meeting</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                            <td class="check">✔</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1574,7 +2038,7 @@
                 <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
                 <p>Find answers to common questions about our SEO services and processes.</p>
             </div>
-            
+
             <div class="accordion custom-accordion" id="faqAccordion">
                 <div class="accordion-item glow-effect">
                     <h2 class="accordion-header" id="headingOne">
@@ -1583,9 +2047,13 @@
                             What is SEO?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            <strong>SEO (Search Engine Optimization)</strong> is the practice of increasing your website's visibility to search engines like Google, making it easier to locate and rank high in search engine result pages. It involves optimizing various elements of your website to improve organic (non-paid) search results.
+                            <strong>SEO (Search Engine Optimization)</strong> is the practice of increasing your
+                            website's visibility to search engines like Google, making it easier to locate and rank high
+                            in search engine result pages. It involves optimizing various elements of your website to
+                            improve organic (non-paid) search results.
                         </div>
                     </div>
                 </div>
@@ -1596,9 +2064,13 @@
                             How does SEO work?
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            SEO functions by enhancing your site's <strong>content, structure, and backlinks</strong>, enabling search engines to understand your site's value. This positions your site higher when people search for what you're offering. Our process includes technical optimization, content creation, and strategic link building.
+                            SEO functions by enhancing your site's <strong>content, structure, and backlinks</strong>,
+                            enabling search engines to understand your site's value. This positions your site higher
+                            when people search for what you're offering. Our process includes technical optimization,
+                            content creation, and strategic link building.
                         </div>
                     </div>
                 </div>
@@ -1609,9 +2081,12 @@
                             Can I do SEO myself, or should I hire an agency?
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            While you can try SEO yourself, it's a complex and time-consuming process. Hiring <strong>AARAV TECH SERVICES LLP</strong> saves you time as our experts provide all services efficiently, achieving your objectives in a shorter timeframe with proven strategies.
+                            While you can try SEO yourself, it's a complex and time-consuming process. Hiring
+                            <strong>AARAV TECH SERVICES LLP</strong> saves you time as our experts provide all services
+                            efficiently, achieving your objectives in a shorter timeframe with proven strategies.
                         </div>
                     </div>
                 </div>
@@ -1623,9 +2098,13 @@
                             <span class="support-badge"><i class="fas fa-star"></i> Premium</span>
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            We focus on <strong>individualized plans, transparent reporting, and actual outcomes</strong>. Our team is highly responsive and accommodating to your business needs at all times. We provide detailed analytics and regular progress updates to ensure you're always informed.
+                            We focus on <strong>individualized plans, transparent reporting, and actual
+                                outcomes</strong>. Our team is highly responsive and accommodating to your business
+                            needs at all times. We provide detailed analytics and regular progress updates to ensure
+                            you're always informed.
                         </div>
                     </div>
                 </div>
@@ -1636,9 +2115,12 @@
                             How long does it take to see results from SEO?
                         </button>
                     </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            You'll typically see initial changes within <strong>3-6 months</strong>, with significant growth occurring in <strong>6 to 12 months</strong>, depending on your industry competition and current website status. We provide monthly progress reports to track improvements.
+                            You'll typically see initial changes within <strong>3-6 months</strong>, with significant
+                            growth occurring in <strong>6 to 12 months</strong>, depending on your industry competition
+                            and current website status. We provide monthly progress reports to track improvements.
                         </div>
                     </div>
                 </div>
@@ -1650,9 +2132,12 @@
                             <span class="support-badge"><i class="fas fa-headset"></i> Support</span>
                         </button>
                     </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            Yes, we provide <strong>comprehensive ongoing support</strong> including monthly performance reviews, strategy adjustments based on analytics, technical maintenance, and regular content updates to ensure your SEO continues to deliver results as search algorithms evolve.
+                            Yes, we provide <strong>comprehensive ongoing support</strong> including monthly performance
+                            reviews, strategy adjustments based on analytics, technical maintenance, and regular content
+                            updates to ensure your SEO continues to deliver results as search algorithms evolve.
                         </div>
                     </div>
                 </div>
@@ -1683,11 +2168,13 @@
                         </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
-                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
+                        team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/AaravTechServicesLLP/"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/aaravtech_services/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1703,15 +2190,20 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                                Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                                Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        </li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a>
+                        </li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        </li>
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -1728,7 +2220,7 @@
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -1737,7 +2229,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>

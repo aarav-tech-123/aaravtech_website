@@ -801,10 +801,10 @@ $stmt_meta->close();
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
-                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="https://aaravtech.net/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="https://aaravtech.net/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                        <li><a href="https://aaravtech.net/career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <li><a href="https://aaravtech.net/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

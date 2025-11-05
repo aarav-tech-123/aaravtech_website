@@ -810,12 +810,12 @@ $stmt_meta->close();
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                        <li><a href="https://aaravtech.net/custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="https://aaravtech.net/web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="https://aaravtech.net/graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
+                        <li><a href="https://aaravtech.net/digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="https://aaravtech.net/ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="https://aaravtech.net/bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
                 
@@ -849,8 +849,8 @@ $stmt_meta->close();
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-and-conditions.html">Terms of Service</a>
+                    <a href="https://aaravtech.net/privacy-policy.html">Privacy Policy</a>
+                    <a href="https://aaravtech.net/terms-and-conditions.html">Terms of Service</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>

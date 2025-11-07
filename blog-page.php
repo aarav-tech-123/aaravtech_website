@@ -661,7 +661,7 @@ $stmt_meta->close();
         ?>
         <div class="container-fluid header position-relative p-0">
             <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-                <a href="https://aaravtech.net/" class="navbar-brand p-0">
+                <a href="https://aaravtech.net" class="navbar-brand p-0">
                     <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
                 </a>
                 <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -669,7 +669,7 @@ $stmt_meta->close();
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="https://aaravtech.net/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
+                        <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
                         <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>

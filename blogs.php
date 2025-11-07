@@ -503,7 +503,7 @@ if ($result === false) {
     <!-- ✅ Header -->
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-            <a href="/" class="navbar-brand p-0">
+            <a href="https://aaravtech.net" class="navbar-brand p-0">
                 <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
@@ -512,8 +512,8 @@ if ($result === false) {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link" style="color:var(--bs-white)!important">Home</a>
-                    <a href="about.html" class="nav-item nav-link" style="color:var(--bs-white)!important">About</a>
+                    <a href="https://aaravtech.net" class="nav-item nav-link" style="color:var(--bs-white)!important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link" style="color:var(--bs-white)!important">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                             style="color:var(--bs-white)!important">Services</a>
@@ -521,41 +521,41 @@ if ($result === false) {
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
-                                    <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="content-marketing-services.html">Content
+                                    <a class="dropdown-item " href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content
                                         Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom
+                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom
                                         Website Development</a>
-                                    <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App
+                                    <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App
                                         Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="logo-design-services.html" class="dropdown-item">Logo Design</a>
+                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office
+                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office
                                         Support</a>
-                                    <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="blogs.php" class="nav-item nav-link active"
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link active"
                         style="color:var(--bs-white)!important">Blogs</a>
-                    <a href="career.php" class="nav-item nav-link"
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link"
                         style="color:var(--bs-white)!important">Career</a>
-                    <a href="contact.html" class="nav-item nav-link"
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link"
                         style="color:var(--bs-white)!important">Contact</a>
                 </div>
                 <a href="tel:" class="glass-btn nav-link-btn"
@@ -567,7 +567,7 @@ if ($result === false) {
         <section class="hero">
             <div class="container hero-content">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="https://aaravtech.net">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Blogs</li>
                 </ol>
                 <div class="hero-badge">

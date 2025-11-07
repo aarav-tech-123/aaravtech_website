@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/favicon.png">
     <meta name="robots" content="index, follow">
     <title>Job Openings & Career Opportunities at Aarav Tech Services</title>
     <meta name="description"

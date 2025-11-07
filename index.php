@@ -48,6 +48,7 @@ if ($result === false) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/favicon.png">
+	<link rel="icon" href="img/favicon.png">
     <meta name="robots" content="index, follow">
     <title>Hire Best Digital Marketing Agency in India to Grow Fast!</title>
     <meta name="description"

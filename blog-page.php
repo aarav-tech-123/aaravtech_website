@@ -902,17 +902,17 @@ $stmt_meta->close();
             });
         });
     </script>
-    <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', event => event.preventDefault());
+    <!-- <script> -->
+        <!-- // Disable right-click
+        // document.addEventListener('contextmenu', event => event.preventDefault());
 
         // Disable text selection
-        document.addEventListener('selectstart', event => event.preventDefault());
+        // document.addEventListener('selectstart', event => event.preventDefault());
 
         // Disable copy and cut
-        document.addEventListener('copy', event => event.preventDefault());
-        document.addEventListener('cut', event => event.preventDefault());
-    </script>
+        // document.addEventListener('copy', event => event.preventDefault());
+        // document.addEventListener('cut', event => event.preventDefault()); -->
+    <!-- </script> -->
 
 </body>
 </html>

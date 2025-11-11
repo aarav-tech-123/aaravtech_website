@@ -793,9 +793,9 @@ $stmt_meta->close();
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/"><i class="fab fa-linked-in"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i class="fab fa-linked-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -902,17 +902,17 @@ $stmt_meta->close();
             });
         });
     </script>
-    <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', event => event.preventDefault());
+    <!-- <script> -->
+        <!-- // Disable right-click
+        // document.addEventListener('contextmenu', event => event.preventDefault());
 
         // Disable text selection
-        document.addEventListener('selectstart', event => event.preventDefault());
+        // document.addEventListener('selectstart', event => event.preventDefault());
 
         // Disable copy and cut
-        document.addEventListener('copy', event => event.preventDefault());
-        document.addEventListener('cut', event => event.preventDefault());
-    </script>
+        // document.addEventListener('copy', event => event.preventDefault());
+        // document.addEventListener('cut', event => event.preventDefault()); -->
+    <!-- </script> -->
 
 </body>
 </html>

@@ -743,13 +743,13 @@ if ($result === false) {
                 <div class="footer-bottom-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-and-conditions.html">Terms of Service</a>
-                    <a href="#">Sitemap</a>
+                    <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ✅ Scripts -->
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>

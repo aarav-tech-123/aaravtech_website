@@ -852,7 +852,7 @@ $stmt_meta->close();
                 <div class="footer-bottom-links">
                     <a href="https://aaravtech.net/privacy-policy.html">Privacy Policy</a>
                     <a href="https://aaravtech.net/terms-and-conditions.html">Terms of Service</a>
-                    <a href="#">Sitemap</a>
+                    <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@ if ($result === false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <meta name="robots" content="index, follow">
     <title>Hire Best Digital Marketing Agency in India to Grow Fast!</title>
     <meta name="description"
@@ -99,14 +99,22 @@ if ($result === false) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');
+    </script>
     <!-- End Google Tag Manager -->
 
     <style>
@@ -128,6 +136,7 @@ if ($result === false) {
             position: relative;
             z-index: 1;
         }
+
         .navbar-container.scrolled {
             background: #00000065;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -153,17 +162,17 @@ if ($result === false) {
     <div class="navbar-container" style="  transition: all 0.4s ease-in-out;">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="https://aaravtech.net" class="navbar-brand p-0">
-                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -194,16 +203,17 @@ if ($result === false) {
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
-                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
-                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+            </div>
         </nav>
 
     </div>
 
-    <div class="container-fluid header position-relative  p-0 hero-section" style="margin-top:-94px; height: 110vh;" >
+    <div class="container-fluid header position-relative  p-0 hero-section" style="margin-top:-94px; height: 110vh;">
         <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100"
             style="object-fit: cover; z-index: -1;">
             <source src="img/bg-header.mp4" type="video/mp4">
@@ -231,17 +241,17 @@ if ($result === false) {
     <section class="about-section container-fluid">
         <div class="about-container row" style="--bs-gutter-x:0;">
             <div class="about-img col-12 col-md-6 ">
-                <img src="img/about-img2.png" alt="">
+                <img src="img/about-img.webp" alt="">
             </div>
             <div class="about-content col-12 col-md-6 ">
                 <div class="about-text">
-                        <p class="subheading">COMPANY PROFILE</h6>
-                        <h5 class="display-5" style="color:var(--bs-white)">
-                            Your Partner in Digital Transformation
-                        </h5>
-                        <p class="description">
-                            We are Aarav Tech Services LLP, a dynamic team of tech innovators and creative problem-solvers dedicated to helping businesses like yours thrive in the digital age. We believe that technology should be an enabler, not a barrier. That's why we offer a comprehensive suite of services—from strategic digital marketing to custom development—to empower our clients and turn their vision into a digital reality.                        </p>    
-                        <!-- <a href="#" class="glass-btn">Our Services</a> -->
+                    <p class="subheading">COMPANY PROFILE</h6>
+                    <h5 class="display-5" style="color:var(--bs-white)">
+                        Your Partner in Digital Transformation
+                    </h5>
+                    <p class="description">
+                        We are Aarav Tech Services LLP, a dynamic team of tech innovators and creative problem-solvers dedicated to helping businesses like yours thrive in the digital age. We believe that technology should be an enabler, not a barrier. That's why we offer a comprehensive suite of services—from strategic digital marketing to custom development—to empower our clients and turn their vision into a digital reality. </p>
+                    <!-- <a href="#" class="glass-btn">Our Services</a> -->
                 </div>
                 <div class="about-content-img">
                     <img src="img/about-content-img2.png" alt="">
@@ -251,7 +261,7 @@ if ($result === false) {
     </section>
     <!-- About End -->
 
-    <div class="services-WCU-container" >
+    <div class="services-WCU-container">
         <section class="services-section">
             <div class="services-container">
                 <div class="services-content">
@@ -283,7 +293,7 @@ if ($result === false) {
                             </p>
                         </div>
                     </a>
-                     <a href="bpo.html">
+                    <a href="bpo.html">
                         <div class="service-card" style="height: 100%;">
                             <div class="service-card-icon">
                                 <i class="bi bi-megaphone" style="color: white;"></i>
@@ -294,7 +304,7 @@ if ($result === false) {
                     </a>
                     <!-- style="padding-top: 2rem;" -->
                     <a href="graphic-designing.html">
-                        <div class="service-card" >
+                        <div class="service-card">
                             <div class="service-card-icon">
                                 <i class="bi bi-trophy" style="color: white;"></i>
                             </div>
@@ -305,165 +315,165 @@ if ($result === false) {
                 </div>
             </div>
         </section>
-         
-        <section>
-                <div class="container mx-auto">
-                    <div class="text-center">
-                        <h2 class="main-heading leading-tight mb-4 animate-fade-in-up" style="color: var(--bs-white);">
-                            Why Choose Aarav Tech Services?
-                        </h2>
-                        <p class="text-lg mx-auto mb-4" style="color: var(--bs-white);">
-                            We're more than just a service provider. We're your strategic partner in digital success.
-                        </p>
-                    </div>
 
-                    <div class="row justify-center">
-                        <!-- Card 1: Tailored Strategy, Real Results -->
-                        <div class="WCU-card-container">
-                            <div class="WCU-card service-card">
-                                <div>
-                                    <div class="mb-4">
-                                        <i class="fas fa-chart-simple fa-2xl " style="color: var(--bs-white);"></i>
-                                    </div>
-                                    <h3 class="mb-4" style="color: var(--bs-white);">Tailored Strategy, Real 
-                                    </h3>
-                                    <p style="color:var(--bs-white)">
-                                        Every company is different. Our digital marketing and lead generation techniques
-                                        are
-                                        specific to your needs, whether you need increased traffic, conversion, or
-                                        qualified
-                                        leads.
-                                    </p>
+        <section>
+            <div class="container mx-auto">
+                <div class="text-center">
+                    <h2 class="main-heading leading-tight mb-4 animate-fade-in-up" style="color: var(--bs-white);">
+                        Why Choose Aarav Tech Services?
+                    </h2>
+                    <p class="text-lg mx-auto mb-4" style="color: var(--bs-white);">
+                        We're more than just a service provider. We're your strategic partner in digital success.
+                    </p>
+                </div>
+
+                <div class="row justify-center">
+                    <!-- Card 1: Tailored Strategy, Real Results -->
+                    <div class="WCU-card-container">
+                        <div class="WCU-card service-card">
+                            <div>
+                                <div class="mb-4">
+                                    <i class="fas fa-chart-simple fa-2xl " style="color: var(--bs-white);"></i>
                                 </div>
+                                <h3 class="mb-4" style="color: var(--bs-white);">Tailored Strategy, Real
+                                </h3>
+                                <p style="color:var(--bs-white)">
+                                    Every company is different. Our digital marketing and lead generation techniques
+                                    are
+                                    specific to your needs, whether you need increased traffic, conversion, or
+                                    qualified
+                                    leads.
+                                </p>
                             </div>
-                            <div class="WCU-card service-card">
-                                <div>
-                                    <div class="mb-4">
-                                        <i class="fas fa-cubes-stacked fa-2xl" style="color: var(--bs-white);"></i>
-                                    </div>
-                                    <h3 class="mb-4" style="color: var(--bs-white);">
-                                        Smart, Streamlined Solutions
-                                    </h3>
-                                    <p style="color:var(--bs-white)">
-                                         Need anything other than marketing? We provide efficient, consistent services of
-                                        business process outsourcing that can be implemented from customer care to
-                                        back-office processes, allowing your organization to grow and work smoothly.
-                                    </p>
+                        </div>
+                        <div class="WCU-card service-card">
+                            <div>
+                                <div class="mb-4">
+                                    <i class="fas fa-cubes-stacked fa-2xl" style="color: var(--bs-white);"></i>
                                 </div>
+                                <h3 class="mb-4" style="color: var(--bs-white);">
+                                    Smart, Streamlined Solutions
+                                </h3>
+                                <p style="color:var(--bs-white)">
+                                    Need anything other than marketing? We provide efficient, consistent services of
+                                    business process outsourcing that can be implemented from customer care to
+                                    back-office processes, allowing your organization to grow and work smoothly.
+                                </p>
                             </div>
-                            <div class="WCU-card service-card">
-                                <div>
-                                    <div class="mb-4">
-                                        <i class="fa fa-hand-peace fa-2xl" style="color: var(--bs-white);"></i>
-                                    </div>
-                                    <h3 class="mb-4" style="color: var(--bs-white);">
-                                        Engaging, Human Touch
-                                    </h3>
-                                    <p style="color:var(--bs-white)">
-                                        We believe in building relationships—not just algorithms. Your brand will have a
-                                        voice, and your message will not only be heard but will also appeal to the
-                                        audience
-                                        as well.
-                                    </p>
+                        </div>
+                        <div class="WCU-card service-card">
+                            <div>
+                                <div class="mb-4">
+                                    <i class="fa fa-hand-peace fa-2xl" style="color: var(--bs-white);"></i>
                                 </div>
+                                <h3 class="mb-4" style="color: var(--bs-white);">
+                                    Engaging, Human Touch
+                                </h3>
+                                <p style="color:var(--bs-white)">
+                                    We believe in building relationships—not just algorithms. Your brand will have a
+                                    voice, and your message will not only be heard but will also appeal to the
+                                    audience
+                                    as well.
+                                </p>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+            </div>
         </section>
     </div>
 
 
-<div class="blog-cta-container">
-    <section class="blog-section">
-  <div class="container">
-    <div class="section-header">
-      <p class="subheading">Our Blogs</p>
-      <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
-    </div>
+    <div class="blog-cta-container">
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="subheading">Our Blogs</p>
+                    <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
+                </div>
 
-    <div class="blog-slider-wrapper">
-      <button class="slider-btn left">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
+                <div class="blog-slider-wrapper">
+                    <button class="slider-btn left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
 
-      <div class="blog-slider">
-        <?php if ($result->num_rows > 0): ?>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <?php
-                    $author_id = $row['post_author'];
-                    $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
-                    $author = ($author_result && $author_result->num_rows > 0)
-                        ? $author_result->fetch_assoc()['display_name']
-                        : "Unknown";
+                    <div class="blog-slider">
+                        <?php if ($result->num_rows > 0): ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <?php
+                                $author_id = $row['post_author'];
+                                $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+                                $author = ($author_result && $author_result->num_rows > 0)
+                                    ? $author_result->fetch_assoc()['display_name']
+                                    : "Unknown";
 
-                    $image_result = $conn->query("
+                                $image_result = $conn->query("
                         SELECT meta_value FROM wp_postmeta
                         WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
                     ");
-                    $thumbnail_id = ($image_result && $image_result->num_rows > 0)
-                        ? $image_result->fetch_assoc()['meta_value']
-                        : 0;
+                                $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+                                    ? $image_result->fetch_assoc()['meta_value']
+                                    : 0;
 
-                    $img_url = '';
-                    if ($thumbnail_id) {
-                        $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
-                        $img_url = ($guid_result && $guid_result->num_rows > 0)
-                            ? $guid_result->fetch_assoc()['guid']
-                            : '';
-                    }
-                ?>
-                <div class="blog-card">
-                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
-                    <?php if ($img_url): ?>
-                        <div class="blog-image">
-                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
-                            <div class="overlay"></div>
-                        </div>
-                    <?php else: ?>
-                        <div class="blog-image">
-                            <img src="img/about_us.png" alt="Blog 1" />
-                            <div class="overlay"></div>
-                        </div>
-                    <?php endif; ?>
-                    <div class="blog-content">
-                    <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>                        
-                    <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                                $img_url = '';
+                                if ($thumbnail_id) {
+                                    $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+                                    $img_url = ($guid_result && $guid_result->num_rows > 0)
+                                        ? $guid_result->fetch_assoc()['guid']
+                                        : '';
+                                }
+                                ?>
+                                <div class="blog-card">
+                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                                    <?php if ($img_url): ?>
+                                        <div class="blog-image">
+                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="blog-image">
+                                            <img src="img/about_us.png" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-content">
+                                        <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                        <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <div class="col-12 text-center">
+                                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
+                            </div>
+                        <?php endif; ?>
+
+
                     </div>
+
+                    <button class="slider-btn right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <div class="col-12 text-center">
-                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
             </div>
-        <?php endif; ?>
+        </section>
 
-
-      </div>
-
-      <button class="slider-btn right">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
-    <section class="cta-section">
-        <div class="cta-overlay"></div>
-        <div class="cta-content">
-            <h1>
-            Let’s create <span class="highlight">creativity</span><br>
-            inspiration <span class="highlight-alt">projects</span> together
-            </h1>
-            <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+        <section class="cta-section">
+            <div class="cta-overlay"></div>
+            <div class="cta-content">
+                <h1>
+                    Let’s create <span class="highlight">creativity</span><br>
+                    inspiration <span class="highlight-alt">projects</span> together
+                </h1>
+                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
                     thrive in the digital landscape.</p>
-            <div class="cta-buttons">
-            <a href="contact.html" class="glass-btn">Request a Quote</a>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="glass-btn">Request a Quote</a>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
 
     <!-- <section class="footer-section">
@@ -586,7 +596,7 @@ if ($result === false) {
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -603,7 +613,7 @@ if ($result === false) {
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -612,7 +622,7 @@ if ($result === false) {
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -651,22 +661,31 @@ if ($result === false) {
         const cardWidth = 380; // approximate width + gap
 
         rightBtn.addEventListener("click", () => {
-            slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+            slider.scrollBy({
+                left: cardWidth,
+                behavior: "smooth"
+            });
         });
 
         leftBtn.addEventListener("click", () => {
-            slider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+            slider.scrollBy({
+                left: -cardWidth,
+                behavior: "smooth"
+            });
         });
 
         // Optional: auto-slide every few seconds
         setInterval(() => {
-            slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+            slider.scrollBy({
+                left: cardWidth,
+                behavior: "smooth"
+            });
         }, 5000);
 
 
 
         // Update slidesToShow on window resize
-   
+
 
         // const cards = document.querySelectorAll('.testimonial-card');
         // const prevBtn = document.querySelector('.nav-btn.left_test');
@@ -763,7 +782,6 @@ if ($result === false) {
         //     });
         // });
         // });
-
     </script>
     <script src="./index.js"></script>
 </body>

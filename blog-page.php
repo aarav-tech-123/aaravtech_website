@@ -63,6 +63,7 @@ $stmt_meta->close();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/favicon.png">
 <meta name="robots" content="index, follow">
 <meta name="title" content="<?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?>">
 <meta name="description" content="<?php echo htmlspecialchars($post_meta['rank_math_description'] ?? 'Default meta description here.'); ?>">
@@ -792,9 +793,9 @@ $stmt_meta->close();
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/"><i class="fab fa-linked-in"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -851,7 +852,7 @@ $stmt_meta->close();
                 <div class="footer-bottom-links">
                     <a href="https://aaravtech.net/privacy-policy.html">Privacy Policy</a>
                     <a href="https://aaravtech.net/terms-and-conditions.html">Terms of Service</a>
-                    <a href="#">Sitemap</a>
+                    <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -901,17 +902,17 @@ $stmt_meta->close();
             });
         });
     </script>
-    <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', event => event.preventDefault());
+    <!-- <script> -->
+        <!-- // Disable right-click
+        // document.addEventListener('contextmenu', event => event.preventDefault());
 
         // Disable text selection
-        document.addEventListener('selectstart', event => event.preventDefault());
+        // document.addEventListener('selectstart', event => event.preventDefault());
 
         // Disable copy and cut
-        document.addEventListener('copy', event => event.preventDefault());
-        document.addEventListener('cut', event => event.preventDefault());
-    </script>
+        // document.addEventListener('copy', event => event.preventDefault());
+        // document.addEventListener('cut', event => event.preventDefault()); -->
+    <!-- </script> -->
 
 </body>
 </html>

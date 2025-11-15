@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <title>Read Our Terms and Conditions | Aarav Tech Services LLP</title>
     <meta name="robots" content="index, follow">
     <meta name="description"
@@ -32,14 +33,14 @@
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -47,14 +48,14 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
@@ -67,18 +68,18 @@
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
-        .breadcrumb-item{
+
+        .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -88,23 +89,23 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .logo span {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 32px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: var(--bs-light);
@@ -114,7 +115,7 @@
             padding: 8px 0;
             font-size: 16px;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -125,17 +126,17 @@
             background: var(--gradient-text);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after,
         nav ul li a.active::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover,
         nav ul li a.active {
             color: var(--accent);
         }
-        
+
         .cta-button {
             background: var(--gradient-primary);
             color: white;
@@ -152,7 +153,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -160,30 +161,30 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
@@ -191,7 +192,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -206,13 +207,21 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -220,7 +229,7 @@
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -229,13 +238,13 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
@@ -243,26 +252,26 @@
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
         }
-        
+
         /* Terms Content */
         .terms-content {
             padding: 80px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .terms-container {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .terms-section {
             margin-bottom: 50px;
         }
-        
+
         .terms-section h2 {
             font-size: 32px;
             margin-bottom: 20px;
@@ -271,7 +280,7 @@
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .terms-section h2::after {
             content: '';
             position: absolute;
@@ -282,31 +291,31 @@
             background: var(--gradient-text);
             border-radius: 3px;
         }
-        
+
         .terms-section h3 {
             font-size: 24px;
             margin: 30px 0 15px;
             color: var(--accent-light);
             font-weight: 600;
         }
-        
+
         .terms-section p {
             margin-bottom: 20px;
             color: rgba(246, 246, 250, 0.8);
             line-height: 1.7;
         }
-        
+
         .terms-section ul {
             margin-bottom: 20px;
             padding-left: 20px;
         }
-        
+
         .terms-section li {
             margin-bottom: 10px;
             color: rgba(246, 246, 250, 0.8);
             line-height: 1.7;
         }
-        
+
         .highlight-box {
             background: var(--gradient-card);
             border-radius: 15px;
@@ -316,7 +325,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .highlight-box::before {
             content: '';
             position: absolute;
@@ -326,13 +335,13 @@
             height: 100%;
             background: var(--gradient-text);
         }
-        
+
         .highlight-box h4 {
             color: var(--accent-light);
             margin-bottom: 15px;
             font-weight: 600;
         }
-        
+
         .last-updated {
             display: inline-block;
             background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
@@ -344,18 +353,18 @@
             margin-bottom: 30px;
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
-        
+
         .terms-list {
             counter-reset: terms-counter;
             list-style: none;
         }
-        
+
         .terms-list li {
             margin-bottom: 25px;
             padding-left: 40px;
             position: relative;
         }
-        
+
         .terms-list li::before {
             counter-increment: terms-counter;
             content: counter(terms-counter);
@@ -372,26 +381,26 @@
             font-weight: 700;
             font-size: 14px;
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-section h2 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -399,14 +408,14 @@
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 40px;
             color: rgba(246, 246, 250, 0.8);
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -425,7 +434,7 @@
             overflow: hidden;
             margin: 0 auto;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -433,19 +442,19 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -464,93 +473,108 @@
             transition: all 0.3s;
             z-index: 99;
         }
-        
+
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
             color: white;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .terms-section h2 {
                 font-size: 28px;
             }
-            
+
             .cta-section h2 {
                 font-size: 42px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 padding: 15px 0;
             }
-            
+
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             nav ul li {
                 margin: 8px 12px;
             }
-            
+
             .hero {
                 padding: 100px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .terms-content {
                 padding: 60px 0;
             }
-            
+
             .terms-section h2 {
                 font-size: 24px;
             }
-            
+
             .terms-section h3 {
                 font-size: 20px;
             }
-            
+
             .cta-section {
                 padding: 60px 0;
             }
-            
+
             .cta-section h2 {
                 font-size: 36px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .terms-section h2 {
                 font-size: 22px;
             }
-            
+
             .cta-section h2 {
                 font-size: 32px;
             }
         }
     </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');</script>
+    <!-- End Google Tag Manager -->
 </head>
+
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSPXHW6R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -561,52 +585,74 @@
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="https://aaravtech.net" class="navbar-brand p-0">
-                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                    <a href="https://aaravtech.net/" class="nav-item nav-link "
+                        style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white"
+                        style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/content-marketing-services.html">Content
+                                        Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/custom-website-development-services.html">Custom
+                                        Website Development</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App
+                                        Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
+                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo
+                                    Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/back-office-support-services.html">Back Office
+                                        Support</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call
+                                        Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
-                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
-                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link "
+                        style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+                <a href="tel:" class="glass-btn nav-link-btn"
+                    style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
             </div>
         </nav>
 
@@ -615,7 +661,8 @@
             <div class="container hero-content">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="https://aaravtech.net" class="">Home</a></li>
-                    <li class="breadcrumb-item"><a href="https://aaravtech.net/terms-and-conditions.html" style="color: #a085b9;">Terms & Conditions</a></li>
+                    <li class="breadcrumb-item"><a href="https://aaravtech.net/terms-and-conditions.html"
+                            style="color: #a085b9;">Terms & Conditions</a></li>
                 </ol>
                 <div class="hero-badge">
                     <i class="fas fa-file-contract"></i> Legal Agreement
@@ -635,166 +682,264 @@
             </div>
             <div class="terms-section">
                 <h2>Terms and Conditions</h2>
-                <p>The following terms and conditions and all applicable laws will be deemed to have been accepted by the user on usage of the website, without any limitation or qualification. You are requested to read them carefully before you use the services of this site.</p>
-                <p>By visiting this website or downloading any information from the website, you agree to abide by the below terms and conditions. In case you don't, we request you not to use the website or download any information from the site.</p>
+                <p>The following terms and conditions and all applicable laws will be deemed to have been accepted by
+                    the user on usage of the website, without any limitation or qualification. You are requested to read
+                    them carefully before you use the services of this site.</p>
+                <p>By visiting this website or downloading any information from the website, you agree to abide by the
+                    below terms and conditions. In case you don't, we request you not to use the website or download any
+                    information from the site.</p>
                 <div class="highlight-box">
                     <h4>Contract Agreement</h4>
-                    <p>The client's approval for work to commence shall be deemed a contractual agreement between the client and Aarav Tech Services LLP. The approval for the work can be either an email confirming back the quote (with the quote document attached) or the quote document signed by the client.</p>
-                    <p><strong>Important:</strong> Payment of the advance fee indicates that the client accepts these terms and conditions and approves to commence the work.</p>
+                    <p>The client's approval for work to commence shall be deemed a contractual agreement between the
+                        client and Aarav Tech Services LLP. The approval for the work can be either an email confirming
+                        back the quote (with the quote document attached) or the quote document signed by the client.
+                    </p>
+                    <p><strong>Important:</strong> Payment of the advance fee indicates that the client accepts these
+                        terms and conditions and approves to commence the work.</p>
                 </div>
             </div>
 
             <div class="terms-section">
                 <h2>Service Terms</h2>
-                
+
                 <ol class="terms-list">
                     <li>
                         <h3>1 Year Free Technical Support</h3>
-                        <p>Aarav Tech Services LLP is among the best website designing companies of India – we not only do best website designs and develop best web solutions, we also provide Free technical support for 1 year from the date of delivery of the project or project files are moved to your hosting account; whichever happens earlier.</p>
-                        <p>1 Year Free Technical Support is available for all the bugs/errors found in our server side scripting or Java script errors. To give you our best services, we take this responsibility of Free support at no extra cost to you until and unless some other designer/developer/person modifies the project files we have delivered.</p>
+                        <p>Aarav Tech Services LLP is among the best website designing companies of India – we not only
+                            do best website designs and develop best web solutions, we also provide Free technical
+                            support for 1 year from the date of delivery of the project or project files are moved to
+                            your hosting account; whichever happens earlier.</p>
+                        <p>1 Year Free Technical Support is available for all the bugs/errors found in our server side
+                            scripting or Java script errors. To give you our best services, we take this responsibility
+                            of Free support at no extra cost to you until and unless some other
+                            designer/developer/person modifies the project files we have delivered.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Photography and Graphics</h3>
-                        <p>Aarav Tech Services LLP may use stock photographs and images in the design and build of the site. Images and graphics purchased from stock libraries are not generally included in the quote and will only be included once the client has approved the additional cost.</p>
-                        <p>General reworking and editing of artwork and photography supplied by the client will be included in the quote but where Aarav Tech Services LLP considers the amount or extent of work involved in editing or reworking Aarav Tech Services LLP reserves the right to charge for the time of carrying out such work at its usual company hourly rates.</p>
+                        <p>Aarav Tech Services LLP may use stock photographs and images in the design and build of the
+                            site. Images and graphics purchased from stock libraries are not generally included in the
+                            quote and will only be included once the client has approved the additional cost.</p>
+                        <p>General reworking and editing of artwork and photography supplied by the client will be
+                            included in the quote but where Aarav Tech Services LLP considers the amount or extent of
+                            work involved in editing or reworking Aarav Tech Services LLP reserves the right to charge
+                            for the time of carrying out such work at its usual company hourly rates.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Browser Compatibility</h3>
-                        <p>Aarav Tech Services LLP makes every effort to design pages that display acceptably in the most popular current browsers i.e. IE10 and IE11 and Latest version of FireFox released on the date of project agreement, but cannot accept responsibility for pages that do not display acceptably in new versions of browsers released after pages have been designed.</p>
-                        <p>IE 6 and IE7 is an outdated browser we should pay tribute to it and say goodbye and upgrade our browsers or should start using Firefox which is free to download and performs much better than IE 6 and IE 7.</p>
+                        <p>Aarav Tech Services LLP makes every effort to design pages that display acceptably in the
+                            most popular current browsers i.e. IE10 and IE11 and Latest version of FireFox released on
+                            the date of project agreement, but cannot accept responsibility for pages that do not
+                            display acceptably in new versions of browsers released after pages have been designed.</p>
+                        <p>IE 6 and IE7 is an outdated browser we should pay tribute to it and say goodbye and upgrade
+                            our browsers or should start using Firefox which is free to download and performs much
+                            better than IE 6 and IE 7.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Search Engine Submission</h3>
-                        <p>Aarav Tech Services LLP is not responsible for the client's on-going web site promotion. Should the client require the site to be promoted a separate contract must be agreed. Aarav Tech Services LLP can make no guarantees about the success of any search engine promotion activity because this is controlled by the search engines.</p>
+                        <p>Aarav Tech Services LLP is not responsible for the client's on-going web site promotion.
+                            Should the client require the site to be promoted a separate contract must be agreed. Aarav
+                            Tech Services LLP can make no guarantees about the success of any search engine promotion
+                            activity because this is controlled by the search engines.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Site Maintenance</h3>
-                        <p>Aarav Tech Services LLP does not undertake to maintain or update a client's website as part of the design commission. If a client wishes Aarav Tech Services LLP to maintain or update a web site as a separate commission, Aarav Tech Services LLP will negotiate with the client a maintenance contract appropriate to the amount of work required.</p>
+                        <p>Aarav Tech Services LLP does not undertake to maintain or update a client's website as part
+                            of the design commission. If a client wishes Aarav Tech Services LLP to maintain or update a
+                            web site as a separate commission, Aarav Tech Services LLP will negotiate with the client a
+                            maintenance contract appropriate to the amount of work required.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Content Responsibility</h3>
-                        <p>Aarav Tech Services LLP cannot be held liable for any information contained within The Client's web site. The content of such remains the copyright and intellectual property of The Client.</p>
+                        <p>Aarav Tech Services LLP cannot be held liable for any information contained within The
+                            Client's web site. The content of such remains the copyright and intellectual property of
+                            The Client.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Material Ownership</h3>
-                        <p>All material supplied by the client shall remain the client's property. Aarav Tech Services LLP rightfully believes that this material belongs to the client and that it does not breach any copyright laws and under no circumstances Aarav Tech Services LLP shall be held responsible for any claims, damages, loss of profit or reputation caused to client due to the use of material provided by the client.</p>
+                        <p>All material supplied by the client shall remain the client's property. Aarav Tech Services
+                            LLP rightfully believes that this material belongs to the client and that it does not breach
+                            any copyright laws and under no circumstances Aarav Tech Services LLP shall be held
+                            responsible for any claims, damages, loss of profit or reputation caused to client due to
+                            the use of material provided by the client.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Domain Names</h3>
-                        <p>Aarav Tech Services LLP provides domain name consultancy if required. Domain names registered by Aarav Tech Services LLP on the Customer's behalf are property of Aarav Tech Services LLP until the client has paid for the domain booked and professional fees involved for the project.</p>
-                        <p>Aarav Tech Services LLP agree to transfer such domains to the customer or his/her agent when asked to do so provided that all accounts have been settled.</p>
-                        <p><strong>Note:</strong> Domains booked and owned by Clients themselves are not subject matter above. This term is related to only those domains which are booked by Aarav Tech Services LLP upon the request of clients.</p>
+                        <p>Aarav Tech Services LLP provides domain name consultancy if required. Domain names registered
+                            by Aarav Tech Services LLP on the Customer's behalf are property of Aarav Tech Services LLP
+                            until the client has paid for the domain booked and professional fees involved for the
+                            project.</p>
+                        <p>Aarav Tech Services LLP agree to transfer such domains to the customer or his/her agent when
+                            asked to do so provided that all accounts have been settled.</p>
+                        <p><strong>Note:</strong> Domains booked and owned by Clients themselves are not subject matter
+                            above. This term is related to only those domains which are booked by Aarav Tech Services
+                            LLP upon the request of clients.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Travel Time and Expenses</h3>
-                        <p>Travelling time to and from customer premises is not generally included in our estimate. If a visit/travel is required for meeting, The Client will bear all the expenses or as agreed by both the parties.</p>
+                        <p>Travelling time to and from customer premises is not generally included in our estimate. If a
+                            visit/travel is required for meeting, The Client will bear all the expenses or as agreed by
+                            both the parties.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Internet Service Provider</h3>
-                        <p>'Client' understands that any Internet Service Provider (ASP) services or Website storage services will require a separate contract with the ISP. Aarav Tech Services LLP will agree to set up a domain name with host if required, but will not be held responsible for any changes made by the server supplied.</p>
+                        <p>'Client' understands that any Internet Service Provider (ASP) services or Website storage
+                            services will require a separate contract with the ISP. Aarav Tech Services LLP will agree
+                            to set up a domain name with host if required, but will not be held responsible for any
+                            changes made by the server supplied.</p>
                     </li>
-                    
+
                     <li>
                         <h3>3rd Party Add Ons/services/applications</h3>
-                        <p>All third party costs arising from the registration of a domain name/purchase of third party utilities/services shall be met by the Client and are payable to Aarav Tech Services LLP before a formal application for registration is made. Examples of 3rd party fees involved are as under:</p>
+                        <p>All third party costs arising from the registration of a domain name/purchase of third party
+                            utilities/services shall be met by the Client and are payable to Aarav Tech Services LLP
+                            before a formal application for registration is made. Examples of 3rd party fees involved
+                            are as under:</p>
                         <ul>
                             <li>Domain Names</li>
                             <li>Server Space Hosting Fees</li>
                             <li>SSL Certificates</li>
                             <li>Backup Services</li>
                             <li>3rd Party APIs, if any, required by 'Client' to be integrated with the work ordered</li>
-                            <li>3rd Party Plugins/Scripts/Applications/Softwares/Widgets/Services, if any, required by 'Client' to be integrated with the work ordered</li>
+                            <li>3rd Party Plugins/Scripts/Applications/Softwares/Widgets/Services, if any, required by
+                                'Client' to be integrated with the work ordered</li>
                             <li>Payment Gateways Signup and Recurring Fees</li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <h3>Examples of Work</h3>
-                        <p>Aarav Tech Services LLP retains the right to display graphics and other web design elements as examples of their work in their respective portfolios.</p>
+                        <p>Aarav Tech Services LLP retains the right to display graphics and other web design elements
+                            as examples of their work in their respective portfolios.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Quotations</h3>
-                        <p>The price quoted to the client is for the work agreed on the quotation only. Should the client decide that changes are required, as the site is developed, then we will provide a separate quote for the additional work and may need to review the timescale for completing the project. Cost estimates and prices quoted are valid for maximum one month unless otherwise agreed otherwise.</p>
+                        <p>The price quoted to the client is for the work agreed on the quotation only. Should the
+                            client decide that changes are required, as the site is developed, then we will provide a
+                            separate quote for the additional work and may need to review the timescale for completing
+                            the project. Cost estimates and prices quoted are valid for maximum one month unless
+                            otherwise agreed otherwise.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Payment Terms</h3>
                         <p>Payment is currently accepted by Wire Transfer & 2checkout, unless otherwise agreed.</p>
                         <ul>
-                            <li>Payment plan is agreed between the 'Client' and Aarav Tech Services LLP based on the milestones</li>
+                            <li>Payment plan is agreed between the 'Client' and Aarav Tech Services LLP based on the
+                                milestones</li>
                             <li>Payment shall be due within 14 days of the invoice date</li>
-                            <li>Full publication of the Web Pages may take place only after full payment has been received unless otherwise agreed</li>
-                            <li>Any material previously published may be removed if payment is not received. When this occurs a minimum charge of US$ 100 will be required to have the site restored</li>
-                            <li>Accounts that have not been settled within 14 days of the date shown on the invoice will incur a late payment charge of 500 USD per week delayed</li>
-                            <li>In case of delay in payments beyond the due date, Aarav Tech Services LLP reserves the right to stop the work being commenced and 'Client' agrees to exempt Aarav Tech Services LLP from meeting the timelines agreed</li>
+                            <li>Full publication of the Web Pages may take place only after full payment has been
+                                received unless otherwise agreed</li>
+                            <li>Any material previously published may be removed if payment is not received. When this
+                                occurs a minimum charge of US$ 100 will be required to have the site restored</li>
+                            <li>Accounts that have not been settled within 14 days of the date shown on the invoice will
+                                incur a late payment charge of 500 USD per week delayed</li>
+                            <li>In case of delay in payments beyond the due date, Aarav Tech Services LLP reserves the
+                                right to stop the work being commenced and 'Client' agrees to exempt Aarav Tech Services
+                                LLP from meeting the timelines agreed</li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <h3>Cancellation Policy</h3>
                         <p>Both the parties reserve the right to cancel the project at any stage.</p>
                         <ul>
-                            <li>In case the project is cancelled by Client, the payments made for the project can be refunded to the after deducting the upfront payment amount received for Initiation of the project and the other payments received against the milestones completed</li>
-                            <li>In case the project is cancelled by Aarav Tech Services LLP, the payments made for the project can be refunded after deducting USD 15 per hour for the hours spent on the work performed for the client including but not limited to the time spent on project discussion, requirements gathering, project planning & documentation, project initiation and execution. After the payments are settled between the two parties – Aarav Tech Services LLP shall transfer to 'Client' – all the documents, designs and scripts produced for the project</li>
+                            <li>In case the project is cancelled by Client, the payments made for the project can be
+                                refunded to the after deducting the upfront payment amount received for Initiation of
+                                the project and the other payments received against the milestones completed</li>
+                            <li>In case the project is cancelled by Aarav Tech Services LLP, the payments made for the
+                                project can be refunded after deducting USD 15 per hour for the hours spent on the work
+                                performed for the client including but not limited to the time spent on project
+                                discussion, requirements gathering, project planning & documentation, project initiation
+                                and execution. After the payments are settled between the two parties – Aarav Tech
+                                Services LLP shall transfer to 'Client' – all the documents, designs and scripts
+                                produced for the project</li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <h3>Copyright</h3>
-                        <p>Aarav Tech Services LLP will retain the copyright of any material, including design, artwork and the source code, created for the client by Aarav Tech Services LLP. Aarav Tech Services LLP reserves the right to retain the copyright on all material created by Aarav Tech Services LLP unless otherwise agreed between the two parties in writing.</p>
+                        <p>Aarav Tech Services LLP will retain the copyright of any material, including design, artwork
+                            and the source code, created for the client by Aarav Tech Services LLP. Aarav Tech Services
+                            LLP reserves the right to retain the copyright on all material created by Aarav Tech
+                            Services LLP unless otherwise agreed between the two parties in writing.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Ownership of Code and Intellectual Property Rights</h3>
-                        <p>Unless otherwise agreed, Aarav Tech Services LLP is the owner of the source code and the intellectual property rights and reserves the right to reuse the code for other projects.</p>
+                        <p>Unless otherwise agreed, Aarav Tech Services LLP is the owner of the source code and the
+                            intellectual property rights and reserves the right to reuse the code for other projects.
+                        </p>
                     </li>
-                    
+
                     <li>
                         <h3>Delayed Response From Client Side</h3>
-                        <p>Unreasonable delays from client side in providing the required feedback/information/data to finish the project shall exempt Aarav Tech Services LLP from meeting the timelines mentioned in the quote. In case client does not provide required details/data/information for more than 15 working days, client authorizes Aarav Tech Services LLP to forfeit the payments made towards this project.</p>
+                        <p>Unreasonable delays from client side in providing the required feedback/information/data to
+                            finish the project shall exempt Aarav Tech Services LLP from meeting the timelines mentioned
+                            in the quote. In case client does not provide required details/data/information for more
+                            than 15 working days, client authorizes Aarav Tech Services LLP to forfeit the payments made
+                            towards this project.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Time Estimates</h3>
-                        <p>Client agrees that timelines agreed cannot be met if the project scope is changed by client after the project scope document is once finalized. Client agrees not to change the requirements without extending the original timelines agreed with minimum 1 week time against each Change Request.</p>
+                        <p>Client agrees that timelines agreed cannot be met if the project scope is changed by client
+                            after the project scope document is once finalized. Client agrees not to change the
+                            requirements without extending the original timelines agreed with minimum 1 week time
+                            against each Change Request.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Single Domain License</h3>
-                        <p>Unless otherwise agreed, client agrees to setup the scripts delivered only on one domain, one sub-domain (wip.yourdomain.com) and localhost. However if client wish to run same website on different domain, then client has to purchase separate license for each domain.</p>
-                        <p>No license would be required for Add-on Domains that will point to the main domain where this system will be implemented. All add-on domains will be forwarded to the main domain from the hosting server and no additional license would be required for these domains.</p>
+                        <p>Unless otherwise agreed, client agrees to setup the scripts delivered only on one domain, one
+                            sub-domain (wip.yourdomain.com) and localhost. However if client wish to run same website on
+                            different domain, then client has to purchase separate license for each domain.</p>
+                        <p>No license would be required for Add-on Domains that will point to the main domain where this
+                            system will be implemented. All add-on domains will be forwarded to the main domain from the
+                            hosting server and no additional license would be required for these domains.</p>
                         <p>For every new domain or sub-domain, client has to buy a separate license.</p>
                     </li>
-                    
+
                     <li>
                         <h3>License Validity Period</h3>
                         <p>License comes without expiry date as long as it is for single domain.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Share in Profits</h3>
-                        <p>After client makes the agreed payment for the project – Aarav Tech Services LLP will not claim share in your profits from business or from sale of business to some other company.</p>
+                        <p>After client makes the agreed payment for the project – Aarav Tech Services LLP will not
+                            claim share in your profits from business or from sale of business to some other company.
+                        </p>
                     </li>
-                    
+
                     <li>
                         <h3>No Recurring License Costs</h3>
-                        <p>There is any renewal /recurring license fee. However if client wish to run same website on different domain, then client has to purchase separate license for each domain.</p>
+                        <p>There is any renewal /recurring license fee. However if client wish to run same website on
+                            different domain, then client has to purchase separate license for each domain.</p>
                     </li>
-                    
+
                     <li>
                         <h3>Use of Encrypted Files</h3>
-                        <p>Unless otherwise agreed, for maintaining our intellectual property/scripts source code secure from other programmers, faster turn around and bug free application development, Aarav Tech Services LLP can use own framework (code library in encrypted format) which is used for web applications development.</p>
-                        <p>Client will be provided with detailed documentation for using framework (code library functions), with help of the documentation provided other programmers can modify the website functionality. Aarav Tech Services LLP framework is collection of functions related to Database Manipulation, Images/Files Management, Paging, Form Builder etc which looks like PHP Functions but have different syntax than default PHP functions. Other willing and efficient PHP programmers can learn and practice these functions/framework within 2-4 days.</p>
+                        <p>Unless otherwise agreed, for maintaining our intellectual property/scripts source code secure
+                            from other programmers, faster turn around and bug free application development, Aarav Tech
+                            Services LLP can use own framework (code library in encrypted format) which is used for web
+                            applications development.</p>
+                        <p>Client will be provided with detailed documentation for using framework (code library
+                            functions), with help of the documentation provided other programmers can modify the website
+                            functionality. Aarav Tech Services LLP framework is collection of functions related to
+                            Database Manipulation, Images/Files Management, Paging, Form Builder etc which looks like
+                            PHP Functions but have different syntax than default PHP functions. Other willing and
+                            efficient PHP programmers can learn and practice these functions/framework within 2-4 days.
+                        </p>
                     </li>
                 </ol>
             </div>
@@ -824,11 +969,15 @@
                         </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
-                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
+                        team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -844,15 +993,20 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                                Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                                Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        </li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a>
+                        </li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        </li>
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -869,7 +1023,7 @@
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -878,7 +1032,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -915,4 +1069,5 @@
     </script>
     <script src="./index.js"></script>
 </body>
+
 </html>

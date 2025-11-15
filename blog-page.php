@@ -101,7 +101,7 @@ $stmt_meta->close();
     })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');
     </script>
     <!-- End Google Tag Manager -->
-    <style>
+<style>
     :root {
         --bs-bg-light: #FFFFFF;
         --bs-dark: #1A1A2E;
@@ -659,11 +659,12 @@ $stmt_meta->close();
             font-size: 20px;
         }
     }
-    </style>
+</style>
+
 </head>
 
 <body>
-     <noscript>
+    <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSPXHW6R" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>

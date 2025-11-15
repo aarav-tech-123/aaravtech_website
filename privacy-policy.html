@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <title>Read Our Privacy Policy – Data Protection & User Information</title>
     <meta name="robots" content="index, follow">
     <meta name="description"
@@ -33,14 +34,14 @@
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -48,14 +49,14 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
@@ -68,18 +69,18 @@
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
-        .breadcrumb-item{
+
+        .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -89,23 +90,23 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .logo span {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 32px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: var(--bs-light);
@@ -115,7 +116,7 @@
             padding: 8px 0;
             font-size: 16px;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -126,17 +127,17 @@
             background: var(--gradient-text);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after,
         nav ul li a.active::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover,
         nav ul li a.active {
             color: var(--accent);
         }
-        
+
         .cta-button {
             background: var(--gradient-primary);
             color: white;
@@ -153,7 +154,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -161,30 +162,30 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
@@ -192,7 +193,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -207,13 +208,21 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -221,7 +230,7 @@
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -230,13 +239,13 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
@@ -244,26 +253,26 @@
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
         }
-        
+
         /* Privacy Policy Content */
         .privacy-content {
             padding: 80px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .privacy-container {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .privacy-section {
             margin-bottom: 50px;
         }
-        
+
         .privacy-section h2 {
             font-size: 32px;
             margin-bottom: 20px;
@@ -272,7 +281,7 @@
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .privacy-section h2::after {
             content: '';
             position: absolute;
@@ -283,31 +292,31 @@
             background: var(--gradient-text);
             border-radius: 3px;
         }
-        
+
         .privacy-section h3 {
             font-size: 24px;
             margin: 30px 0 15px;
             color: var(--accent-light);
             font-weight: 600;
         }
-        
+
         .privacy-section p {
             margin-bottom: 20px;
             color: rgba(246, 246, 250, 0.8);
             line-height: 1.7;
         }
-        
+
         .privacy-section ul {
             margin-bottom: 20px;
             padding-left: 20px;
         }
-        
+
         .privacy-section li {
             margin-bottom: 10px;
             color: rgba(246, 246, 250, 0.8);
             line-height: 1.7;
         }
-        
+
         .highlight-box {
             background: var(--gradient-card);
             border-radius: 15px;
@@ -317,7 +326,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .highlight-box::before {
             content: '';
             position: absolute;
@@ -327,13 +336,13 @@
             height: 100%;
             background: var(--gradient-text);
         }
-        
+
         .highlight-box h4 {
             color: var(--accent-light);
             margin-bottom: 15px;
             font-weight: 600;
         }
-        
+
         .last-updated {
             display: inline-block;
             background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
@@ -345,26 +354,26 @@
             margin-bottom: 30px;
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-section h2 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -372,14 +381,14 @@
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 40px;
             color: rgba(246, 246, 250, 0.8);
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -398,7 +407,7 @@
             overflow: hidden;
             margin: 0 auto;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -406,18 +415,19 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -436,96 +446,111 @@
             transition: all 0.3s;
             z-index: 99;
         }
-        
+
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
             color: white;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .privacy-section h2 {
                 font-size: 28px;
             }
-            
+
             .cta-section h2 {
                 font-size: 42px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 padding: 15px 0;
             }
-            
+
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             nav ul li {
                 margin: 8px 12px;
             }
-            
+
             .hero {
                 padding: 100px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .privacy-content {
                 padding: 60px 0;
             }
-            
+
             .privacy-section h2 {
                 font-size: 24px;
             }
-            
+
             .privacy-section h3 {
                 font-size: 20px;
             }
-            
+
             .cta-section {
                 padding: 60px 0;
             }
-            
+
             .cta-section h2 {
                 font-size: 36px;
             }
-            
+
 
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .privacy-section h2 {
                 font-size: 22px;
             }
-            
+
             .cta-section h2 {
                 font-size: 32px;
             }
 
         }
     </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');</script>
 </head>
+
 <body>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSPXHW6R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+            
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -536,17 +561,20 @@
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="/" class="navbar-brand p-0">
-                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;" >
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important" >Home</a>
-                    <a href="about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important" >About</a>
+                    <a href="/" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="about.html" class="nav-item nav-link navlink-white"
+                        style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important" >Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
@@ -554,15 +582,18 @@
                                     <a class="dropdown-item " href="seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="content-marketing-services.html">Content Marketing</a>
+                                    <a class="dropdown-item" href="content-marketing-services.html">Content
+                                        Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">Web Development</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom Website Development</a>
+                                    <a class="dropdown-item" href="custom-website-development-services.html">Custom
+                                        Website Development</a>
                                     <a class="dropdown-item" href="ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    <a class="dropdown-item" href="web-and-mobile-app-development.html">Web/Mobile App
+                                        Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
@@ -571,17 +602,21 @@
                             <div class="submenu-wrapper">
                                 <a href="#" class="dropdown-item submenu-parent">BPO</a>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="back-office-support-services.html">Back Office
+                                        Support</a>
                                     <a class="dropdown-item" href="call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important" >Blogs</a>
-                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important" >Career</a>
-                    <a href="contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important" >Contact</a>
+                    <a href="blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="contact.html" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>            </div>
+                <a href="tel:" class="glass-btn nav-link-btn"
+                    style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+            </div>
         </nav>
 
         <!-- Hero Section -->
@@ -589,7 +624,8 @@
             <div class="container hero-content">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="/" class="">Home</a></li>
-                    <li class="breadcrumb-item"><a href="privacy-policy.html" style="color: #a085b9;">Privacy Policy</a></li>
+                    <li class="breadcrumb-item"><a href="privacy-policy.html" style="color: #a085b9;">Privacy Policy</a>
+                    </li>
                 </ol>
                 <div class="hero-badge">
                     <i class="fas fa-shield-alt"></i> Your Privacy Matters
@@ -607,48 +643,88 @@
 
             <div class="privacy-section">
                 <h2>Privacy Policy</h2>
-                <p>While visiting this site our servers will log your IP address, time and date information, and the specific files requested. This information is used internally to monitor Web site traffic. No attempt is made to discover identity based on the IP address. A cookie is an information packet that is passed to and stored on your computer. A cookie was set when you first visited the site in order to identify you as a repeat visitor on subsequent visits. Additionally, the client login section utilizes cookies to manage login information.</p>
+                <p>While visiting this site our servers will log your IP address, time and date information, and the
+                    specific files requested. This information is used internally to monitor Web site traffic. No
+                    attempt is made to discover identity based on the IP address. A cookie is an information packet that
+                    is passed to and stored on your computer. A cookie was set when you first visited the site in order
+                    to identify you as a repeat visitor on subsequent visits. Additionally, the client login section
+                    utilizes cookies to manage login information.</p>
 
-                <p>Any information that is submitted to Aarav Tech Services LLP via email becomes property of Aarav Tech Services LLP and may be used at its discretion. Information gathered by the completion of online forms on this web site will be used solely for the purpose or purposes indicated by the given form.</p>
+                <p>Any information that is submitted to Aarav Tech Services LLP via email becomes property of Aarav Tech
+                    Services LLP and may be used at its discretion. Information gathered by the completion of online
+                    forms on this web site will be used solely for the purpose or purposes indicated by the given form.
+                </p>
 
-                <p>This site provides links to other sites. Aarav Tech Services LLP makes no statement on the privacy policies of sites not under its direct control. You are encouraged to read the privacy policies of any site that you visit after leaving this site.</p>
+                <p>This site provides links to other sites. Aarav Tech Services LLP makes no statement on the privacy
+                    policies of sites not under its direct control. You are encouraged to read the privacy policies of
+                    any site that you visit after leaving this site.</p>
 
-                <p>Aarav Tech Services LLP reserves the right to modify its privacy policy as needed. Any and all changes will be reflected immediately in the statement.</p>
+                <p>Aarav Tech Services LLP reserves the right to modify its privacy policy as needed. Any and all
+                    changes will be reflected immediately in the statement.</p>
             </div>
 
             <div class="privacy-section">
                 <h2>Personal Information</h2>
-                <p>We may ask you to submit personal information at various places on our web site, including on pages for requesting a service or information, subscribing to a newsletter, placing an order, downloading software, submitting feedback, or participating in a forum or survey. This personal information, which you voluntarily submit, may include your name, address, email address and telephone number, as well as other information about, for example, your interest in SSS products and services.</p>
-                <p>We use this personal information to contact you or send you information you have requested or that we feel will be of interest to you. We may contact you via phone, email, or postal mail. We generally provide an option for you to choose not to receive these types of communications. However, even if you request not to be contacted by us, we reserve the right to use your contact information if we consider it necessary to send you crucial information about, for example, the product or services you have purchased from us or information about changes to our privacy policy.</p>
+                <p>We may ask you to submit personal information at various places on our web site, including on pages
+                    for requesting a service or information, subscribing to a newsletter, placing an order, downloading
+                    software, submitting feedback, or participating in a forum or survey. This personal information,
+                    which you voluntarily submit, may include your name, address, email address and telephone number, as
+                    well as other information about, for example, your interest in SSS products and services.</p>
+                <p>We use this personal information to contact you or send you information you have requested or that we
+                    feel will be of interest to you. We may contact you via phone, email, or postal mail. We generally
+                    provide an option for you to choose not to receive these types of communications. However, even if
+                    you request not to be contacted by us, we reserve the right to use your contact information if we
+                    consider it necessary to send you crucial information about, for example, the product or services
+                    you have purchased from us or information about changes to our privacy policy.</p>
             </div>
             <div class="privacy-section">
                 <h2>Non-Personally Identifying Information</h2>
-                <p>We may also collect information automatically about the use of our web site, through, for example, "cookies" or "IP addresses." This information is not collected and stored in a personally identifiable manner, however. This information helps us evaluate and improve our site and is also used for marketing and investment analysis. We may share this information with third parties, but only in aggregate statistical form that includes no personally identifying information.</p>
-                
+                <p>We may also collect information automatically about the use of our web site, through, for example,
+                    "cookies" or "IP addresses." This information is not collected and stored in a personally
+                    identifiable manner, however. This information helps us evaluate and improve our site and is also
+                    used for marketing and investment analysis. We may share this information with third parties, but
+                    only in aggregate statistical form that includes no personally identifying information.</p>
+
                 <div class="highlight-box">
                     <h4>About Cookies</h4>
-                    <p>"Cookies" are small files web sites place on your hard drive that allow sites to identify you. The use of cookies is a common practice on many web sites.</p>
+                    <p>"Cookies" are small files web sites place on your hard drive that allow sites to identify you.
+                        The use of cookies is a common practice on many web sites.</p>
                 </div>
             </div>
 
             <div class="privacy-section">
                 <h2>Corporate Family</h2>
-                <p>We may share some or all of your personal information with any current or future "affiliate" (which means a parent company, a subsidiary, joint venture, or other company under a common control with Aarav Tech Services LLP), in which case we will require the affiliate to honor this privacy policy. If another company acquires Aarav Tech Services LLP (or a business unit of Aarav Tech Services LLP that uses your personal information), that company will possess the personal information collected by Aarav Tech Services LLP and it will assume the rights and obligations regarding your personal information as described in this privacy policy.</p>
+                <p>We may share some or all of your personal information with any current or future "affiliate" (which
+                    means a parent company, a subsidiary, joint venture, or other company under a common control with
+                    Aarav Tech Services LLP), in which case we will require the affiliate to honor this privacy policy.
+                    If another company acquires Aarav Tech Services LLP (or a business unit of Aarav Tech Services LLP
+                    that uses your personal information), that company will possess the personal information collected
+                    by Aarav Tech Services LLP and it will assume the rights and obligations regarding your personal
+                    information as described in this privacy policy.</p>
             </div>
 
             <div class="privacy-section">
                 <h2>Our Security</h2>
-                <p>We take reasonable steps to protect the personal information you share with us from unauthorized access or disclosure. However, you should know that no company, including Aarav Tech Services LLP, can fully eliminate security risks associated with personal information.</p>
+                <p>We take reasonable steps to protect the personal information you share with us from unauthorized
+                    access or disclosure. However, you should know that no company, including Aarav Tech Services LLP,
+                    can fully eliminate security risks associated with personal information.</p>
 
-                <p>Your privacy is very important to us. Due to factors beyond our control, however, we cannot fully ensure that your personal information will not be disclosed to other third parties. For example, we may be legally required to disclose information to the government or third parties under certain circumstances, or third parties may unlawfully intercept or access transmissions or private communications.</p>
+                <p>Your privacy is very important to us. Due to factors beyond our control, however, we cannot fully
+                    ensure that your personal information will not be disclosed to other third parties. For example, we
+                    may be legally required to disclose information to the government or third parties under certain
+                    circumstances, or third parties may unlawfully intercept or access transmissions or private
+                    communications.</p>
             </div>
 
             <div class="privacy-section">
                 <h2>Changes to the Privacy Policy</h2>
                 <p>We may amend this privacy policy at any time by, in our discretion, either:</p>
                 <ul>
-                    <li>Sending you a notice of the amended policy to the email address you have submitted to us (if applicable), in which case you agree to the amended version if you do not contact us to inform us otherwise, or</li>
-                    <li>Posting the amended version on our web site, in which case you agree to the amended version if you continue to use the web site.</li>
+                    <li>Sending you a notice of the amended policy to the email address you have submitted to us (if
+                        applicable), in which case you agree to the amended version if you do not contact us to inform
+                        us otherwise, or</li>
+                    <li>Posting the amended version on our web site, in which case you agree to the amended version if
+                        you continue to use the web site.</li>
                 </ul>
             </div>
         </div>
@@ -678,11 +754,15 @@
                         </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
-                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
+                        team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -698,15 +778,20 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                                Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                                Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        </li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a>
+                        </li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        </li>
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -723,7 +808,7 @@
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -732,7 +817,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -769,4 +854,5 @@
     </script>
     <script src="./index.js"></script>
 </body>
+
 </html>

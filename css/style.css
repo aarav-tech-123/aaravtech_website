@@ -3076,6 +3076,7 @@ footer {
 .btn-primary:hover {
   background: linear-gradient(45deg, #6C63FF, #5A50F2);
   transform: translateY(-3px);
+  color: var(--bs-white);
 }
 
 /* Outline button */

@@ -270,7 +270,6 @@ if ($result === false) {
                     <p class="description">
                         We don't just offer services—we deliver integrated solutions designed to help your business thrive in the digital world. We act as your strategic partner, combining technology, creativity, and data to drive real, measurable growth.
                     </p>
-                    <a href="#" class="glass-btn">Our Services</a>
                 </div>
                 <div class="service-cards-section">
                     <a href="digital-marketing.html">

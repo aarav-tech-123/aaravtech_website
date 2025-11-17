@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <meta name="robots" content="index, follow">
     <title>Job Openings & Career Opportunities at Aarav Tech Services</title>
     <meta name="description"
@@ -34,14 +34,14 @@
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -49,14 +49,14 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         h1 {
             color: var(--bs-light);
         }
@@ -64,7 +64,7 @@
         .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         /* Header Styles */
         header {
             background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
@@ -77,14 +77,14 @@
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -94,23 +94,23 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .logo span {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 32px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: var(--bs-light);
@@ -120,7 +120,7 @@
             padding: 8px 0;
             font-size: 16px;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -131,17 +131,17 @@
             background: var(--gradient-text);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after,
         nav ul li a.active::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover,
         nav ul li a.active {
             color: var(--accent);
         }
-        
+
         .cta-button {
             background: var(--gradient-primary);
             color: white;
@@ -158,7 +158,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -166,37 +166,37 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 180px 0 120px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -211,13 +211,21 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -225,7 +233,7 @@
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -234,27 +242,27 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             margin: 0 0 40px;
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
-            text-align:center;
+            text-align: center;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -273,7 +281,7 @@
             overflow: hidden;
             width: fit-content;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -281,19 +289,19 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         .btn-outline {
             background: transparent;
             color: var(--bs-light);
@@ -310,22 +318,22 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-outline:hover {
             background: rgba(138, 43, 226, 0.1);
             transform: translateY(-3px);
         }
-        
+
         /* Career Section */
         .career-section {
             padding: 120px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .career-intro {
             text-align: center;
             margin-bottom: 70px;
@@ -334,7 +342,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .subheading {
             color: var(--accent);
             font-weight: 600;
@@ -343,14 +351,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .career-intro h1 {
             font-size: 42px;
             margin-bottom: 24px;
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .career-intro p {
             margin-bottom: 20px;
             color: rgba(246, 246, 250, 0.8);
@@ -360,7 +368,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         /* Job Listings */
         .job-listing-card {
             background: var(--gradient-card);
@@ -374,13 +382,13 @@
             backdrop-filter: blur(10px);
             height: 100%;
         }
-        
+
         .job-listing-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .job-listing-card::before {
             content: '';
             position: absolute;
@@ -393,32 +401,32 @@
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .job-listing-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .job-listing-card h4 {
             font-size: 24px;
             margin-bottom: 16px;
             color: var(--bs-light);
             font-weight: 600;
         }
-        
+
         .job-meta {
             color: var(--accent);
             font-size: 14px;
             margin-bottom: 20px;
             font-weight: 500;
         }
-        
+
         .job-listing-card p {
             color: rgba(246, 246, 250, 0.7);
             margin-bottom: 25px;
             font-size: 16px;
             line-height: 1.7;
         }
-        
+
         .apply-btn {
             background: var(--gradient-primary);
             color: white;
@@ -436,7 +444,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .apply-btn::before {
             content: '';
             position: absolute;
@@ -444,34 +452,34 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .apply-btn:hover::before {
             left: 100%;
         }
-        
+
         .apply-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
             color: white;
             text-decoration: none;
         }
-        
+
         /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .section-title h2 {
             font-size: 48px;
             color: var(--bs-light);
             margin-bottom: 16px;
             font-weight: 700;
         }
-        
+
         .section-title h2 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -479,7 +487,7 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         .section-title p {
             color: rgba(246, 246, 250, 0.7);
             max-width: 700px;
@@ -487,19 +495,19 @@
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 120px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
@@ -510,7 +518,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .cta-section h1 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -518,110 +526,119 @@
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section h1 .highlight {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 40px;
             color: rgba(246, 246, 250, 0.8);
         }
-        
-        
+
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .section-title h2 {
                 font-size: 42px;
             }
-            
+
             .cta-section h1 {
                 font-size: 42px;
             }
-            
+
 
         }
-        
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 padding: 15px 0;
             }
-            
+
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             nav ul li {
                 margin: 8px 12px;
             }
-            
+
             .hero {
                 padding: 150px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
-            .btn-primary, .btn-outline {
+
+            .btn-primary,
+            .btn-outline {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
             }
-            
+
             .section-title h2 {
                 font-size: 36px;
             }
-            
+
             .cta-section h1 {
                 font-size: 36px;
             }
 
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
-            
+
             .cta-section h1 {
                 font-size: 32px;
             }
         }
     </style>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');
+    </script>
     <!-- End Google Tag Manager -->
 </head>
 
@@ -646,13 +663,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net" class="nav-item nav-link" style="color:var(--bs-white) !important">Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link" style="color:var(--bs-white) !important">About</a>
+                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+
                                 <div class="submenu">
                                     <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
@@ -661,8 +685,13 @@
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
-                                <div class="submenu">
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="web-development.html" class="submenu-link ">Web Development</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
@@ -672,19 +701,24 @@
                                 <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
-                                <div class="submenu">
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="bpo.html" class="submenu-link ">BPO</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
                     <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
                     <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
             </div>
         </nav>
         <!-- Hero Section -->
@@ -828,7 +862,7 @@
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -845,7 +879,7 @@
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -854,7 +888,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -876,8 +910,9 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="./index.js"></script>
     <script>
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');

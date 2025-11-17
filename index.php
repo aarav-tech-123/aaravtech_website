@@ -175,16 +175,28 @@ if ($result === false) {
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+
+                                <div class="submenu">
+                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="web-development.html" class="submenu-link ">Web Development</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
@@ -195,7 +207,12 @@ if ($result === false) {
                                 <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="bpo.html" class="submenu-link ">BPO</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
@@ -210,7 +227,6 @@ if ($result === false) {
                 <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
             </div>
         </nav>
-
     </div>
 
     <div class="container-fluid header position-relative  p-0 hero-section" style="margin-top:-94px; height: 110vh;">

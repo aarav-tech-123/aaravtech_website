@@ -141,8 +141,6 @@
     right: 0px;
   }
 }
-
-
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
   margin-right: 25px;
@@ -182,31 +180,76 @@
   margin-left: 8px;
 }
 
+/* Navbar base */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-container.scrolled {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-primary {
+  border: 1px solid var(--bs-primary) !important;
+  color: var(--bs-primary) !important;
+}
+
+.navbar-white {
+  background-color: var(--bs-white);
+}
+
+.nav-item {
+  color: var(--bs-white) !important;
+}
+
+.navbar {
+  transition: all ease .8s;
+}
+
+.nav-link-white {
+  color: var(--bs-white) !important;
+}
+
+.home-nav-scrolled {
+  background-color: #000000cf !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .navbar .nav-item .dropdown-menu {
-    display: block;
+    display: none !important;  /* CHANGE: Prevent hover-open */
     visibility: hidden;
-    top: 100%;
+    opacity: 0;
     transform: rotateX(-75deg);
     transform-origin: 0% 0%;
     border: 0;
     border-radius: 10px;
     transition: .5s;
-    opacity: 0;
+  }
+
+  /* OPEN STATE — shown only via JS */
+  .navbar .nav-item.open > .dropdown-menu {
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+    transform: rotateX(0deg);
+    background: var(--bs-light) !important;
   }
 }
 
-.dropdown .dropdown-menu a:hover {
-  background: var(--bs-primary);
-  color: var(--bs-white);
-}
 
+
+/* REMOVE hover-open dropdown completely */
 .navbar .nav-item:hover .dropdown-menu {
-  transform: rotateX(0deg);
-  visibility: visible;
-  background: var(--bs-light) !important;
-  transition: .5s;
-  opacity: 1;
+  /* removed to disable hover open */
 }
 
 .collapse.navbar-collapse {
@@ -215,29 +258,16 @@
 
 @media (max-width: 992px) {
   nav.bg-transparent {
-    position: absolute;
-    width: 100%;
     background: transparent !important;
   }
 
-  .navbar.navbar-expand-lg button span {
-    position: relative;
-    z-index: 99;
-  }
-
   .navbar {
-    position: relative;
     z-index: 2;
   }
 
   .sticky-top.navbar-light {
-    position: relative;
     background: var(--bs-white) !important;
     padding: 0 20px 20px 20px !important;
-  }
-
-  .sticky-top.navbar-light {
-    background: transparent;
   }
 
   nav.navbar {
@@ -246,27 +276,19 @@
 
   .navbar.navbar-expand-lg .navbar-toggler {
     padding: 10px 20px;
-    border: 1px solid var(--bs-primary);
-    color: var(--bs-primary);
+    border: 1px solid  var(--bs-white);
+    color:  var(--bs-white);
   }
-  .navbar-toggler-white{
-  padding: 10px 20px;
-  border: 1px solid var(--bs-white) !important;
-  color: var(--bs-white) !important;
-}
 
   .navbar-light .navbar-collapse {
     margin-top: 15px;
     border-top: 1px solid #DDDDDD;
   }
 
-  .navbar-light .navbar-nav .nav-link,
-  .sticky-top.navbar-light .navbar-nav .nav-link {
+  .navbar-light .navbar-nav .nav-link {
     padding: 10px 0;
-    margin-left: 0;
     color: var(--bs-dark) !important;
   }
-
 
   .navbar-light .navbar-brand img {
     max-height: 45;
@@ -277,24 +299,100 @@
   }
 }
 
+/* REMOVE HOVER SUBMENU OPENING */
 @media (min-width: 992px) {
-  .submenu-wrapper:hover .submenu {
-    display: block;
+  .submenu-wrapper:hover .submenu:not(.open) {
+    /* removed to disable hover-opening submenus */
   }
+
   .navbar-light {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     background: transparent !important;
     z-index: 999;
   }
 
   .sticky-top.navbar-light {
-    position: fixed;
     background: var(--bs-light) !important;
   }
 }
+
+/*** FIXED SUBMENU STYLES ***/
+.submenu {
+  display: none;
+  width: 150%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: var(--bs-light);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* JS OPEN STATE */
+.submenu.open {
+  display: block;
+  overflow:hidden;
+}
+
+.submenu-parent {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px !important;
+  position: relative;
+}
+
+.submenu-parent .submenu-link {
+  flex: 1;
+  text-decoration: none;
+  color: inherit !important;
+}
+
+.submenu-toggle {
+  background: none;
+  border: none;
+  padding: 0 6px;
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+}
+
+.submenu-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.submenu-toggle.open i {
+  transform: rotate(180deg);
+}
+
+/* Mobile mode */
+@media (max-width: 992px) {
+  .submenu {
+    position: static !important;
+    width: 100% !important;
+    margin-left: 1rem;
+  }
+}
+
+/* Main services dropdown */
+.dropdown-menu {
+    display: none !important;
+}
+.dropdown-menu.open {
+    display: block !important;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+}
+.submenu.open {
+    display: block;
+}
+
+
 
 /*** Navbar End ***/
 
@@ -2193,36 +2291,6 @@ pagination {
   z-index: 10;
 }
 
-
-.submenu{
-  display: none;
-  width:150%;
-  position:absolute;
-  top:0;
-  left:100%;
-  padding:0;
-  background-color: var(--bs-light);
-  border-radius:10px;
-}
-
-.submenu-wrapper{
-  position:relative;
-}
-
-
-.submenu.mobile {
-  display: block;
-  position: initial;
-  margin-left: 1rem;
-}
-
-.submenu.desktop {
-  display: block;
-  position: absolute;
-  top:0;
-  left:100%;
-}
-
 .custom-accordion .accordion-button:focus {
   box-shadow: none;             /* Remove blue/red glow */
   border-color: transparent;    /* Or use your custom color */
@@ -2398,21 +2466,6 @@ h1{
 }
 
 
-/* Navbar base */
-.navbar-container {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-/* Add background + shadow when scrolled */
-.navbar-container.scrolled {
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transform: translateY(0);
-}
-
 /* Optional: change link colors */
 
 
@@ -2432,18 +2485,7 @@ h1{
   opacity: 0.95;
 }
 
-.navbar-primary{
-  border: 1px solid var(--bs-primary) !important;
-  color: var(--bs-primary) !important;
-}
 
-.navbar-white{
-  background-color: var(--bs-white);
-}
-
-.nav-item{
-  color:var(--bs-white) !important;
-}
 
 .button-boxshadow{
   border: 1px solid white; 
@@ -2500,23 +2542,7 @@ h1{
   z-index: -1;
 }
 
-.navbar{
-  transition: all ease .8s;
-}
 
-.nav-link-white{
-  color:var(--bs-white) !important;
-}
-
-.home-nav-scrolled{
-    background-color: #000000cf !important;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    left: 0;
-    width: 100%;
-}
 
 .subheading {
   font-size: 0.9rem;

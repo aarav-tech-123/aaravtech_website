@@ -46,7 +46,7 @@ if ($result === false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <meta name="robots" content="index, follow">
     <title>Explore Our Blog Section | Learn, Apply & Grow with Insights</title>
     <meta name="description"
@@ -75,14 +75,14 @@ if ($result === false) {
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -90,7 +90,7 @@ if ($result === false) {
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -110,31 +110,31 @@ if ($result === false) {
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         .breadcrumb-item a {
             color: var(--accent-light);
             text-decoration: none;
         }
-        
+
         .breadcrumb-item.active {
             color: var(--bs-light);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 140px 0 80px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
@@ -142,7 +142,7 @@ if ($result === false) {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -157,13 +157,21 @@ if ($result === false) {
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -171,7 +179,7 @@ if ($result === false) {
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -180,13 +188,13 @@ if ($result === false) {
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
@@ -194,14 +202,14 @@ if ($result === false) {
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
         }
-        
+
         .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -219,7 +227,7 @@ if ($result === false) {
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -227,14 +235,14 @@ if ($result === false) {
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
@@ -244,24 +252,24 @@ if ($result === false) {
         .blog-section {
             padding: 100px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .section-title h2 {
             font-size: 48px;
             color: var(--bs-light);
             margin-bottom: 16px;
             font-weight: 700;
         }
-        
+
         .section-title h2 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -269,7 +277,7 @@ if ($result === false) {
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         .section-title p {
             color: rgba(246, 246, 250, 0.7);
             max-width: 700px;
@@ -277,13 +285,13 @@ if ($result === false) {
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-        
+
         .blog-card {
             background: var(--gradient-card);
             border-radius: 20px;
@@ -295,7 +303,7 @@ if ($result === false) {
             backdrop-filter: blur(10px);
             height: 100%;
         }
-        
+
         .blog-card::before {
             content: '';
             position: absolute;
@@ -308,28 +316,28 @@ if ($result === false) {
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .blog-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .blog-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
             border-radius: 20px 20px 0 0;
         }
-        
+
         .blog-content {
             padding: 30px;
         }
-        
+
         .blog-meta {
             display: flex;
             align-items: center;
@@ -338,28 +346,28 @@ if ($result === false) {
             font-size: 14px;
             color: rgba(246, 246, 250, 0.7);
         }
-        
+
         .blog-meta i {
             color: var(--accent);
             margin-right: 5px;
         }
-        
+
         .blog-title {
             font-size: 20px;
             margin-bottom: 15px;
             color: var(--bs-light);
             font-weight: 600;
             line-height: 1.4;
-            padding:0;
+            padding: 0;
         }
-        
+
         .blog-excerpt {
             color: rgba(246, 246, 250, 0.7);
             margin-bottom: 20px;
             font-size: 15px;
             line-height: 1.6;
         }
-        
+
         .read-more {
             background: var(--gradient-primary);
             color: white;
@@ -372,7 +380,7 @@ if ($result === false) {
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .read-more:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
@@ -385,19 +393,19 @@ if ($result === false) {
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-section h2 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -405,7 +413,7 @@ if ($result === false) {
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
@@ -413,59 +421,59 @@ if ($result === false) {
             color: rgba(246, 246, 250, 0.8);
         }
 
-      
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .section-title h2 {
                 font-size: 42px;
             }
-            
+
             .cta-section h2 {
                 font-size: 42px;
             }
         }
 
-        
+
         @media (max-width: 768px) {
             .hero {
                 padding: 120px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .section-title h2 {
                 font-size: 36px;
             }
-            
+
             .cta-section h2 {
                 font-size: 36px;
             }
-            
+
             .blog-grid {
                 grid-template-columns: 1fr;
             }
 
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
-            
+
             .cta-section h2 {
                 font-size: 32px;
             }
@@ -473,9 +481,12 @@ if ($result === false) {
     </style>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
+        (function(w, d, s, l, i) {
             w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
                 dl = l != 'dataLayer' ? '&l=' + l : '';
@@ -507,60 +518,67 @@ if ($result === false) {
             <a href="https://aaravtech.net" class="navbar-brand p-0">
                 <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net" class="nav-item nav-link" style="color:var(--bs-white)!important">Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link" style="color:var(--bs-white)!important">About</a>
+                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            style="color:var(--bs-white)!important">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+
+                                <div class="submenu">
+                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content
-                                        Marketing</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="web-development.html" class="submenu-link ">Web Development</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom
-                                        Website Development</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App
-                                        Development</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="bpo.html" class="submenu-link ">BPO</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office
-                                        Support</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link active"
-                        style="color:var(--bs-white)!important">Blogs</a>
-                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link"
-                        style="color:var(--bs-white)!important">Career</a>
-                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link"
-                        style="color:var(--bs-white)!important">Contact</a>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn"
-                    style="margin-right:2rem;font-size:.8rem;padding:.8rem 1.6rem">Let's Talk</a>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
             </div>
         </nav>
 
@@ -574,7 +592,7 @@ if ($result === false) {
                 <div class="hero-badge">
                     <i class="fas fa-blog"></i> Latest Insights
                 </div>
-                <h1 style="color:var(--bs-white)" >Our<span class="gradient-text"> Blogs</span></h1>
+                <h1 style="color:var(--bs-white)">Our<span class="gradient-text"> Blogs</span></h1>
                 <p>A place where new ideas meet practical insights. Discover our blogs to keep you informed and inspired.</p>
             </div>
         </section>
@@ -587,7 +605,7 @@ if ($result === false) {
                 <h2>Insights & Ideas for Your <span class="gradient-text">Digital Journey</span></h2>
                 <p>Unlock expert articles on marketing, design & technology. Learn what works, apply it & see results.</p>
             </div>
-            
+
             <div class="blog-grid">
                 <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
@@ -614,24 +632,24 @@ if ($result === false) {
                                 : '';
                         }
                         ?>
-                        <a  class="blog-card" href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>">
-                                <?php if ($img_url): ?>
-                                    <img src="<?php echo $img_url; ?>" class="blog-image"
-                                        alt="<?php echo htmlspecialchars($row['post_title']); ?>">
-                                <?php else: ?>
-                                    <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($row['post_date'])); ?></span>
-                                        <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
-                                    </div>
-                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
-                                    <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                    <button href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</button>
+                        <a class="blog-card" href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>">
+                            <?php if ($img_url): ?>
+                                <img src="<?php echo $img_url; ?>" class="blog-image"
+                                    alt="<?php echo htmlspecialchars($row['post_title']); ?>">
+                            <?php else: ?>
+                                <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
                                 </div>
+                            <?php endif; ?>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($row['post_date'])); ?></span>
+                                    <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
+                                </div>
+                                <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']); ?></h3>
+                                <p class="blog-excerpt"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                <button href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More</button>
+                            </div>
                         </a>
 
                     <?php endwhile; ?>
@@ -710,7 +728,7 @@ if ($result === false) {
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -727,7 +745,7 @@ if ($result === false) {
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -736,7 +754,7 @@ if ($result === false) {
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -760,7 +778,7 @@ if ($result === false) {
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -769,6 +787,7 @@ if ($result === false) {
             }
         });
     </script>
+    <script src="./index.js"></script>
 </body>
 
 </html>

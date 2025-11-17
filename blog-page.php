@@ -693,7 +693,7 @@ $stmt_meta->close();
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
             <a href="https://aaravtech.net" class="navbar-brand p-0">
-                <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
+                <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -706,16 +706,28 @@ $stmt_meta->close();
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Digital Marketing</a>
-                                <div class="submenu ">
-                                    <a class="dropdown-item " href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+
+                                <div class="submenu">
+                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">Web Development</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/web-development.html" class="submenu-link ">Web Development</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
@@ -726,7 +738,12 @@ $stmt_meta->close();
                                 <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="#" class="dropdown-item submenu-parent">BPO</a>
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/bpo.html" class="submenu-link ">BPO</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
@@ -738,7 +755,7 @@ $stmt_meta->close();
                     <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
                     <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem">Let's Talk</a>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
             </div>
         </nav>
         <!-- Blog Hero Section -->
@@ -918,7 +935,7 @@ $stmt_meta->close();
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://aaravtech.net/js/main.js"></script>
-
+    <script src="https://aaravtech.net/index.js"></script>
     <script>
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');

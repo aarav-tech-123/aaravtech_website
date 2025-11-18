@@ -589,9 +589,6 @@ if ($result === false) {
                     <li class="breadcrumb-item"><a href="https://aaravtech.net">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Blogs</li>
                 </ol>
-                <div class="hero-badge">
-                    <i class="fas fa-blog"></i> Latest Insights
-                </div>
                 <h1 style="color:var(--bs-white)">Our<span class="gradient-text"> Blogs</span></h1>
                 <p>A place where new ideas meet practical insights. Discover our blogs to keep you informed and inspired.</p>
             </div>

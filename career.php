@@ -724,9 +724,6 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-rocket"></i> Career Opportunities
-                </div>
                 <h1>Shape the Future of <span class="gradient-text">Digital with Us</span></h1>
                 <p>Work in a fast-paced team-based environment and grow with a company that values innovation, collaboration and professional progression. The opportunities we experience are incredible and numerous regarding the fields your skills and visions might make a tangible difference. In Aarav Tech Services LLP, we encourage a diverse workplace culture to encourage learning, creativity and career development. Whatever your experience or the fact that you are a fresh graduate, you will be provided with a good environment in which to nurture your future. Explore the opportunities which we have and begin an eager career at our company. </p>
                 <div class="hero-buttons">

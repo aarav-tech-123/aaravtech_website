@@ -752,37 +752,10 @@
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="job-listing-card">
-                        <h4>Senior Digital Marketing Specialist</h4>
-                        <p class="job-meta">Full-time | Remote | Experience: 5+ years</p>
-                        <p>We're seeking a seasoned digital marketer to lead our client campaigns. The ideal candidate will have extensive experience in SEO, SEM, social media, and content strategy with a proven track record of delivering measurable results.</p>
-                        <a href="mailto:careers@aaravtech.net?subject=Application for Senior Digital Marketing Specialist" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="job-listing-card">
-                        <h4>Front-End Web Developer</h4>
-                        <p class="job-meta">Full-time | On-site | Experience: 2+ years</p>
-                        <p>We are looking for a creative and skilled Front-End Developer to join our web team. You will be responsible for building user-friendly and responsive websites, working with technologies like HTML, CSS, JavaScript, and modern frameworks.</p>
-                        <a href="mailto:careers@aaravtech.net?subject=Application for Front-End Web Developer" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="job-listing-card">
-                        <h4>Graphic Designer</h4>
-                        <p class="job-meta">Full-time | Hybrid | Experience: 3+ years</p>
-                        <p>Join our design team to create stunning visuals for our clients. We're looking for a designer with a strong portfolio in brand identity, marketing materials, and digital graphics who is proficient in Adobe Creative Suite.</p>
-                        <a href="mailto:careers@aaravtech.net?subject=Application for Graphic Designer" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="job-listing-card">
-                        <h4>BPO Operations Manager</h4>
-                        <p class="job-meta">Full-time | On-site | Experience: 4+ years</p>
-                        <p>Lead our BPO team and ensure the smooth operation of all outsourced services. The ideal candidate will have experience in managing teams, optimizing workflows, and maintaining high standards of quality and efficiency.</p>
-                        <a href="mailto:careers@aaravtech.net?subject=Application for BPO Operations Manager" class="apply-btn">Apply Now</a>
+                        <h4>Business Development Associate (Digital Marketing) — Night Shift</h4>
+                        <p class="job-meta">Full-time | On-site | Experience: 1+ years</p>
+                        <p>We’re scaling rapidly and need a business development professional who truly understands digital marketing from end to end. You’ll be the driving force bringing in clients who need SEO, PPC, SMM, web design, branding, and the whole digital ecosystem. No hand-holding. No “we’ll give you leads.” You need your own network, sources, and hustle.</p>
+                        <a href="https://in.linkedin.com/jobs/view/business-development-manager-at-aarav-tech-services-llp-4305209073?trk=public_post_feed-job-posting-content" class="apply-btn">Apply Now</a>
                     </div>
                 </div>
             </div>

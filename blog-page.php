@@ -409,7 +409,7 @@ $stmt_meta->close();
 
         .blog-content h1 {
             font-size: 32px;
-            border-bottom: 2px solid var(--accent-lighter);
+            /* border-bottom: 2px solid var(--accent-lighter); */
             padding-bottom: 10px;
         }
 

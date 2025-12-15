@@ -1271,7 +1271,7 @@ if ($result === false) {
                     <h2 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                            How can I get started with Aaravtech?
+                            How can you get started with us?
                         </button>
                     </h2>
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"

@@ -223,7 +223,7 @@ if ($result === false) {
             overflow: hidden;
             border: 1px solid rgba(138, 43, 226, 0.2);
             backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 1s ease;
             height: 100%;
         }
 
@@ -256,7 +256,7 @@ if ($result === false) {
             border-radius: 40px;
             transform: scale(1);
             transform-origin: 50% 50%;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 1s ease;
             opacity: 0;
         }
 
@@ -314,35 +314,7 @@ if ($result === false) {
             background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
         }
 
-        .card2::before {
-            top: -15px;
-            left: -15px;
-            background: linear-gradient(135deg, #9D4EDD 0%, #8A2BE2 100%);
-        }
 
-        .card3::before {
-            top: -25px;
-            left: -25px;
-            background: linear-gradient(135deg, #B66DF0 0%, #8A2BE2 100%);
-        }
-
-        .card4::before {
-            top: -20px;
-            left: -20px;
-            background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 50%, #4A0080 100%);
-        }
-
-        .card5::before {
-            top: -18px;
-            left: -18px;
-            background: linear-gradient(135deg, #6A0DAD 0%, #8A2BE2 100%);
-        }
-
-        .card6::before {
-            top: -22px;
-            left: -22px;
-            background: linear-gradient(135deg, #8A2BE2 0%, #9D4EDD 100%);
-        }
 
         /* Card Icons */
         .card-icon {
@@ -368,57 +340,6 @@ if ($result === false) {
             transform: scale(1.1);
         }
 
-        /* Floating Animation */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* Apply floating animation to all cards */
-        .card1,
-        .card2,
-        .card3,
-        .card4,
-        .card5,
-        .card6 {
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .card1 {
-            animation-delay: 0s;
-        }
-
-        .card2 {
-            animation-delay: 1s;
-        }
-
-        .card3 {
-            animation-delay: 2s;
-        }
-
-        .card4 {
-            animation-delay: 3s;
-        }
-
-        .card5 {
-            animation-delay: 4s;
-        }
-
-        .card6 {
-            animation-delay: 5s;
-        }
-
-        /* Pause floating on hover */
-        .card:hover {
-            animation-play-state: paused;
-        }
 
         /* Appointment Section */
         .appointment-section {

@@ -1741,7 +1741,7 @@
 }
 
 .form-group input {
-  padding: 12px 0px !important;
+  /* padding: 12px 0px ; */
   width: 250px;
   border: none;
   border-bottom: 1px solid #ccc;

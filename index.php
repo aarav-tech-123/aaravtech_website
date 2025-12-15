@@ -118,6 +118,27 @@ if ($result === false) {
     <!-- End Google Tag Manager -->
 
     <style>
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
+        }
+
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         .header::before {
             content: "";
             position: absolute;
@@ -141,6 +162,554 @@ if ($result === false) {
             background: #00000065;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             transform: translateY(0);
+        }
+
+        /* Why Hire Us Section with Left Gradient Cards */
+        .why-hire-us {
+            padding: 120px 0;
+            position: relative;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* NEW: Left Gradient Cards Design */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Common Card Styles - Gradient Expand Animation from LEFT for ALL cards */
+        .card {
+            display: block;
+            position: relative;
+            background: var(--gradient-card);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        /* Left Corner Indicator */
+        .left-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            background: var(--gradient-primary);
+            border-radius: 0 0 40px 0;
+            z-index: 3;
+        }
+
+        /* Gradient Expand Animation from LEFT for ALL cards */
+        .card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -20px;
+            left: -20px;
+            background: var(--gradient-primary);
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+
+        /* Card hover effect - gradient fills entire card from LEFT */
+        .card:hover::before {
+            transform: scale(35);
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                0 25px 50px rgba(138, 43, 226, 0.3),
+                0 0 60px rgba(138, 43, 226, 0.2);
+            border-color: transparent;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease-out;
+        }
+
+        .card p {
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 16px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease-out;
+        }
+
+        .card:hover h3 {
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .card:hover .left-corner {
+            background: transparent;
+            transform: scale(1.1);
+        }
+
+        /* Individual card variations (subtle gradient differences) */
+        .card1::before {
+            top: -20px;
+            left: -20px;
+            background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+        }
+
+        .card2::before {
+            top: -15px;
+            left: -15px;
+            background: linear-gradient(135deg, #9D4EDD 0%, #8A2BE2 100%);
+        }
+
+        .card3::before {
+            top: -25px;
+            left: -25px;
+            background: linear-gradient(135deg, #B66DF0 0%, #8A2BE2 100%);
+        }
+
+        .card4::before {
+            top: -20px;
+            left: -20px;
+            background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 50%, #4A0080 100%);
+        }
+
+        .card5::before {
+            top: -18px;
+            left: -18px;
+            background: linear-gradient(135deg, #6A0DAD 0%, #8A2BE2 100%);
+        }
+
+        .card6::before {
+            top: -22px;
+            left: -22px;
+            background: linear-gradient(135deg, #8A2BE2 0%, #9D4EDD 100%);
+        }
+
+        /* Card Icons */
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, rgba(106, 13, 173, 0.1) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            color: var(--accent);
+            font-size: 24px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .card:hover .card-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Apply floating animation to all cards */
+        .card1,
+        .card2,
+        .card3,
+        .card4,
+        .card5,
+        .card6 {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .card1 {
+            animation-delay: 0s;
+        }
+
+        .card2 {
+            animation-delay: 1s;
+        }
+
+        .card3 {
+            animation-delay: 2s;
+        }
+
+        .card4 {
+            animation-delay: 3s;
+        }
+
+        .card5 {
+            animation-delay: 4s;
+        }
+
+        .card6 {
+            animation-delay: 5s;
+        }
+
+        /* Pause floating on hover */
+        .card:hover {
+            animation-play-state: paused;
+        }
+
+        /* Appointment Section */
+        .appointment-section {
+            padding: 100px 0;
+            position: relative;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
+
+        .appointment-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .appointment-content {
+            align-self: self-start;
+        }
+
+        .appointment-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--bs-white);
+        }
+
+        .appointment-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: rgba(246, 246, 250, 0.8);
+            line-height: 1.7;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(30, 14, 69, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .trust-badge .stars {
+            color: #FFD700;
+        }
+
+        .trust-badge span {
+            font-weight: 600;
+            color: var(--bs-light);
+        }
+
+        .appointment-form {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--bs-light);
+        }
+
+        .form-subtitle {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 16px 20px !important;
+            background: rgba(11, 1, 28, 0.6) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 10px;
+            color: var(--bs-light);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(246, 246, 250, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23F6F6FA' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 16px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(11, 1, 28, 0.4);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .captcha-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+        }
+
+        .captcha-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+
+        .captcha-icon {
+            color: #4285F4;
+            font-size: 18px;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            width: 100%;
+            /* padding: 18px; */
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* FAQ Section - Updated Design */
+        .faq-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+
+        .accordion.custom-accordion {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion.custom-accordion .accordion-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion.custom-accordion .accordion-button {
+            background: var(--gradient-pricing);
+            color: var(--bs-light);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 20px 25px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: none !important;
+        }
+
+        .accordion.custom-accordion .accordion-button:hover {
+            background: rgba(138, 43, 226, 0.1);
+        }
+
+        .accordion.custom-accordion .accordion-button:not(.collapsed) {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--bs-light);
+            box-shadow: none;
+        }
+
+        .accordion.custom-accordion .accordion-button::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s;
+            background-image: none !important;
+            width: auto;
+            height: auto;
+            transform: none;
+        }
+
+        .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '-';
+            transform: none;
+        }
+
+        .accordion.custom-accordion .accordion-body {
+            padding: 0;
+            background: rgba(11, 1, 28, 0.5);
+        }
+
+        .faq-accordion-body {
+            padding: 1rem .5rem !important;
+            color: rgba(246, 246, 250, 0.8);
+            line-height: 1.7;
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(106, 13, 173, 0.1) 100%);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
@@ -398,6 +967,323 @@ if ($result === false) {
             </div>
         </section>
     </div>
+
+    <!-- Why Hire Us Section with Left Gradient Cards -->
+    <section class="why-hire-us" id="why-hire">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose <span class="gradient-text">Aaravtech</span></h2>
+                <p>We combine strategic insight with performance-driven execution to deliver exceptional digital growth results.</p>
+            </div>
+
+            <div class="cards-container">
+                <!-- Card 1 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Digital Expertise</h3>
+                    <p>Aaravtech offers a strong sense of industry insight and practical experience to provide trusted digital marketing services to help brands to grow, expand, and remain competitive in the digital world.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Vision, Local Understanding</h3>
+                    <p>In order to make our campaigns effective and appealing, we operate with the businesses among various industries and pay a close attention to the local behavior of the audience, the trend and the intent.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Customized Strategies for Every Brand</h3>
+                    <p>No two businesses are the same. We do not apply a one-size-fits-all strategy when forming a digital strategy, as our team designs specific strategies using your objectives, industry, and audience.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Results That Matter</h3>
+                    <p>At Aaravtech, success comes in the form of actual results. From increased traffic to better conversions, we are driven by providing quantifiable growth and value in the long term.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Performance-Driven Excellence</h3>
+                    <p>We have a high quality performance and innovation in our work. Each of the campaigns is streamlined using data-driven insights to provide stable and meaningful outcomes.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card card1">
+                    <div class="left-corner"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dedicated Client Support</h3>
+                    <p>Your growth is our priority. We are constantly supportive, communicative, and we provide frequent performance updates so as to keep you updated and ahead of the competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section" id="appointment">
+        <div class="container">
+            <div class="appointment-container">
+                <div class="appointment-content">
+                    <h2>Book an Appointment With Our Trusted Digital Growth Experts</h2>
+                    <p>Looking to grow your business online? You're in the right place.</p>
+                    <p>Connect with a real Aaravtech expert and discuss your objectives, issues, and optimal digital strategy for your brand. Don't wait—let's start building your success today.</p>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>Rated 4.5/5</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fab fa-google" style="color: #4285F4;"></i>
+                            <span>Google Partner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-form">
+
+                    <form id="appointmentForm" action="send_mail2.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp Mobile Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="city" name="city" placeholder="City" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>- Select Service -</option>
+                                <option value="seo">SEO Services</option>
+                                <option value="social">Social Media Marketing</option>
+                                <option value="ppc">PPC Advertising</option>
+                                <option value="content">Content Marketing</option>
+                                <option value="web">Web Development</option>
+                                <option value="strategy">Digital Strategy</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="description" name="description placeholder=" Please type at least 20 characters about your inquiry" minlength="20" required></textarea>
+                        </div>
+
+                        <div class="g-recaptcha" data-sitekey="6Le2LtkrAAAAAAN7z1yULcq0sZF0IYAx8tiWK8HP"></div>
+
+                        <button type="submit" class="submit-btn">Submit Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - Updated Design -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Find answers to common questions about our digital marketing services and process.</p>
+            </div>
+
+            <div class="accordion custom-accordion" id="faqAccordion">
+                <!-- FAQ 1 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What services does Aaravtech offer?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            <strong>Aaravtech offers digital marketing services</strong> such as SEO, social media marketing, PPC advertising, content marketing, web development, and lead generation services.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How can digital marketing help my business grow?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Digital marketing is the best way to <strong>reach the right people, build brand awareness, generate quality leads, and increase sales</strong> using data-driven online marketing tactics.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Do you develop a tailored marketing program?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes. <strong>Every business is unique</strong> and so we develop unique digital marketing plans based on your goals, industry and target market.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            How long does it take to see results?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Results depend on the service. The average period for SEO is <strong>3-6 months</strong>, whereas paid advertisements and social media can deliver more rapid results.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Do you work with small businesses and startups?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Absolutely. Our solutions can be <strong>scaled to meet any budget</strong> as we work with startups, small businesses, and established brands.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            How do you measure campaign performance?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            To be completely transparent, we track <strong>critical metrics such as traffic, leads, conversions and ROI</strong> and provide monthly performance reports as well.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Will it have frequent updates and support?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes. Our team offers <strong>ongoing support, proper communication, and frequent updates</strong> to ensure you stay updated at all times.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Do you offer local and international digital marketing services?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes. Aaravtech has <strong>local and international clients</strong> whom we provide with regional and global marketing campaigns.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            Is my business data safe with Aaravtech?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes. We follow <strong>stringent data security and data confidentiality provisions</strong> to guarantee that your business details are secure at any given time.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="headingTen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            How can I get started with Aaravtech?
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body faq-accordion-body">
+                            You can <strong>fill out the contact form, request a call back, or book an appointment</strong> to speak directly with our digital marketing experts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <div class="blog-cta-container">
@@ -668,6 +1554,24 @@ if ($result === false) {
     <!-- Template JavaScript -->
     <script src="js/main.js"></script>
     <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
         const slider = document.querySelector(".blog-slider");
         const leftBtn = document.querySelector(".slider-btn.left");
         const rightBtn = document.querySelector(".slider-btn.right");

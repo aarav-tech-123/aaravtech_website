@@ -893,8 +893,8 @@ if ($result === false) {
     <section class="why-hire-us" id="why-hire">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose <span class="gradient-text">Aaravtech</span></h2>
-                <p>We combine strategic insight with performance-driven execution to deliver exceptional digital growth results.</p>
+                <h2>Why Should You Hire <span class="gradient-text">Aaravtech</span> for Digital Growth</h2>
+                <p>Strategy-Led. Performance-Driven. Built for Results.</p>
             </div>
 
             <div class="cards-container">

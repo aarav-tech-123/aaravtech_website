@@ -51,7 +51,7 @@ if ($result === false) {
     <meta name="robots" content="index, follow">
     <title>Hire Best Digital Marketing Agency in India to Grow Fast!</title>
     <meta name="description"
-        content="Aarav Tech Services is a top digital marketing agency in India. We offer SEO, PPC & social media to boost online visibility & ROI. Contact us today for result-driven success!">
+        content="Aarav Tech Services is a top digital marketing agency in India. We offer SEO, PPC & social media to boost online visibility & ROI. Contact us today for success!">
     <!-- Open Graph Meta Tags for Aarav Tech -->
     <meta property="og:title" content="#1 Best Digital Marketing Agency India | Contact Us Now" />
     <meta property="og:description"

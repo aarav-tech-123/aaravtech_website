@@ -358,6 +358,12 @@ if ($result === false) {
             align-items: center;
         }
 
+        @media (max-width: 992px) {
+            .appointment-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .appointment-content {
             align-self: self-start;
         }
@@ -742,6 +748,58 @@ if ($result === false) {
             </div>
         </div>
     </div>
+
+
+    <section class="cta-section" style="padding: 100px 0; background: linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 50px;">
+                <h2>Best Digital Marketing Agency in India for ROI-Driven Growth</h2>
+                <p>Helping brands grow smarter with AI-driven digital marketing solutions.</p>
+            </div>
+
+            <div class="row align-items-center" style="margin-bottom: 60px;">
+                <div class="col-lg-6">
+                    <div class="expertise-content" style="display: flex;justify-content: center;align-items: start;flex-direction: column; margin-bottom: 2rem;">
+                        <h3 class="mb-4" style="color: var(--bs-light); font-size: 32px; font-weight: 600;text-align: left;">AI- driven agency you can trust upon </h3>
+                        <p style="color: rgba(246, 246, 250, 0.8); line-height: 1.7; margin-bottom: 20px;text-align: left;">
+                            Aarav Tech Services LLP is a leading digital marketing agency in India. We provide SEO, PPC, social media, content, and performance-driven campaigns that increase visibility, leads, and ROI. Our team of experts creates custom plans to help organizations excel online, and achieve long-term digital success.
+                        </p>
+                        <a class="consultation-btn mt-4" href="contact.html" style="background: var(--gradient-primary); color: white; border: none; padding: 14px 32px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);">
+                            <i class="fas fa-calendar-alt me-2"></i> Schedule Consultation
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                        <!-- Stat 1 -->
+                        <div class="stat-card" style="background: var(--gradient-card); border-radius: 16px; padding: 30px 20px; text-align: center; border: 1px solid rgba(138, 43, 226, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease; height: 100%;">
+                            <div class="stat-number" style="font-size: 42px; font-weight: 700; color: #8A2BE2; margin-bottom: 10px; line-height: 1;">8<span style="font-size: 28px; color: var(--accent-light);">+</span></div>
+                            <div class="stat-label" style="color: rgba(246, 246, 250, 0.8); font-size: 16px; font-weight: 500;">Years of Experience</div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div class="stat-card" style="background: var(--gradient-card); border-radius: 16px; padding: 30px 20px; text-align: center; border: 1px solid rgba(138, 43, 226, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease; height: 100%;">
+                            <div class="stat-number" style="font-size: 42px; font-weight: 700; color: #8A2BE2; margin-bottom: 10px; line-height: 1;">50<span style="font-size: 28px; color: var(--accent-light);">+</span></div>
+                            <div class="stat-label" style="color: rgba(246, 246, 250, 0.8); font-size: 16px; font-weight: 500;">Clients Served</div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div class="stat-card" style="background: var(--gradient-card); border-radius: 16px; padding: 30px 20px; text-align: center; border: 1px solid rgba(138, 43, 226, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease; height: 100%;">
+                            <div class="stat-number" style="font-size: 42px; font-weight: 700; color: #8A2BE2; margin-bottom: 10px; line-height: 1;">20<span style="font-size: 28px; color: var(--accent-light);">+</span></div>
+                            <div class="stat-label" style="color: rgba(246, 246, 250, 0.8); font-size: 16px; font-weight: 500;">Team Members</div>
+                        </div>
+
+                        <!-- Stat 4 -->
+                        <div class="stat-card" style="background: var(--gradient-card); border-radius: 16px; padding: 30px 20px; text-align: center; border: 1px solid rgba(138, 43, 226, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease; height: 100%;">
+                            <div class="stat-number" style="font-size: 42px; font-weight: 700; color: #8A2BE2; margin-bottom: 10px; line-height: 1;">98<span style="font-size: 28px; color: var(--accent-light);">%</span></div>
+                            <div class="stat-label" style="color: rgba(246, 246, 250, 0.8); font-size: 16px; font-weight: 500;">Client Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- About Start -->
     <section class="about-section container-fluid">

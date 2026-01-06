@@ -1314,7 +1314,6 @@ if ($result === false) {
             });
         });
     </script>
-    /* JavaScript needed for slider functionality */
     <script>
         const slider = document.querySelector(".blogs-slider");
         const leftBtn = document.querySelector(".slider-btn.left");

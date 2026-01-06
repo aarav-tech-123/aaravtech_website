@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // ✅ Connect to local XAMPP MySQL database
-$servername = "185.224.138.7";
+$servername = "localhost";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name

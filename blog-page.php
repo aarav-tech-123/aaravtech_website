@@ -55,6 +55,18 @@ while ($row = $result_meta->fetch_assoc()) {
 
 $stmt_meta->close();
 
+// Fetch published blog posts
+$sql = "SELECT ID, post_title, post_content, post_date, post_author,post_name
+        FROM wp_posts
+        WHERE post_type='post' AND post_status='publish' AND post_name != '$slug'
+        ORDER BY post_date DESC";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("❌ SQL Error: " . $conn->error);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -658,6 +670,270 @@ $stmt_meta->close();
                 font-size: 20px;
             }
         }
+
+        .our-blogs-section {
+            background: var(--gradient-bg);
+            padding: 100px 0;
+            color: var(--bs-bg-light);
+        }
+
+        .our-blogs-container {
+            max-width: 1600px !important;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header .subheading {
+            color: var(--accent-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .section-header .title {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Blog Slider Wrapper */
+        .blogs-slider-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .blogs-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 20px 0;
+        }
+
+        .blogs-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Blog Cards in Slider */
+        .blog-slider-card {
+            flex: 0 0 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-slider-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+        }
+
+        .blog-slider-card .blog-slider-title {
+            color: var(--bs-bg-light);
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+            padding: 25px 25px 15px;
+            line-height: 1.3;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-slider-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .blog-slider-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-slider-card:hover .blog-slider-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-slider-image .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(26, 26, 46, 0.1), rgba(138, 43, 226, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-slider-card:hover .blog-slider-image .slider-overlay {
+            opacity: 1;
+        }
+
+        .blog-slider-content {
+            padding: 25px;
+        }
+
+        .blog-slider-content p {
+            color: #c3c6d1;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 76px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more-slider {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-slider:hover {
+            color: var(--accent-light);
+            gap: 12px;
+        }
+
+        .read-more-slider i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more-slider:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Slider Buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+        }
+
+        .slider-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .slider-btn.left {
+            left: 0;
+        }
+
+        .slider-btn.right {
+            right: 0;
+        }
+
+        .slider-btn i {
+            font-size: 18px;
+        }
+
+        /* Responsive Design for Slider */
+        @media (max-width: 1200px) {
+            .blogs-slider-wrapper {
+                padding: 0 80px;
+            }
+
+            .blog-slider-card {
+                flex: 0 0 350px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .our-blogs-section {
+                padding: 80px 0;
+            }
+
+            .section-header .title {
+                font-size: 42px;
+            }
+
+            .blog-slider-card {
+                flex: 0 0 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blogs-slider-wrapper {
+                padding: 0 60px;
+            }
+
+            .section-header .title {
+                font-size: 36px;
+            }
+
+            .blog-slider-card {
+                flex: 0 0 300px;
+            }
+
+            .slider-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .our-blogs-section {
+                padding: 60px 0;
+            }
+
+            .section-header .title {
+                font-size: 32px;
+            }
+
+            .blogs-slider-wrapper {
+                padding: 0 50px;
+            }
+
+            .blog-slider-card {
+                flex: 0 0 280px;
+            }
+
+            .blog-slider-card .blog-slider-title {
+                font-size: 20px;
+                padding: 20px 20px 10px;
+                min-height: 70px;
+            }
+
+            .blog-slider-content {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -675,9 +951,9 @@ $stmt_meta->close();
         : "Unknown";
 
     $image_result = $conn->query("
-            SELECT meta_value FROM wp_postmeta
-            WHERE post_id = {$blog['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
-        ");
+                        SELECT meta_value FROM wp_postmeta
+                        WHERE post_id = {$blog['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                    ");
     $thumbnail_id = ($image_result && $image_result->num_rows > 0)
         ? $image_result->fetch_assoc()['meta_value']
         : 0;
@@ -800,6 +1076,79 @@ $stmt_meta->close();
         </div>
     </section>
 
+    <!-- Our Blogs Section -->
+    <section class="our-blogs-section">
+        <div class="container our-blogs-container">
+            <div class="section-header">
+                <p class="subheading">Our Blogs</p>
+                <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
+            </div>
+
+            <div class="blogs-slider-wrapper">
+                <button class="slider-btn left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="blogs-slider">
+                    <?php if ($result->num_rows > 0): ?>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <?php
+                            $author_id = $row['post_author'];
+                            $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+                            $author = ($author_result && $author_result->num_rows > 0)
+                                ? $author_result->fetch_assoc()['display_name']
+                                : "Unknown";
+
+                            $image_result = $conn->query("
+                                SELECT meta_value FROM wp_postmeta
+                                WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                            ");
+                            $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+                                ? $image_result->fetch_assoc()['meta_value']
+                                : 0;
+
+                            $img_url = '';
+                            if ($thumbnail_id) {
+                                $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+                                $img_url = ($guid_result && $guid_result->num_rows > 0)
+                                    ? $guid_result->fetch_assoc()['guid']
+                                    : '';
+                            }
+                            ?>
+                            <div class="blog-slider-card">
+                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" style="text-decoration: none;">
+                                    <h3 class="blog-slider-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                                    <?php if ($img_url): ?>
+                                        <div class="blog-slider-image">
+                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                                            <div class="slider-overlay"></div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="blog-slider-image">
+                                            <img src="img/about_us.png" alt="Blog 1" />
+                                            <div class="slider-overlay"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-slider-content">
+                                        <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more-slider">Read More<i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <div class="col-12 text-center">
+                            <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <button class="slider-btn right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Call To Action -->
     <section class="cta-section">
@@ -937,6 +1286,7 @@ $stmt_meta->close();
     <script src="https://aaravtech.net/js/main.js"></script>
     <script src="https://aaravtech.net/index.js"></script>
     <script>
+        // Show/hide back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');
 
@@ -963,6 +1313,38 @@ $stmt_meta->close();
                 behavior: 'smooth'
             });
         });
+    </script>
+    /* JavaScript needed for slider functionality */
+    <script>
+        const slider = document.querySelector(".blogs-slider");
+        const leftBtn = document.querySelector(".slider-btn.left");
+        const rightBtn = document.querySelector(".slider-btn.right");
+
+        if (slider && leftBtn && rightBtn) {
+            const cardWidth = 380; // approximate width + gap
+
+            rightBtn.addEventListener("click", () => {
+                slider.scrollBy({
+                    left: cardWidth,
+                    behavior: "smooth"
+                });
+            });
+
+            leftBtn.addEventListener("click", () => {
+                slider.scrollBy({
+                    left: -cardWidth,
+                    behavior: "smooth"
+                });
+            });
+
+            // Optional: auto-slide every few seconds
+            // setInterval(() => {
+            //     slider.scrollBy({
+            //         left: cardWidth,
+            //         behavior: "smooth"
+            //     });
+            // }, 5000);
+        }
     </script>
     <!-- <script> -->
     <!-- // Disable right-click

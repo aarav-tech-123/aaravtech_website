@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <title>Call Center Service for Your Business: Inbound vs Outbound</title>
     <meta name="robots" content="index, follow">
     <meta name="description"
@@ -17,6 +18,8 @@
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -46,14 +49,14 @@
             --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: var(--gradient-bg);
             color: var(--bs-light);
@@ -61,20 +64,20 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            
-            h1{
-                color:var(--bs-white);
+
+            h1 {
+                color: var(--bs-white);
             }
         }
 
 
-        
+
         /* Header Styles */
         header {
             background: linear-gradient(180deg, rgba(11, 1, 28, 0.95) 0%, rgba(11, 1, 28, 0.8) 100%);
@@ -87,7 +90,7 @@
             z-index: 1000;
             transition: all 0.4s ease;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -95,10 +98,10 @@
             padding: 20px 0;
         }
 
-        .breadcrumb-item{
+        .breadcrumb-item {
             font-size: .8rem;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -108,23 +111,23 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .logo span {
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 32px;
         }
-        
+
         nav ul li a {
             text-decoration: none;
             color: var(--bs-light);
@@ -134,7 +137,7 @@
             padding: 8px 0;
             font-size: 16px;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -145,17 +148,17 @@
             background: var(--gradient-text);
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after,
         nav ul li a.active::after {
             width: 100%;
         }
-        
+
         nav ul li a:hover,
         nav ul li a.active {
             color: var(--accent);
         }
-        
+
         .cta-button {
             background: var(--gradient-primary);
             color: white;
@@ -172,7 +175,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -180,30 +183,30 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             padding: 120px 0 120px;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
@@ -211,7 +214,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -226,13 +229,21 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
         }
-        
+
         .hero h1 {
             font-size: 60px;
             margin-bottom: 24px;
@@ -240,7 +251,7 @@
             line-height: 1.1;
             letter-spacing: -1px;
         }
-        
+
         .hero h1 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -249,13 +260,13 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
             to {
                 background-position: 200% center;
             }
         }
-        
+
         .hero p {
             font-size: 20px;
             max-width: 700px;
@@ -263,14 +274,14 @@
             color: rgba(246, 246, 250, 0.8);
             font-weight: 400;
         }
-        
+
         .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
@@ -288,7 +299,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -296,41 +307,41 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
         }
-        
+
         /* Services Section */
         .services {
             padding: 120px 0;
             position: relative;
-            background: 
+            background:
                 radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 var(--gradient-bg);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .section-title h2 {
             font-size: 48px;
             color: var(--bs-light);
             margin-bottom: 16px;
             font-weight: 700;
         }
-        
+
         .section-title h2 .gradient-text {
             background: var(--gradient-text);
             -webkit-background-clip: text;
@@ -338,7 +349,7 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         .section-title p {
             color: rgba(246, 246, 250, 0.7);
             max-width: 700px;
@@ -346,13 +357,13 @@
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-        
+
         .service-card {
             background: var(--gradient-card);
             border-radius: 20px;
@@ -364,7 +375,7 @@
             z-index: 1;
             backdrop-filter: blur(10px);
         }
-        
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -377,17 +388,17 @@
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .service-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -404,37 +415,37 @@
             overflow: hidden;
             transition: all 0.3s;
         }
-        
+
         .service-card:hover .service-icon {
             transform: scale(1.1);
             background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(106, 13, 173, 0.2) 100%);
         }
-        
+
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 16px;
             color: var(--bs-light);
             font-weight: 600;
         }
-        
+
         .service-card p {
             color: rgba(246, 246, 250, 0.7);
             margin-bottom: 25px;
             font-size: 16px;
             line-height: 1.7;
         }
-        
+
         /* Pricing Section */
         .pricing {
             padding: 100px 0;
             background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
         }
-        
+
         .pricing-header {
             text-align: center;
             margin-bottom: 70px;
         }
-        
+
         .pricing-badge {
             display: inline-flex;
             align-items: center;
@@ -449,14 +460,14 @@
             backdrop-filter: blur(10px);
             animation: pulse 2s infinite;
         }
-        
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 50px;
         }
-        
+
         .pricing-card {
             background: var(--gradient-pricing);
             border-radius: 20px;
@@ -471,9 +482,9 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            align-items:center;
+            align-items: center;
         }
-        
+
         .pricing-card::before {
             content: '';
             position: absolute;
@@ -486,44 +497,44 @@
             transition: opacity 0.4s;
             z-index: -1;
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: transparent;
         }
-        
+
         .pricing-card:hover::before {
             opacity: 0.05;
         }
-        
+
         .pricing-card.featured {
             border: 2px solid var(--accent);
             transform: scale(1.05);
         }
-        
+
         .pricing-card.featured:hover {
             transform: scale(1.05) translateY(-10px);
         }
-        
+
         .pricing-header-card {
             margin-bottom: 25px;
             flex-shrink: 0;
         }
-        
+
         .pricing-title {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--bs-light);
         }
-        
+
         .pricing-subtitle {
             color: rgba(246, 246, 250, 0.7);
             font-size: 14px;
             margin-bottom: 15px;
         }
-        
+
         .price {
             font-size: 42px;
             font-weight: 800;
@@ -532,19 +543,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .price small {
             font-size: 14px;
             color: rgba(246, 246, 250, 0.7);
             font-weight: 400;
         }
-        
+
         .pricing-features {
             list-style: none;
             margin-bottom: 25px;
             flex-grow: 1;
         }
-        
+
         .pricing-features li {
             padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -555,34 +566,34 @@
             font-size: 14px;
             text-align: left;
         }
-        
+
         .pricing-features li i {
             color: var(--accent);
             flex-shrink: 0;
         }
-        
+
         .pricing-button {
             margin-top: auto;
             flex-shrink: 0;
         }
-        
+
         /* Comparison Section */
-        
+
         .comparison {
             padding: 60px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-title h2 {
             font-size: 42px;
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
+
         .gradient-text {
             background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
             -webkit-background-clip: text;
@@ -590,16 +601,18 @@
             background-size: 200% auto;
             animation: textShine 3s linear infinite;
         }
-        
+
         @keyframes textShine {
-            to { background-position: 200% center; }
+            to {
+                background-position: 200% center;
+            }
         }
-        
+
         .accordion.custom-accordion {
             border-radius: 15px;
             overflow: hidden;
         }
-        
+
         .accordion.custom-accordion .accordion-item {
             background: var(--gradient-card);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -607,7 +620,7 @@
             border-radius: 15px;
             overflow: hidden;
         }
-        
+
         .accordion.custom-accordion .accordion-button {
             background: var(--gradient-pricing);
             color: var(--bs-light);
@@ -624,17 +637,17 @@
             align-items: center;
             box-shadow: none !important;
         }
-        
+
         .accordion.custom-accordion .accordion-button:hover {
             background: rgba(138, 43, 226, 0.1);
         }
-        
+
         .accordion.custom-accordion .accordion-button:not(.collapsed) {
             background: rgba(138, 43, 226, 0.15);
             color: var(--bs-light);
             box-shadow: none;
         }
-        
+
         .accordion.custom-accordion .accordion-button::after {
             content: '+';
             font-size: 24px;
@@ -644,21 +657,21 @@
             height: auto;
             transform: none;
         }
-        
+
         .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
             content: '-';
             transform: none;
         }
-        
+
         .accordion.custom-accordion .accordion-body {
             padding: 0;
             background: rgba(11, 1, 28, 0.5);
         }
 
-        .faq-accordion-body{
-            padding:1rem .5rem !important;
+        .faq-accordion-body {
+            padding: 1rem .5rem !important;
         }
-        
+
         /* Table Styling */
         .comparison-table {
             width: 100%;
@@ -667,7 +680,7 @@
             color: var(--bs-light);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .comparison-table th {
             background: rgba(30, 14, 69, 0.8);
             padding: 15px;
@@ -677,13 +690,13 @@
             font-size: 14px;
             vertical-align: middle;
         }
-        
+
         .comparison-table th:first-child {
             text-align: left;
             background: rgba(11, 1, 28, 0.8);
             width: 25%;
         }
-        
+
         .comparison-table td {
             padding: 12px 15px;
             text-align: center;
@@ -692,69 +705,69 @@
             font-size: 14px;
             vertical-align: middle;
         }
-        
+
         .comparison-table td:first-child {
             text-align: left;
             font-weight: 500;
             background: rgba(11, 1, 28, 0.3);
         }
-        
+
         .comparison-table .text-start {
             text-align: left !important;
         }
-        
+
         .comparison-table .align-middle {
             vertical-align: middle !important;
         }
-        
+
         .comparison-table .text-center {
             text-align: center !important;
         }
-        
+
         /* Package Header Styling */
         .comparison-table .bg-primary {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .bg-danger {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .bg-warning {
             background: linear-gradient(135deg, #ffd93d 0%, #ffcd3c 100%) !important;
             color: #1a1a1a !important;
         }
-        
+
         .comparison-table .bg-dark {
             background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%) !important;
             color: white !important;
         }
-        
+
         .comparison-table .table-light {
             background: rgba(30, 14, 69, 0.9) !important;
             color: var(--bs-light) !important;
         }
-        
+
         .comparison-table .bg-white {
             background: rgba(11, 1, 28, 0.8) !important;
             color: var(--bs-light) !important;
         }
-        
+
         /* Check and Cross Styling */
         .check {
             color: #00ff88 !important;
             font-weight: bold;
             font-size: 16px;
         }
-        
+
         .cross {
             color: #ff4444 !important;
             font-weight: bold;
             font-size: 16px;
         }
-        
+
         /* Small text in headers */
         .comparison-table th small {
             display: block;
@@ -765,40 +778,40 @@
         }
 
         /* FAQ section*/
-       
+
         .faq-section {
             padding: 5rem 0;
             background-color: var(--dark-bg);
             color: var(--text-primary);
             background: linear-gradient(135deg, #0c0c1f 0%, #161632 100%);
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
-        
+
         .section-title p {
             font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .custom-accordion .accordion-item {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -807,12 +820,12 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-item:hover {
             border-color: rgba(106, 17, 203, 0.5);
             box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
         }
-        
+
         .custom-accordion .accordion-button {
             background-color: var(--card-bg);
             color: var(--text-primary);
@@ -823,27 +836,27 @@
             box-shadow: none;
             transition: all 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-button:not(.collapsed) {
             background-color: rgba(106, 17, 203, 0.1);
             color: var(--text-primary);
             box-shadow: none;
         }
-        
+
         .custom-accordion .accordion-button:focus {
             box-shadow: none;
             border-color: rgba(106, 17, 203, 0.5);
         }
-        
+
         .custom-accordion .accordion-button::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e2e8f0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
             transition: transform 0.3s ease;
         }
-        
+
         .custom-accordion .accordion-button:not(.collapsed)::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236a11cb'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
-        
+
         .custom-accordion .accordion-body {
             padding: 1.5rem;
             background-color: var(--card-bg);
@@ -851,15 +864,15 @@
             line-height: 1.6;
             border-top: 1px solid var(--border-color);
         }
-        
+
         .custom-accordion .accordion-body strong {
             color: var(--text-primary);
         }
-        
+
         .glow-effect {
             position: relative;
         }
-        
+
         .glow-effect::before {
             content: '';
             position: absolute;
@@ -873,22 +886,22 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .glow-effect:hover::before {
             opacity: 1;
         }
-        
+
         @media (max-width: 768px) {
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .custom-accordion .accordion-button {
                 font-size: 1rem;
                 padding: 1rem 1.25rem;
             }
         }
-        
+
         .support-badge {
             display: inline-flex;
             align-items: center;
@@ -899,67 +912,68 @@
             font-size: 0.8rem;
             margin-left: 10px;
         }
-        
+
         .support-badge i {
             margin-right: 5px;
         }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .accordion.custom-accordion .accordion-button {
                 font-size: 16px;
                 padding: 15px 20px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 8px 10px;
                 font-size: 12px;
             }
-            
+
             .comparison-table th small {
                 font-size: 10px;
             }
-            
+
             .check,
             .cross {
                 font-size: 14px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .comparison-table {
                 font-size: 11px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 6px 8px;
             }
         }
-        
+
         /* CTA Section */
         .cta-section {
             padding: 120px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: 
+            background:
                 radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
         }
-        
+
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-section h2 {
             font-size: 48px;
             margin-bottom: 24px;
@@ -967,130 +981,191 @@
             font-weight: 700;
             line-height: 1.2;
         }
-        
+
         .cta-section p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 40px;
             color: rgba(246, 246, 250, 0.8);
         }
-        
-      
-        
+
+
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-            
+
             .section-title h2 {
                 font-size: 42px;
             }
-            
+
             .cta-section h2 {
                 font-size: 42px;
             }
-            
+
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .pricing-card.featured {
                 transform: scale(1);
             }
-            
+
             .pricing-card.featured:hover {
                 transform: translateY(-10px);
             }
         }
-        
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 padding: 15px 0;
             }
-            
+
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             nav ul li {
                 margin: 8px 12px;
             }
-            
+
             .hero {
                 padding: 30px 0 60px;
             }
-            
+
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn-primary {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .section-title h2 {
                 font-size: 36px;
             }
-            
+
             .cta-section h2 {
                 font-size: 36px;
             }
-            
+
             .comparison-table {
                 font-size: 12px;
             }
-            
+
             .comparison-table th,
             .comparison-table td {
                 padding: 8px 10px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .section-title h2 {
                 font-size: 32px;
             }
-            
+
             .cta-section h2 {
                 font-size: 32px;
             }
 
         }
+
+        /* Why Choose Us section styles */
+        .why-list .why-item strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: var(--bs-light);
+            font-weight: 700;
+        }
+
+        .why-list .why-item div {
+            font-size: 15px;
+        }
+
+        @media (max-width:768px) {
+            .why-list .why-item {
+                align-items: flex-start;
+            }
+
+            .why-list .why-item .why-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .col-md-6 {
+                width: 100%;
+            }
+        }
+
+        .advantages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .advantages-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            color: rgba(246, 246, 250, 0.92);
+        }
+
+        .advantages-list li strong {
+            display: block;
+            color: var(--bs-light);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .advantages-list li div {
+            font-size: 15px;
+        }
+
+        @media (max-width:768px) {
+            .advantages-list li {
+                font-size: 15px;
+            }
+        }
     </style>
 
 </head>
+
 <body>
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSPXHW6R" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-            
+
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -1103,15 +1178,19 @@
             <a href="https://aaravtech.net" class="navbar-brand p-0">
                 <img src="img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
-            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
+                    <a href="https://aaravtech.net" class="nav-item nav-link "
+                        style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white"
+                        style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
@@ -1123,10 +1202,15 @@
                                 </div>
 
                                 <div class="submenu">
-                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/content-marketing-services.html">Content
+                                        Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
@@ -1137,13 +1221,19 @@
                                     </button>
                                 </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/custom-website-development-services.html">Custom
+                                        Website Development</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App
+                                        Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
+                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo
+                                    Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
@@ -1153,17 +1243,25 @@
                                     </button>
                                 </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
+                                    <a class="dropdown-item"
+                                        href="https://aaravtech.net/back-office-support-services.html">Back Office
+                                        Support</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call
+                                        Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
-                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
-                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link "
+                        style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Contact</a>
                 </div>
-                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
+                <a href="tel:" class="glass-btn nav-link-btn"
+                    style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's
+                    Talk</a>
             </div>
         </nav>
 
@@ -1174,27 +1272,34 @@
                     <li class="breadcrumb-item"><a href="https://aaravtech.net">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Services</a></li>
                     <li class="breadcrumb-item"><a href="https://aaravtech.net/bpo.html">BPO</a></li>
-                    <li class="breadcrumb-item"><a href="https://aaravtech.net/call-centre-services.html" style="color: #a085b9;">Call Centre Services</a></li>
+                    <li class="breadcrumb-item"><a href="https://aaravtech.net/call-centre-services.html"
+                            style="color: #a085b9;">Call Centre Services</a></li>
                 </ol>
 
 
 
-                <h1>Deliver <span class="gradient-text">Seamless Communication</span> with Expert Call Centre Solutions</h1>
-                <p>Providing 24/7 inbound and outbound customer solutions in terms of addressing customer needs so that satisfaction, retention, and brand image is strengthened.</p>
+                <h1>Call Center <span class="gradient-text">Services by Trusted Experts </span> Tailored to Your
+                    Business Needs </h1>
+                <p>Delivering reliable, scalable & customer-first call center services built to elevate your business
+                    operations. </p>
 
                 <div class="hero-buttons">
-                    <a href="https://aaravtech.net/contact.html" class="btn-primary">Get Started <i class="fas fa-bullhorn"></i></a>
+                    <a href="https://aaravtech.net/contact.html" class="btn-primary">Get Started <i
+                            class="fas fa-bullhorn"></i></a>
                 </div>
             </div>
         </section>
     </div>
 
+
     <!-- Services Section -->
     <section class="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our <span class="gradient-text">Call Center Services</span></h2>
-                <p>Our services include end-to-end call handling designed to enhance customer response and business performance.</p>
+                <h2>Professional Call Center Services <span class="gradient-text">That Grow Your Business</span></h2>
+                <p>AARAV TECH delivers high-performance inbound and outbound call center
+                    solutions designed to boost customer satisfaction, generate quality
+                    leads, and accelerate business growth.</p>
             </div>
 
             <div class="services-grid">
@@ -1203,7 +1308,8 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Inbound Call Handling</h3>
-                    <p>Process incoming queries professionally, deliver real-time service, resolve issues quickly, and create positive customer experiences that foster trust and satisfaction.</p>
+                    <p>Process incoming queries professionally, deliver real-time service, resolve issues quickly, and
+                        create positive customer experiences that foster trust and satisfaction.</p>
                 </div>
 
                 <div class="service-card">
@@ -1211,7 +1317,8 @@
                         <i class="fas fa-bullhorn"></i>
                     </div>
                     <h3>Outbound Sales Calls</h3>
-                    <p>Generate leads and boost conversions through personalized outbound campaigns, effective pitching, and consistent follow-ups to turn prospects into loyal customers.</p>
+                    <p>Generate leads and boost conversions through personalized outbound campaigns, effective pitching,
+                        and consistent follow-ups to turn prospects into loyal customers.</p>
                 </div>
 
                 <div class="service-card">
@@ -1219,7 +1326,8 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Technical Support Assistance</h3>
-                    <p>Deliver reliable and timely technical support to assist customers with troubleshooting, installation, and technical guidance, ensuring smooth user experiences.</p>
+                    <p>Deliver reliable and timely technical support to assist customers with troubleshooting,
+                        installation, and technical guidance, ensuring smooth user experiences.</p>
                 </div>
 
                 <div class="service-card">
@@ -1227,7 +1335,8 @@
                         <i class="fas fa-box"></i>
                     </div>
                     <h3>Order Processing & Tracking</h3>
-                    <p>Assist customers in placing orders, confirming transactions, and tracking deliveries — ensuring seamless post-purchase support and satisfaction.</p>
+                    <p>Assist customers in placing orders, confirming transactions, and tracking deliveries — ensuring
+                        seamless post-purchase support and satisfaction.</p>
                 </div>
 
                 <div class="service-card">
@@ -1235,7 +1344,8 @@
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Appointment Scheduling</h3>
-                    <p>Coordinate and manage appointments efficiently to streamline customer interactions and improve accessibility across multiple industries and services.</p>
+                    <p>Coordinate and manage appointments efficiently to streamline customer interactions and improve
+                        accessibility across multiple industries and services.</p>
                 </div>
 
                 <div class="service-card">
@@ -1243,7 +1353,194 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>24/7 Multichannel Support</h3>
-                    <p>Offer round-the-clock assistance through phone, email, chat, and social media — ensuring global availability and superior customer convenience.</p>
+                    <p>Offer round-the-clock assistance through phone, email, chat, and social media — ensuring global
+                        availability and superior customer convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Call Center Services Section -->
+    <!-- <section class="services" style="padding:60px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Call Center Services for Your Business</h2>
+                <p>AARAV TECH being a top call center services provider will offer 24/7 in-bound and out-bound service as a driver to customer satisfaction, lead generation and business development.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Why Choose Us Section -->
+    <section class="services" style="padding:80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us as Your <span class="gradient-text">Call Center Services Provider?</span></h2>
+                <p>We do not happen to be one of those traditional call centers — we are your strategic business
+                    partner. Here’s why top brands trust us:</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <ul class="why-list" style="list-style:none; padding:0; margin:0;">
+                        <li class="why-item"
+                            style="display:flex; gap:16px; margin-bottom:18px; align-items:flex-start;">
+                            <div class="why-icon"
+                                style="font-size:28px; color:var(--accent); width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(138,43,226,0.08); border-radius:10px;">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <strong>Experienced & Professional Agents</strong>
+                                <div style="color:rgba(246,246,250,0.8);">Agents trained on high performance and good
+                                    communication.</div>
+                            </div>
+                        </li>
+
+                        <li class="why-item"
+                            style="display:flex; gap:16px; margin-bottom:18px; align-items:flex-start;">
+                            <div class="why-icon"
+                                style="font-size:28px; color:var(--accent); width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(138,43,226,0.08); border-radius:10px;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong>24/7 Support Across Time Zones</strong>
+                                <div style="color:rgba(246,246,250,0.8);">Global coverage and responsiveness across
+                                    regions.</div>
+                            </div>
+                        </li>
+
+                        <li class="why-item"
+                            style="display:flex; gap:16px; margin-bottom:18px; align-items:flex-start;">
+                            <div class="why-icon"
+                                style="font-size:28px; color:var(--accent); width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(138,43,226,0.08); border-radius:10px;">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div>
+                                <strong>Customized Workflow</strong>
+                                <div style="color:rgba(246,246,250,0.8);">Personalized services tailored to your
+                                    business requirements.</div>
+                            </div>
+                        </li>
+
+                        <li class="why-item"
+                            style="display:flex; gap:16px; margin-bottom:18px; align-items:flex-start;">
+                            <div class="why-icon"
+                                style="font-size:28px; color:var(--accent); width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(138,43,226,0.08); border-radius:10px;">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Scalable Solutions</strong>
+                                <div style="color:rgba(246,246,250,0.8);">Ability to scale teams for seasonal peaks and
+                                    growth.</div>
+                            </div>
+                        </li>
+
+                        <li class="why-item"
+                            style="display:flex; gap:16px; margin-bottom:18px; align-items:flex-start;">
+                            <div class="why-icon"
+                                style="font-size:28px; color:var(--accent); width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(138,43,226,0.08); border-radius:10px;">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div>
+                                <strong>Advanced Technology Integration</strong>
+                                <div style="color:rgba(246,246,250,0.8);">Hi‑tech implementation: CRM, analytics, and
+                                    reporting.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <img src="img/call-center-service-advantage.jpeg" alt="Call Centre Team" class="img-fluid rounded-3"
+                        style="max-width:100%; box-shadow:0 20px 40px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section (bullet list) -->
+    <section class="services" style="padding:60px 0 40px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advantages of Our <span class="gradient-text">Call Center Services</span></h2>
+                <p>Running your call center businesses with AARAV TECH implies:</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/call-center-service-2.jpeg" alt="Call Centre Team" class="img-fluid rounded-3"
+                        style="max-width:100%; box-shadow:0 20px 40px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.04);">
+                </div>
+                <div class="col-md-6">
+                    <ul class="advantages-list">
+                        <li><i class="fas fa-check-circle"
+                                style="color:#ffffff; font-size:20px; margin-right:12px;"></i>
+                            <div><strong>Enhanced Customer Satisfaction</strong>
+                                <div>Deliver consistent results that boost retention and brand loyalty.</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-check-circle"
+                                style="color:#ffffff; font-size:20px; margin-right:12px;"></i>
+                            <div><strong>Quicker Turnaround</strong>
+                                <div>Faster resolution times and proactive services reduce complaints.</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-check-circle"
+                                style="color:#ffffff; font-size:20px; margin-right:12px;"></i>
+                            <div><strong>Lower Operational Costs</strong>
+                                <div>Optimized processes and outsourcing reduce overheads while improving service.</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-check-circle"
+                                style="color:#ffffff; font-size:20px; margin-right:12px;"></i>
+                            <div><strong>Better Data Collection & Insights</strong>
+                                <div>Actionable analytics and reporting power smarter decisions and campaign
+                                    optimization.</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-check-circle"
+                                style="color:#ffffff; font-size:20px; margin-right:12px;"></i>
+                            <div><strong>Centered Core Business Development</strong>
+                                <div>Focus internal resources on strategic initiatives while we handle customer
+                                    engagement.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Our Process) -->
+    <section class="services" style="padding:60px 0 40px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works (<span class="gradient-text">Our Process</span>)</h2>
+                <p>We follow a structured process to deliver measurable results.</p>
+            </div>
+
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:24px;">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h3>Discovery & Planning</h3>
+                    <p>Understand your goals and target audience to design the right program.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Strategy Development</h3>
+                    <p>Create tailored call scripts, escalation flows and KPI frameworks aligned to your goals.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Deployment</h3>
+                    <p>Launch call programs with trained agents and integrated technology to start delivering value.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Performance Tracking</h3>
+                    <p>Report dashboards, KPI control and continuous optimization to improve outcomes over time.</p>
                 </div>
             </div>
         </div>
@@ -1270,7 +1567,7 @@
                 <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
                 <p>Find answers to common questions about our Call Center services and processes.</p>
             </div>
-            
+
             <div class="accordion custom-accordion" id="faqAccordionCallCenter">
                 <div class="accordion-item glow-effect">
                     <h2 class="accordion-header" id="headingCC1">
@@ -1279,9 +1576,12 @@
                             What are call center services?
                         </button>
                     </h2>
-                    <div id="collapseCC1" class="accordion-collapse collapse show" aria-labelledby="headingCC1" data-bs-parent="#faqAccordionCallCenter">
+                    <div id="collapseCC1" class="accordion-collapse collapse show" aria-labelledby="headingCC1"
+                        data-bs-parent="#faqAccordionCallCenter">
                         <div class="accordion-body faq-accordion-body">
-                            Call center services deal with both inbound and outbound communication with customers. These involve activities such as <strong>sales, order processing, technical support, and customer assistance.</strong>
+                            Call center services deal with both inbound and outbound communication with customers. These
+                            involve activities such as <strong>sales, order processing, technical support, and customer
+                                assistance.</strong>
                         </div>
                     </div>
                 </div>
@@ -1290,13 +1590,15 @@
                     <h2 class="accordion-header" id="headingCC2">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseCC2" aria-expanded="false" aria-controls="collapseCC2">
-                                Do you provide 24/7 support?
+                            Do you provide 24/7 support?
                             <span class="support-badge"><i class="fas fa-clock"></i> 24/7</span>
                         </button>
                     </h2>
-                    <div id="collapseCC2" class="accordion-collapse collapse" aria-labelledby="headingCC2" data-bs-parent="#faqAccordionCallCenter">
+                    <div id="collapseCC2" class="accordion-collapse collapse" aria-labelledby="headingCC2"
+                        data-bs-parent="#faqAccordionCallCenter">
                         <div class="accordion-body faq-accordion-body">
-                            Yes, we provide <strong>round-the-clock service</strong> by phone, chat, email, and other channels so that your customers always receive timely assistance.
+                            Yes, we provide <strong>round-the-clock service</strong> by phone, chat, email, and other
+                            channels so that your customers always receive timely assistance.
                         </div>
                     </div>
                 </div>
@@ -1308,9 +1610,11 @@
                             How do you ensure quality in customer interactions?
                         </button>
                     </h2>
-                    <div id="collapseCC3" class="accordion-collapse collapse" aria-labelledby="headingCC3" data-bs-parent="#faqAccordionCallCenter">
+                    <div id="collapseCC3" class="accordion-collapse collapse" aria-labelledby="headingCC3"
+                        data-bs-parent="#faqAccordionCallCenter">
                         <div class="accordion-body faq-accordion-body">
-                            We provide extensive <strong>training, use modern call monitoring tools,</strong> and adhere to strict performance standards to ensure top-quality communication.
+                            We provide extensive <strong>training, use modern call monitoring tools,</strong> and adhere
+                            to strict performance standards to ensure top-quality communication.
                         </div>
                     </div>
                 </div>
@@ -1322,9 +1626,11 @@
                             Can your call center scale with my business needs?
                         </button>
                     </h2>
-                    <div id="collapseCC4" class="accordion-collapse collapse" aria-labelledby="headingCC4" data-bs-parent="#faqAccordionCallCenter">
+                    <div id="collapseCC4" class="accordion-collapse collapse" aria-labelledby="headingCC4"
+                        data-bs-parent="#faqAccordionCallCenter">
                         <div class="accordion-body faq-accordion-body">
-                            Absolutely. As a professional call center staffing agency, we offer <strong>scalable teams</strong> to accommodate seasonal demand, business expansion, or special campaigns.
+                            Absolutely. As a professional call center staffing agency, we offer <strong>scalable
+                                teams</strong> to accommodate seasonal demand, business expansion, or special campaigns.
                         </div>
                     </div>
                 </div>
@@ -1337,9 +1643,12 @@
                             <span class="support-badge"><i class="fas fa-briefcase"></i> Multi-Sector</span>
                         </button>
                     </h2>
-                    <div id="collapseCC5" class="accordion-collapse collapse" aria-labelledby="headingCC5" data-bs-parent="#faqAccordionCallCenter">
+                    <div id="collapseCC5" class="accordion-collapse collapse" aria-labelledby="headingCC5"
+                        data-bs-parent="#faqAccordionCallCenter">
                         <div class="accordion-body faq-accordion-body">
-                            We serve a wide range of industries including <strong>e-commerce, healthcare, finance, travel, and technology.</strong> Our solutions are customized to meet the unique needs of each sector.
+                            We serve a wide range of industries including <strong>e-commerce, healthcare, finance,
+                                travel, and technology.</strong> Our solutions are customized to meet the unique needs
+                            of each sector.
                         </div>
                     </div>
                 </div>
@@ -1371,11 +1680,15 @@
                         </svg> -->
                         <div class="footer-logo-text">AaravTechServices</div>
                     </div>
-                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our team of experts delivers innovative software and consulting services.</p>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
+                        team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1391,15 +1704,20 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                                Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                                Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        </li>
+                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a>
+                        </li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        </li>
                         <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
@@ -1416,7 +1734,7 @@
                             <span>support@aaravtech.net</span>
                         </li>
                     </ul>
-                    
+
                     <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
                     <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
                     <form class="newsletter-form">
@@ -1425,7 +1743,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
@@ -1462,4 +1780,5 @@
     </script>
     <script src="./index.js"></script>
 </body>
+
 </html>

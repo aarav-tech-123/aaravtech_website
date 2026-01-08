@@ -983,7 +983,7 @@ if ($result === false) {
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+                                    <a href="https://aaravtech.net/digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
 
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
@@ -999,7 +999,7 @@ if ($result === false) {
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/web-development.html" class="submenu-link ">Web Development</a>
+                                    <a href="https://aaravtech.net/web-development-services.html" class="submenu-link ">Web Development</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
@@ -1015,7 +1015,7 @@ if ($result === false) {
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/bpo.html" class="submenu-link ">BPO</a>
+                                    <a href="https://aaravtech.net/bpo-services.html" class="submenu-link ">BPO</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
@@ -1222,11 +1222,11 @@ if ($result === false) {
                                     class="fas fa-chevron-right"></i> Mobile Apps</a></li>
                         <li><a href="https://aaravtech.net/graphic-designing.html"><i
                                     class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="https://aaravtech.net/digital-marketing.html"><i class="fas fa-chevron-right"></i>
+                        <li><a href="https://aaravtech.net/digital-marketing-services.html"><i class="fas fa-chevron-right"></i>
                                 Digital Marketing</a></li>
                         <li><a href="https://aaravtech.net/ui-ux-design-services.html"><i
                                     class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="https://aaravtech.net/bpo.html"><i class="fas fa-chevron-right"></i>BPO
+                        <li><a href="https://aaravtech.net/bpo-services.html"><i class="fas fa-chevron-right"></i>BPO
                                 Services</a></li>
                     </ul>
                 </div>

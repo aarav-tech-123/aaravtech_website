@@ -540,22 +540,40 @@
             color: rgba(246, 246, 250, 0.8);
         }
 
+          .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--bs-light);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
 
         /* Responsive Design */
-        @media (max-width: 1100px) {
+          @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 50px;
             }
-
+            
             .section-title h2 {
                 font-size: 42px;
             }
-
-            .cta-section h1 {
+            
+            .cta-section h2 {
                 font-size: 42px;
             }
-
-
+            
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
         }
 
         @media (max-width: 768px) {
@@ -563,49 +581,64 @@
                 flex-direction: column;
                 padding: 15px 0;
             }
-
+            
             nav ul {
                 margin: 20px 0 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
+            
             nav ul li {
                 margin: 8px 12px;
             }
-
+            
             .hero {
-                padding: 150px 0 60px;
+                padding: 30px 0 60px;
             }
-
+            
             .hero h1 {
                 font-size: 40px;
             }
-
+            
             .hero p {
                 font-size: 18px;
             }
-
+            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .btn-primary,
-            .btn-outline {
+            
+            .btn-primary {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
             }
-
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .section-title h2 {
                 font-size: 36px;
             }
-
-            .cta-section h1 {
+            
+            .cta-section h2 {
                 font-size: 36px;
             }
-
+            
+            .comparison-table {
+                font-size: 12px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -618,6 +651,9 @@
             }
 
             .cta-section h1 {
+                font-size: 32px;
+            }
+             .cta-section h2 {
                 font-size: 32px;
             }
         }
@@ -670,7 +706,7 @@
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+                                    <a href="digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
 
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
@@ -686,7 +722,7 @@
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="web-development.html" class="submenu-link ">Web Development</a>
+                                    <a href="web-development-services.html" class="submenu-link ">Web Development</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
@@ -702,7 +738,7 @@
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="bpo.html" class="submenu-link ">BPO</a>
+                                    <a href="bpo-services.html" class="submenu-link ">BPO</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
@@ -827,9 +863,9 @@
                         <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
                         <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
                         <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="digital-marketing-services.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
                         <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                        <li><a href="bpo-services.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
 

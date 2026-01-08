@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // ✅ Connect to local XAMPP MySQL database
-$servername = "localhost";
+$servername = "185.224.138.7";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
 $dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name
@@ -196,7 +196,7 @@ if ($result === false) {
 
         .section-title p {
             color: rgba(246, 246, 250, 0.7);
-            max-width: 700px;
+
             margin: 0 auto;
             font-size: 18px;
             font-weight: 400;
@@ -754,7 +754,8 @@ if ($result === false) {
         <div class="container">
             <div class="section-title" style="margin-bottom: 50px;">
                 <h2>Best Digital Marketing Agency in India for ROI-Driven Growth</h2>
-                <p>Helping brands grow smarter with AI-driven digital marketing solutions.</p>
+                <p>Aarav Tech Services is a top digital marketing agency in India that assists companies to gain more exposure, attract high-quality leads, and record quantifiable growth. You have come to the right place if you want to hire a digital marketing agency that will perform, scale and generate ROI.</p>
+                <p>We integrate both strategic data and creative implementation as well as advanced technology to offer the top digital marketing services to startups, SMEs, and enterprises across the globe.</p>
             </div>
 
             <div class="row align-items-center" style="margin-bottom: 60px;">
@@ -800,6 +801,30 @@ if ($result === false) {
 
         </div>
     </section>
+
+    <div class="media-section container" style="margin-bottom:4rem;">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h1 style="font-weight: 500; color: white;">Why AaravTech Is the <span class="gradient-text" style="font-weight: 600;">Best Digital Marketing Agency</span> in India
+                </h1>
+                <p style="text-align: left; font-size: 18px; color: rgba(246, 246, 250, 0.8);">
+                    Selecting the appropriate marketing partner will transform your business. We do not just run campaigns but create growth systems as a top digital marketing company in India.
+                </p>
+                <h3 style="text-align: left; font-size: 24px; color: rgba(246, 246, 250, 0.8);">What makes us different:</h3>
+                <ul style="list-style: none; padding-left: 0; font-size: 18px; color: rgba(246, 246, 250, 0.8);"">
+                    <li style=" font-size: 1.2rem;"><i class="fa fa-chevron-right"></i>ROI-driven strategies</li>
+                    <li style="font-size: 1.2rem;"><i class="fa fa-chevron-right"></i>Certified SEO, PPC, and performance marketing specialists</li>
+                    <li style="font-size: 1.2rem;"><i class="fa fa-chevron-right"></i>Proven lead generation frameworks</li>
+                    <li style="font-size: 1.2rem;"><i class="fa fa-chevron-right"></i>Transparent reporting & real-time tracking</li>
+                    <li style="font-size: 1.2rem;"><i class="fa fa-chevron-right"></i>Affordable pricing without quality compromise</li>
+                </ul>
+                <p style="text-align: left; font-size: 18px; color: rgba(246, 246, 250, 0.8);">When corporations are seeking the most appropriate and best digital marketing agency in India, they are seeking results and this is what we deliver.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="img/home-media-section.jpg" alt="" style="width: 100%;height:100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
 
     <!-- About Start -->
     <section class="about-section container-fluid">
@@ -1019,6 +1044,20 @@ if ($result === false) {
         </div>
     </section>
 
+    <section class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h1>Let’s Grow Your <span class="highlight">Business</span> with Top <span class="highlight-alt">Digital Marketing</span> Services
+            </h1>
+            <p>
+                When you are willing to grow your business, generate more leads and dominate your market, partner with AaravTech, the best digital marketing agency in India.
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="glass-btn">Book a Free Strategy Call Today</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Appointment Section -->
     <section class="appointment-section" id="appointment">
         <div class="container">
@@ -1091,6 +1130,84 @@ if ($result === false) {
             </div>
         </div>
     </section>
+
+
+
+
+    <div class="blog-cta-container">
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="subheading">Our Blogs</p>
+                    <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
+                </div>
+
+                <div class="blog-slider-wrapper">
+                    <button class="slider-btn left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="blog-slider">
+                        <?php if ($result->num_rows > 0): ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <?php
+                                $author_id = $row['post_author'];
+                                $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+                                $author = ($author_result && $author_result->num_rows > 0)
+                                    ? $author_result->fetch_assoc()['display_name']
+                                    : "Unknown";
+
+                                $image_result = $conn->query("
+                        SELECT meta_value FROM wp_postmeta
+                        WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                    ");
+                                $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+                                    ? $image_result->fetch_assoc()['meta_value']
+                                    : 0;
+
+                                $img_url = '';
+                                if ($thumbnail_id) {
+                                    $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+                                    $img_url = ($guid_result && $guid_result->num_rows > 0)
+                                        ? $guid_result->fetch_assoc()['guid']
+                                        : '';
+                                }
+                                ?>
+                                <div class="blog-card">
+                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                                    <?php if ($img_url): ?>
+                                        <div class="blog-image">
+                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="blog-image">
+                                            <img src="img/about_us.png" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-content">
+                                        <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <div class="col-12 text-center">
+                                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
+                            </div>
+                        <?php endif; ?>
+
+
+                    </div>
+
+                    <button class="slider-btn right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- FAQ Section - Updated Design -->
     <section class="faq-section" id="faq">
@@ -1263,98 +1380,6 @@ if ($result === false) {
             </div>
         </div>
     </section>
-
-
-    <div class="blog-cta-container">
-        <section class="blog-section">
-            <div class="container">
-                <div class="section-header">
-                    <p class="subheading">Our Blogs</p>
-                    <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
-                </div>
-
-                <div class="blog-slider-wrapper">
-                    <button class="slider-btn left">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-
-                    <div class="blog-slider">
-                        <?php if ($result->num_rows > 0): ?>
-                            <?php while ($row = $result->fetch_assoc()): ?>
-                                <?php
-                                $author_id = $row['post_author'];
-                                $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
-                                $author = ($author_result && $author_result->num_rows > 0)
-                                    ? $author_result->fetch_assoc()['display_name']
-                                    : "Unknown";
-
-                                $image_result = $conn->query("
-                        SELECT meta_value FROM wp_postmeta
-                        WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
-                    ");
-                                $thumbnail_id = ($image_result && $image_result->num_rows > 0)
-                                    ? $image_result->fetch_assoc()['meta_value']
-                                    : 0;
-
-                                $img_url = '';
-                                if ($thumbnail_id) {
-                                    $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
-                                    $img_url = ($guid_result && $guid_result->num_rows > 0)
-                                        ? $guid_result->fetch_assoc()['guid']
-                                        : '';
-                                }
-                                ?>
-                                <div class="blog-card">
-                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
-                                    <?php if ($img_url): ?>
-                                        <div class="blog-image">
-                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
-                                            <div class="overlay"></div>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="blog-image">
-                                            <img src="img/about_us.png" alt="Blog 1" />
-                                            <div class="overlay"></div>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="blog-content">
-                                        <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php else: ?>
-                            <div class="col-12 text-center">
-                                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
-                            </div>
-                        <?php endif; ?>
-
-
-                    </div>
-
-                    <button class="slider-btn right">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-overlay"></div>
-            <div class="cta-content">
-                <h1>
-                    Let’s create <span class="highlight">creativity</span><br>
-                    inspiration <span class="highlight-alt">projects</span> together
-                </h1>
-                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
-                    thrive in the digital landscape.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="glass-btn">Request a Quote</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
 
     <!-- <section class="footer-section">
         <div class="newsletter">

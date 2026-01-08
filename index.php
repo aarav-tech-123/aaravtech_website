@@ -711,7 +711,7 @@ if ($result === false) {
                                 </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Centre Services</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Center Services</a>
                                 </div>
                             </div>
                         </div>

@@ -80,7 +80,7 @@ if ($result === false) {
     <meta name="title" content="<?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?>">
     <meta name="description" content="<?php echo htmlspecialchars($post_meta['rank_math_description'] ?? 'Default meta description here.'); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($post_meta['rank_math_focus_keyword'] ?? ''); ?>">
-    <link rel="canonical" href="https://aaravtech.net/blogs/<?php echo $slug; ?>" />
+    <link rel="canonical" href="https://aaravtech.net/blogs/<?php echo $slug; ?>/" />
     <title><?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?></title>
 
     <!-- CSS -->

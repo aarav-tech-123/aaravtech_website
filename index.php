@@ -861,43 +861,43 @@ if ($result === false) {
                     </p>
                 </div>
                 <div class="service-cards-section">
-                    <a href="digital-marketing.html">
+                    <a href="digital-marketing-services.html">
                         <div class="service-card" style="height: 100%;">
                             <div class="service-card-icon">
                                 <i class="fa-regular fa-lightbulb" style="color: white;"></i>
                             </div>
-                            <h4>Digital Marketing</h4>
+                            <h4>Digital Marketing Services</h4>
                             <p>Get your brand in front of the right people at the right time.
                             </p>
                         </div>
                     </a>
-                    <a href="web-development.html">
+                    <a href="web-development-services.html">
                         <div class="service-card" style="height: 100%;">
                             <div class="service-card-icon">
                                 <i class="bi bi-briefcase" style="color: white;"></i>
                             </div>
-                            <h4>Web & Application Development</h4>
+                            <h4>Web Development Services</h4>
                             <p>Your website and app are the foundation of your digital identity.
                             </p>
                         </div>
                     </a>
-                    <a href="bpo.html">
+                    <a href="bpo-services.html">
                         <div class="service-card" style="height: 100%;">
                             <div class="service-card-icon">
                                 <i class="bi bi-megaphone" style="color: white;"></i>
                             </div>
-                            <h4>BPO</h4>
+                            <h4>BPO Services</h4>
                             <p>Streamline your operations, reduce costs, and focus on your core business.</p>
                         </div>
                     </a>
                     <!-- style="padding-top: 2rem;" -->
-                    <a href="graphic-designing.html">
+                    <a href="logo-design-services.html">
                         <div class="service-card">
                             <div class="service-card-icon">
                                 <i class="bi bi-trophy" style="color: white;"></i>
                             </div>
-                            <h4>Graphics Designing</h4>
-                            <p>Visuals are a powerful way to tell your brand's story.</p>
+                            <h4>Logo Design Services</h4>
+                            <p>Logos are a powerful way to tell your brand's story.</p>
                         </div>
                     </a>
                 </div>
@@ -976,7 +976,7 @@ if ($result === false) {
     <section class="why-hire-us" id="why-hire">
         <div class="container">
             <div class="section-title">
-                <h2>Why Should You Hire <span class="gradient-text">Aaravtech</span> for Digital Growth</h2>
+                <h2>Why Should You Hire <span class="gradient-text">Aarav Tech</span> for Digital Growth</h2>
                 <p>Strategy-Led. Performance-Driven. Built for Results.</p>
             </div>
 
@@ -988,7 +988,7 @@ if ($result === false) {
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Proven Digital Expertise</h3>
-                    <p>Aaravtech offers a strong sense of industry insight and practical experience to provide trusted digital marketing services to help brands to grow, expand, and remain competitive in the digital world.</p>
+                    <p>Aarav Tech offers a strong sense of industry insight and practical experience to provide trusted digital marketing services to help brands to grow, expand, and remain competitive in the digital world.</p>
                 </div>
 
                 <!-- Card 2 -->
@@ -1018,7 +1018,7 @@ if ($result === false) {
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3>Results That Matter</h3>
-                    <p>At Aaravtech, success comes in the form of actual results. From increased traffic to better conversions, we are driven by providing quantifiable growth and value in the long term.</p>
+                    <p>At Aarav Tech, success comes in the form of actual results. From increased traffic to better conversions, we are driven by providing quantifiable growth and value in the long term.</p>
                 </div>
 
                 <!-- Card 5 -->
@@ -1065,7 +1065,7 @@ if ($result === false) {
                 <div class="appointment-content">
                     <h2>Book an Appointment With Our Trusted Digital Growth Experts</h2>
                     <p>Looking to grow your business online? You're in the right place.</p>
-                    <p>Connect with a real Aaravtech expert and discuss your objectives, issues, and optimal digital strategy for your brand. Don't wait—let's start building your success today.</p>
+                    <p>Connect with a real Aarav Tech expert and discuss your objectives, issues, and optimal digital strategy for your brand. Don't wait—let's start building your success today.</p>
 
                     <div class="trust-badges">
                         <div class="trust-badge">
@@ -1223,13 +1223,13 @@ if ($result === false) {
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            What services does Aaravtech offer?
+                            What services does Aarav Tech offer?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            <strong>Aaravtech offers digital marketing services</strong> such as SEO, social media marketing, PPC advertising, content marketing, web development, and lead generation services.
+                            <strong>Aarav Tech offers digital marketing services</strong> such as SEO, social media marketing, PPC advertising, content marketing, web development, and lead generation services.
                         </div>
                     </div>
                 </div>
@@ -1341,7 +1341,7 @@ if ($result === false) {
                     <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
                         data-bs-parent="#faqAccordion">
                         <div class="accordion-body faq-accordion-body">
-                            Yes. Aaravtech has <strong>local and international clients</strong> whom we provide with regional and global marketing campaigns.
+                            Yes. Aarav Tech has <strong>local and international clients</strong> whom we provide with regional and global marketing campaigns.
                         </div>
                     </div>
                 </div>
@@ -1351,7 +1351,7 @@ if ($result === false) {
                     <h2 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            Is my business data safe with Aaravtech?
+                            Is my business data safe with Aarav Tech?
                         </button>
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
@@ -1420,7 +1420,7 @@ if ($result === false) {
             <div class="column">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="digital-marketing-services.html">Digital Marketing</a></li>
                     <li><a href="term-of-use.html">Terms Of Use</a></li>
                     <li><a href="privacy-policy.html"></a>Privacy Policy</li>
                     <li><a href="contact.html">Contact Us</a></li>
@@ -1496,9 +1496,9 @@ if ($result === false) {
                         <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
                         <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
                         <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="digital-marketing.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+                        <li><a href="digital-marketing-services.html"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
                         <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="bpo.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                        <li><a href="bpo-services.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
 

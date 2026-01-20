@@ -672,7 +672,7 @@ if ($result === false) {
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="digital-marketing.html" class="submenu-link ">Digital Marketing</a>
+                                    <a href="digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
 
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
@@ -688,7 +688,7 @@ if ($result === false) {
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="web-development.html" class="submenu-link ">Web Development</a>
+                                    <a href="web-development-services.html" class="submenu-link ">Web Development</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
@@ -704,14 +704,14 @@ if ($result === false) {
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="bpo.html" class="submenu-link ">BPO</a>
+                                    <a href="bpo-services.html" class="submenu-link ">BPO</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                 </div>
                                 <div class="submenu ">
                                     <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/call-centre-services.html">Call Center Services</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-center-services.html">Call Center Services</a>
                                 </div>
                             </div>
                         </div>

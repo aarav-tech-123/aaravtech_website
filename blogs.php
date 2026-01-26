@@ -51,7 +51,7 @@ if ($result === false) {
     <title>Explore Our Blog Section | Learn, Apply & Grow with Insights</title>
     <meta name="description"
         content="Unlock expert articles on marketing, design & technology. Learn what works, apply it & see results. Browse AaravTech Services blogs now and grow smarter today.">
-    <link rel="canonical" href="https://aaravtech.net/blogs.php/" />
+    <link rel="canonical" href="https://aaravtech.net/blogs.php" />
 
     <!-- ✅ Styles & Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
